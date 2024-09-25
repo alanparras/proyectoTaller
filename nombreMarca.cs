@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pruebaLogin
+namespace ProyectoTallerG8
 {
     public partial class nombreMarca : Form
     {

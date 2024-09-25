@@ -1,4 +1,4 @@
-﻿namespace pruebaLogin
+﻿namespace ProyectoTallerG8
 {
     partial class nombreMarca
     {
