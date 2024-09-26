@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoTallerG8;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Proyecto_TP2_2
+namespace ProyectoTallerG8
 {
     public partial class Form1 : Form
     {
@@ -27,15 +29,13 @@ namespace Proyecto_TP2_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet1.usuarios' Puede moverla o quitarla según sea necesario.
-            this.usuariosTableAdapter.Fill(this.dataSet1.usuarios);
-
+            // TODO: esta línea de código carga datos en la tabla 'dataSet11.usuarios' Puede moverla o quitarla según sea necesario.
+            this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 consultas = new Form2();
-            consultas.ShowDialog();
+            
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -44,6 +44,35 @@ namespace Proyecto_TP2_2
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

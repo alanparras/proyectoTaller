@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Proyecto_TP2_2 {
+namespace ProyectoTallerG8 {
     
     
     /// <summary>
@@ -1907,7 +1907,7 @@ namespace Proyecto_TP2_2 {
         }
     }
 }
-namespace Proyecto_TP2_2.DataSet1TableAdapters {
+namespace ProyectoTallerG8.DataSet1TableAdapters {
     
     
     /// <summary>
