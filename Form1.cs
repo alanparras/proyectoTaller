@@ -29,6 +29,7 @@ namespace ProyectoTallerG8
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.usuarios' Puede moverla o quitarla según sea necesario.
             this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
         }
@@ -73,6 +74,16 @@ namespace ProyectoTallerG8
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TUserA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
         {
 
         }
