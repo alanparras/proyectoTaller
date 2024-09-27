@@ -105,23 +105,28 @@ namespace ProyectoTallerG8
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-
+            var Form1 = new Form1();
+            Form1.Show();
+            this.Hide();
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
             var FormMensajes = new FormMensajes();
-            FormMensajes.ShowDialog();
+            FormMensajes.Show();
+            this.Hide();
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-
+            var FormConsultas = new FormConsultas();
+            FormConsultas.Show();
+            this.Hide();
         }
     }
 }

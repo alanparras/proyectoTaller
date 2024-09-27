@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.usuariosDataGridView = new System.Windows.Forms.DataGridView();
@@ -63,13 +63,13 @@
             this.TUserA = new System.Windows.Forms.TextBox();
             this.LUser = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.ReceiptsButton = new FontAwesome.Sharp.IconButton();
+            this.StatsButton = new FontAwesome.Sharp.IconButton();
+            this.ProductsButton = new FontAwesome.Sharp.IconButton();
+            this.MsgButton = new FontAwesome.Sharp.IconButton();
+            this.ConsultasButton = new FontAwesome.Sharp.IconButton();
+            this.UsersButton = new FontAwesome.Sharp.IconButton();
+            this.LogOutButton = new FontAwesome.Sharp.IconButton();
             this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -133,14 +133,14 @@
             this.usuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.usuariosDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.usuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.usuariosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.usuariosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.usuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -153,14 +153,14 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9});
             this.usuariosDataGridView.DataSource = this.usuariosBindingSource1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.usuariosDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.usuariosDataGridView.DefaultCellStyle = dataGridViewCellStyle18;
             this.usuariosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.usuariosDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.usuariosDataGridView.Location = new System.Drawing.Point(3, 275);
@@ -456,15 +456,16 @@
             this.tableLayoutPanel3.AutoScroll = true;
             this.tableLayoutPanel3.AutoSize = true;
             this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.iconButton7, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.iconButton6, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.iconButton5, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.iconButton4, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.iconButton3, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.iconButton2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.iconButton1, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.ReceiptsButton, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.StatsButton, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.ProductsButton, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.MsgButton, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.ConsultasButton, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.UsersButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.LogOutButton, 0, 6);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -479,159 +480,159 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(121, 519);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // iconButton7
+            // ReceiptsButton
             // 
-            this.iconButton7.AutoSize = true;
-            this.iconButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton7.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.Silver;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            this.iconButton7.IconColor = System.Drawing.Color.Silver;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.Location = new System.Drawing.Point(3, 373);
-            this.iconButton7.MinimumSize = new System.Drawing.Size(120, 70);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(120, 70);
-            this.iconButton7.TabIndex = 10;
-            this.iconButton7.Text = "Recibos";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
+            this.ReceiptsButton.AutoSize = true;
+            this.ReceiptsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ReceiptsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReceiptsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReceiptsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReceiptsButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ReceiptsButton.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            this.ReceiptsButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.ReceiptsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ReceiptsButton.Location = new System.Drawing.Point(3, 373);
+            this.ReceiptsButton.MinimumSize = new System.Drawing.Size(120, 70);
+            this.ReceiptsButton.Name = "ReceiptsButton";
+            this.ReceiptsButton.Size = new System.Drawing.Size(120, 70);
+            this.ReceiptsButton.TabIndex = 10;
+            this.ReceiptsButton.Text = "Recibos";
+            this.ReceiptsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ReceiptsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ReceiptsButton.UseVisualStyleBackColor = true;
+            this.ReceiptsButton.Click += new System.EventHandler(this.iconButton7_Click);
             // 
-            // iconButton6
+            // StatsButton
             // 
-            this.iconButton6.AutoSize = true;
-            this.iconButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton6.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton6.ForeColor = System.Drawing.Color.Silver;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            this.iconButton6.IconColor = System.Drawing.Color.Silver;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.Location = new System.Drawing.Point(3, 299);
-            this.iconButton6.MinimumSize = new System.Drawing.Size(120, 70);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(120, 70);
-            this.iconButton6.TabIndex = 9;
-            this.iconButton6.Text = "Estadísticas";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
+            this.StatsButton.AutoSize = true;
+            this.StatsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.StatsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StatsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatsButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.StatsButton.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            this.StatsButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.StatsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.StatsButton.Location = new System.Drawing.Point(3, 299);
+            this.StatsButton.MinimumSize = new System.Drawing.Size(120, 70);
+            this.StatsButton.Name = "StatsButton";
+            this.StatsButton.Size = new System.Drawing.Size(120, 70);
+            this.StatsButton.TabIndex = 9;
+            this.StatsButton.Text = "Estadísticas";
+            this.StatsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.StatsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.StatsButton.UseVisualStyleBackColor = true;
+            this.StatsButton.Click += new System.EventHandler(this.iconButton6_Click);
             // 
-            // iconButton5
+            // ProductsButton
             // 
-            this.iconButton5.AutoSize = true;
-            this.iconButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton5.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.Silver;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
-            this.iconButton5.IconColor = System.Drawing.Color.Silver;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.Location = new System.Drawing.Point(3, 225);
-            this.iconButton5.MinimumSize = new System.Drawing.Size(120, 70);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(120, 70);
-            this.iconButton5.TabIndex = 8;
-            this.iconButton5.Text = "Productos";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.ProductsButton.AutoSize = true;
+            this.ProductsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ProductsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductsButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ProductsButton.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
+            this.ProductsButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.ProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ProductsButton.Location = new System.Drawing.Point(3, 225);
+            this.ProductsButton.MinimumSize = new System.Drawing.Size(120, 70);
+            this.ProductsButton.Name = "ProductsButton";
+            this.ProductsButton.Size = new System.Drawing.Size(120, 70);
+            this.ProductsButton.TabIndex = 8;
+            this.ProductsButton.Text = "Productos";
+            this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ProductsButton.UseVisualStyleBackColor = true;
+            this.ProductsButton.Click += new System.EventHandler(this.iconButton5_Click);
             // 
-            // iconButton4
+            // MsgButton
             // 
-            this.iconButton4.AutoSize = true;
-            this.iconButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton4.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.ForeColor = System.Drawing.Color.Silver;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Envelope;
-            this.iconButton4.IconColor = System.Drawing.Color.Silver;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(3, 151);
-            this.iconButton4.MinimumSize = new System.Drawing.Size(120, 70);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(120, 70);
-            this.iconButton4.TabIndex = 7;
-            this.iconButton4.Text = "Mensajes";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            this.MsgButton.AutoSize = true;
+            this.MsgButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.MsgButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MsgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MsgButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MsgButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.MsgButton.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            this.MsgButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.MsgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MsgButton.Location = new System.Drawing.Point(3, 151);
+            this.MsgButton.MinimumSize = new System.Drawing.Size(120, 70);
+            this.MsgButton.Name = "MsgButton";
+            this.MsgButton.Size = new System.Drawing.Size(120, 70);
+            this.MsgButton.TabIndex = 7;
+            this.MsgButton.Text = "Mensajes";
+            this.MsgButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MsgButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MsgButton.UseVisualStyleBackColor = true;
+            this.MsgButton.Click += new System.EventHandler(this.iconButton4_Click);
             // 
-            // iconButton3
+            // ConsultasButton
             // 
-            this.iconButton3.AutoSize = true;
-            this.iconButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Silver;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.FileText;
-            this.iconButton3.IconColor = System.Drawing.Color.Silver;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(3, 77);
-            this.iconButton3.MinimumSize = new System.Drawing.Size(120, 70);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(120, 70);
-            this.iconButton3.TabIndex = 6;
-            this.iconButton3.Text = "Consultas";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.ConsultasButton.AutoSize = true;
+            this.ConsultasButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ConsultasButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultasButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultasButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ConsultasButton.IconChar = FontAwesome.Sharp.IconChar.FileText;
+            this.ConsultasButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.ConsultasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ConsultasButton.Location = new System.Drawing.Point(3, 77);
+            this.ConsultasButton.MinimumSize = new System.Drawing.Size(120, 70);
+            this.ConsultasButton.Name = "ConsultasButton";
+            this.ConsultasButton.Size = new System.Drawing.Size(120, 70);
+            this.ConsultasButton.TabIndex = 6;
+            this.ConsultasButton.Text = "Consultas";
+            this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ConsultasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ConsultasButton.UseVisualStyleBackColor = true;
+            this.ConsultasButton.Click += new System.EventHandler(this.iconButton3_Click);
             // 
-            // iconButton2
+            // UsersButton
             // 
-            this.iconButton2.AutoSize = true;
-            this.iconButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton2.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.Silver;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.iconButton2.IconColor = System.Drawing.Color.Silver;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(3, 3);
-            this.iconButton2.MinimumSize = new System.Drawing.Size(120, 70);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(120, 70);
-            this.iconButton2.TabIndex = 5;
-            this.iconButton2.Text = "Usuarios";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.UsersButton.AutoSize = true;
+            this.UsersButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UsersButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UsersButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsersButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.UsersButton.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.UsersButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.UsersButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UsersButton.Location = new System.Drawing.Point(3, 3);
+            this.UsersButton.MinimumSize = new System.Drawing.Size(120, 70);
+            this.UsersButton.Name = "UsersButton";
+            this.UsersButton.Size = new System.Drawing.Size(120, 70);
+            this.UsersButton.TabIndex = 5;
+            this.UsersButton.Text = "Usuarios";
+            this.UsersButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.UsersButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.UsersButton.UseVisualStyleBackColor = true;
+            this.UsersButton.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // iconButton1
+            // LogOutButton
             // 
-            this.iconButton1.AutoSize = true;
-            this.iconButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.iconButton1.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Silver;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
-            this.iconButton1.IconColor = System.Drawing.Color.Silver;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(3, 447);
-            this.iconButton1.MinimumSize = new System.Drawing.Size(120, 70);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(120, 70);
-            this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "Cerrar Sesión";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.LogOutButton.AutoSize = true;
+            this.LogOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.LogOutButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOutButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.LogOutButton.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
+            this.LogOutButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.LogOutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LogOutButton.Location = new System.Drawing.Point(3, 447);
+            this.LogOutButton.MinimumSize = new System.Drawing.Size(120, 70);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(120, 70);
+            this.LogOutButton.TabIndex = 4;
+            this.LogOutButton.Text = "Cerrar Sesión";
+            this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LogOutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.LogOutButton.UseVisualStyleBackColor = true;
+            this.LogOutButton.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // usuariosTableAdapter1
             // 
@@ -680,6 +681,7 @@
             this.MinimumSize = new System.Drawing.Size(1080, 564);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -738,12 +740,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TConfPassA;
         private System.Windows.Forms.Label label6;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton LogOutButton;
+        private FontAwesome.Sharp.IconButton ReceiptsButton;
+        private FontAwesome.Sharp.IconButton StatsButton;
+        private FontAwesome.Sharp.IconButton ProductsButton;
+        private FontAwesome.Sharp.IconButton MsgButton;
+        private FontAwesome.Sharp.IconButton ConsultasButton;
+        private FontAwesome.Sharp.IconButton UsersButton;
     }
 }

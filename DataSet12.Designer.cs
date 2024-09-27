@@ -858,6 +858,10 @@ namespace pruebaLogin {
             
             private global::System.Data.DataColumn columncreated_at;
             
+            private global::System.Data.DataColumn columnrespuesta;
+            
+            private global::System.Data.DataColumn columnupdated_at;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public consultasDataTable() {
@@ -957,6 +961,22 @@ namespace pruebaLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn respuestaColumn {
+                get {
+                    return this.columnrespuesta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn updated_atColumn {
+                get {
+                    return this.columnupdated_at;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -992,7 +1012,7 @@ namespace pruebaLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public consultasRow AddconsultasRow(bool leido, string mensaje, string correo, string apellido, string nombre, string usuario, System.DateTime created_at) {
+            public consultasRow AddconsultasRow(bool leido, string mensaje, string correo, string apellido, string nombre, string usuario, System.DateTime created_at, string respuesta, System.DateTime updated_at) {
                 consultasRow rowconsultasRow = ((consultasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         leido,
@@ -1002,7 +1022,9 @@ namespace pruebaLogin {
                         nombre,
                         usuario,
                         null,
-                        created_at};
+                        created_at,
+                        respuesta,
+                        updated_at};
                 rowconsultasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowconsultasRow);
                 return rowconsultasRow;
@@ -1040,6 +1062,8 @@ namespace pruebaLogin {
                 this.columnusuario = base.Columns["usuario"];
                 this.columnid = base.Columns["id"];
                 this.columncreated_at = base.Columns["created_at"];
+                this.columnrespuesta = base.Columns["respuesta"];
+                this.columnupdated_at = base.Columns["updated_at"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1061,6 +1085,10 @@ namespace pruebaLogin {
                 base.Columns.Add(this.columnid);
                 this.columncreated_at = new global::System.Data.DataColumn("created_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreated_at);
+                this.columnrespuesta = new global::System.Data.DataColumn("respuesta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrespuesta);
+                this.columnupdated_at = new global::System.Data.DataColumn("updated_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_at);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnmensaje.AllowDBNull = false;
@@ -1079,6 +1107,7 @@ namespace pruebaLogin {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnrespuesta.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1224,6 +1253,10 @@ namespace pruebaLogin {
             
             private global::System.Data.DataColumn columncreated_at;
             
+            private global::System.Data.DataColumn columnrespuesta;
+            
+            private global::System.Data.DataColumn columnupdated_at;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public mensajesDataTable() {
@@ -1307,6 +1340,22 @@ namespace pruebaLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn respuestaColumn {
+                get {
+                    return this.columnrespuesta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn updated_atColumn {
+                get {
+                    return this.columnupdated_at;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1342,7 +1391,7 @@ namespace pruebaLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public mensajesRow AddmensajesRow(string nombre, string correo, string mensaje, bool leido, System.DateTime created_at) {
+            public mensajesRow AddmensajesRow(string nombre, string correo, string mensaje, bool leido, System.DateTime created_at, string respuesta, System.DateTime updated_at) {
                 mensajesRow rowmensajesRow = ((mensajesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nombre,
@@ -1350,7 +1399,9 @@ namespace pruebaLogin {
                         mensaje,
                         null,
                         leido,
-                        created_at};
+                        created_at,
+                        respuesta,
+                        updated_at};
                 rowmensajesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmensajesRow);
                 return rowmensajesRow;
@@ -1386,6 +1437,8 @@ namespace pruebaLogin {
                 this.columnid = base.Columns["id"];
                 this.columnleido = base.Columns["leido"];
                 this.columncreated_at = base.Columns["created_at"];
+                this.columnrespuesta = base.Columns["respuesta"];
+                this.columnupdated_at = base.Columns["updated_at"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1403,6 +1456,10 @@ namespace pruebaLogin {
                 base.Columns.Add(this.columnleido);
                 this.columncreated_at = new global::System.Data.DataColumn("created_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreated_at);
+                this.columnrespuesta = new global::System.Data.DataColumn("respuesta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrespuesta);
+                this.columnupdated_at = new global::System.Data.DataColumn("updated_at", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdated_at);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnnombre.AllowDBNull = false;
@@ -1417,6 +1474,7 @@ namespace pruebaLogin {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnrespuesta.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2784,6 +2842,38 @@ namespace pruebaLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string respuesta {
+                get {
+                    try {
+                        return ((string)(this[this.tableconsultas.respuestaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'respuesta\' de la tabla \'consultas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableconsultas.respuestaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime updated_at {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableconsultas.updated_atColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'updated_at\' de la tabla \'consultas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableconsultas.updated_atColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsleidoNull() {
                 return this.IsNull(this.tableconsultas.leidoColumn);
             }
@@ -2804,6 +2894,30 @@ namespace pruebaLogin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcreated_atNull() {
                 this[this.tableconsultas.created_atColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsrespuestaNull() {
+                return this.IsNull(this.tableconsultas.respuestaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetrespuestaNull() {
+                this[this.tableconsultas.respuestaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isupdated_atNull() {
+                return this.IsNull(this.tableconsultas.updated_atColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setupdated_atNull() {
+                this[this.tableconsultas.updated_atColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2899,6 +3013,38 @@ namespace pruebaLogin {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string respuesta {
+                get {
+                    try {
+                        return ((string)(this[this.tablemensajes.respuestaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'respuesta\' de la tabla \'mensajes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemensajes.respuestaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime updated_at {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablemensajes.updated_atColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'updated_at\' de la tabla \'mensajes\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemensajes.updated_atColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsleidoNull() {
                 return this.IsNull(this.tablemensajes.leidoColumn);
             }
@@ -2919,6 +3065,30 @@ namespace pruebaLogin {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setcreated_atNull() {
                 this[this.tablemensajes.created_atColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsrespuestaNull() {
+                return this.IsNull(this.tablemensajes.respuestaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetrespuestaNull() {
+                this[this.tablemensajes.respuestaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isupdated_atNull() {
+                return this.IsNull(this.tablemensajes.updated_atColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setupdated_atNull() {
+                this[this.tablemensajes.updated_atColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3847,12 +4017,15 @@ namespace pruebaLogin.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("usuario", "usuario");
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("created_at", "created_at");
+            tableMapping.ColumnMappings.Add("respuesta", "respuesta");
+            tableMapping.ColumnMappings.Add("updated_at", "updated_at");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [consultas] ([leido], [mensaje], [correo], [apellido], [nombre], [usu" +
-                "ario], [id], [created_at]) VALUES (@leido, @mensaje, @correo, @apellido, @nombre" +
-                ", @usuario, @id, @created_at)";
+                "ario], [id], [created_at], [respuesta], [updated_at]) VALUES (@leido, @mensaje, " +
+                "@correo, @apellido, @nombre, @usuario, @id, @created_at, @respuesta, @updated_at" +
+                ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@leido", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "leido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mensaje", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "mensaje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3862,6 +4035,8 @@ namespace pruebaLogin.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usuario", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "usuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@respuesta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "respuesta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3877,8 +4052,8 @@ namespace pruebaLogin.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        leido, mensaje, correo, apellido, nombre, usuario, id, created_at\r\n" +
-                "FROM            consultas";
+            this._commandCollection[0].CommandText = "SELECT        leido, mensaje, correo, apellido, nombre, usuario, id, created_at, " +
+                "respuesta, updated_at\r\nFROM            consultas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3939,7 +4114,7 @@ namespace pruebaLogin.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<bool> leido, string mensaje, string correo, string apellido, string nombre, string usuario, int id, global::System.Nullable<global::System.DateTime> created_at) {
+        public virtual int Insert(global::System.Nullable<bool> leido, string mensaje, string correo, string apellido, string nombre, string usuario, int id, global::System.Nullable<global::System.DateTime> created_at, string respuesta, global::System.Nullable<global::System.DateTime> updated_at) {
             if ((leido.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((bool)(leido.Value));
             }
@@ -3982,6 +4157,18 @@ namespace pruebaLogin.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((respuesta == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(respuesta));
+            }
+            if ((updated_at.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(updated_at.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4127,11 +4314,14 @@ namespace pruebaLogin.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("leido", "leido");
             tableMapping.ColumnMappings.Add("created_at", "created_at");
+            tableMapping.ColumnMappings.Add("respuesta", "respuesta");
+            tableMapping.ColumnMappings.Add("updated_at", "updated_at");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [mensajes] ([nombre], [correo], [mensaje], [id], [leido], [created_at" +
-                "]) VALUES (@nombre, @correo, @mensaje, @id, @leido, @created_at)";
+                "], [respuesta], [updated_at]) VALUES (@nombre, @correo, @mensaje, @id, @leido, @" +
+                "created_at, @respuesta, @updated_at)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4139,6 +4329,8 @@ namespace pruebaLogin.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@leido", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "leido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@respuesta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "respuesta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@updated_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "updated_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4154,8 +4346,8 @@ namespace pruebaLogin.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        nombre, correo, mensaje, id, leido, created_at\r\nFROM            men" +
-                "sajes";
+            this._commandCollection[0].CommandText = "SELECT        nombre, correo, mensaje, id, leido, created_at, respuesta, updated_" +
+                "at\r\nFROM            mensajes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4216,7 +4408,7 @@ namespace pruebaLogin.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nombre, string correo, string mensaje, int id, global::System.Nullable<bool> leido, global::System.Nullable<global::System.DateTime> created_at) {
+        public virtual int Insert(string nombre, string correo, string mensaje, int id, global::System.Nullable<bool> leido, global::System.Nullable<global::System.DateTime> created_at, string respuesta, global::System.Nullable<global::System.DateTime> updated_at) {
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
@@ -4247,6 +4439,18 @@ namespace pruebaLogin.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((respuesta == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(respuesta));
+            }
+            if ((updated_at.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(updated_at.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

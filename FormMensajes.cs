@@ -124,5 +124,10 @@ namespace ProyectoTallerG8
         {
 
         }
+
+        private void ConsultasButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
