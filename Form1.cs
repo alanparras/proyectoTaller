@@ -128,5 +128,40 @@ namespace ProyectoTallerG8
             FormConsultas.Show();
             this.Hide();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            string searchTerm = textSearch.Text;
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                // Llama al método FillBySearch con el texto ingresado en el TextBox
+                this.usuariosTableAdapter1.FillBySearch(this.dataSet11.usuarios, searchTerm);
+            }
+            else
+            {
+                // Si no hay texto, se cargan todos los registros
+                this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
+            }
+        }
+
+        private void holaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

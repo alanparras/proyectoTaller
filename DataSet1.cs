@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace pruebaLogin.DataSet1TableAdapters {
+    
+    
+    public partial class usuariosTableAdapter {
+    }
+}
