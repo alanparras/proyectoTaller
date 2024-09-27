@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoTallerG8
 {
-    public partial class Form1 : Form
+    public partial class FormConsultas : Form
     {
-        public Form1()
+        public FormConsultas()
         {
             InitializeComponent();
         }
@@ -27,9 +27,13 @@ namespace ProyectoTallerG8
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormConsultas_Load(object sender, EventArgs e)
         {
-            
+            // TODO: esta línea de código carga datos en la tabla 'dataSet11.consultas' Puede moverla o quitarla según sea necesario.
+            this.consultasTableAdapter.Fill(this.dataSet11.consultas);
+            // TODO: esta línea de código carga datos en la tabla 'dataSet11.mensajes' Puede moverla o quitarla según sea necesario.
+            this.mensajesTableAdapter.Fill(this.dataSet11.mensajes);
+
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.usuarios' Puede moverla o quitarla según sea necesario.
             this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
         }
@@ -115,8 +119,7 @@ namespace ProyectoTallerG8
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            var FormMensajes = new FormMensajes();
-            FormMensajes.ShowDialog();
+
         }
 
         private void iconButton3_Click(object sender, EventArgs e)

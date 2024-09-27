@@ -63,6 +63,26 @@ namespace pruebaLogin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap envelope_solid {
+            get {
+                object obj = ResourceManager.GetObject("envelope-solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap envelope_solid__1_ {
+            get {
+                object obj = ResourceManager.GetObject("envelope-solid (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap file_alt_solid {
             get {
                 object obj = ResourceManager.GetObject("file-alt-solid", resourceCulture);

@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTallerG8
 {
-    partial class Form1
+    partial class FormConsultas
     {
         /// <summary>
         /// Required designer variable.
@@ -33,17 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.usuariosDataGridView = new System.Windows.Forms.DataGridView();
+            this.consultasDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new pruebaLogin.DataSet1();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TConfPassA = new System.Windows.Forms.TextBox();
@@ -70,21 +67,27 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
-            this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
+            this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
+            this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
+            this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
+            this.consultasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.consultasTableAdapter = new pruebaLogin.DataSet1TableAdapters.consultasTableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -111,7 +114,7 @@
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.usuariosDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.consultasDataGridView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(130, 3);
@@ -124,15 +127,15 @@
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
-            // usuariosDataGridView
+            // consultasDataGridView
             // 
-            this.usuariosDataGridView.AllowUserToAddRows = false;
-            this.usuariosDataGridView.AllowUserToDeleteRows = false;
-            this.usuariosDataGridView.AutoGenerateColumns = false;
-            this.usuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.usuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.usuariosDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.usuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.consultasDataGridView.AllowUserToAddRows = false;
+            this.consultasDataGridView.AllowUserToDeleteRows = false;
+            this.consultasDataGridView.AutoGenerateColumns = false;
+            this.consultasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.consultasDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.consultasDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.consultasDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,19 +143,16 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.usuariosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.usuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.consultasDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.consultasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.consultasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.usuariosDataGridView.DataSource = this.usuariosBindingSource1;
+            this.correo,
+            this.mensaje,
+            this.leido,
+            this.created_at,
+            this.dataGridViewTextBoxColumn2});
+            this.consultasDataGridView.DataSource = this.mensajesBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,21 +160,60 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.usuariosDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.usuariosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usuariosDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.usuariosDataGridView.Location = new System.Drawing.Point(3, 275);
-            this.usuariosDataGridView.Name = "usuariosDataGridView";
-            this.usuariosDataGridView.ReadOnly = true;
-            this.usuariosDataGridView.Size = new System.Drawing.Size(925, 210);
-            this.usuariosDataGridView.TabIndex = 4;
+            this.consultasDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.consultasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consultasDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.consultasDataGridView.Location = new System.Drawing.Point(3, 275);
+            this.consultasDataGridView.Name = "consultasDataGridView";
+            this.consultasDataGridView.ReadOnly = true;
+            this.consultasDataGridView.Size = new System.Drawing.Size(925, 210);
+            this.consultasDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.Frozen = true;
             this.dataGridViewTextBoxColumn1.HeaderText = "id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 147;
+            // 
+            // correo
+            // 
+            this.correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.correo.DataPropertyName = "correo";
+            this.correo.Frozen = true;
+            this.correo.HeaderText = "correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            this.correo.Width = 147;
+            // 
+            // mensaje
+            // 
+            this.mensaje.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.mensaje.DataPropertyName = "mensaje";
+            this.mensaje.Frozen = true;
+            this.mensaje.HeaderText = "mensaje";
+            this.mensaje.Name = "mensaje";
+            this.mensaje.ReadOnly = true;
+            this.mensaje.Width = 147;
+            // 
+            // leido
+            // 
+            this.leido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.leido.DataPropertyName = "leido";
+            this.leido.HeaderText = "leido";
+            this.leido.Name = "leido";
+            this.leido.ReadOnly = true;
+            this.leido.Width = 147;
+            // 
+            // created_at
+            // 
+            this.created_at.DataPropertyName = "created_at";
+            this.created_at.HeaderText = "created_at";
+            this.created_at.Name = "created_at";
+            this.created_at.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -183,59 +222,10 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // mensajesBindingSource
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "apellido";
-            this.dataGridViewTextBoxColumn3.HeaderText = "apellido";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "baja";
-            this.dataGridViewTextBoxColumn4.HeaderText = "baja";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "perfil_id";
-            this.dataGridViewTextBoxColumn5.HeaderText = "perfil_id";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "usuario";
-            this.dataGridViewTextBoxColumn6.HeaderText = "usuario";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "email";
-            this.dataGridViewTextBoxColumn7.HeaderText = "email";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "domicilio";
-            this.dataGridViewTextBoxColumn8.HeaderText = "domicilio";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "zipcode";
-            this.dataGridViewTextBoxColumn9.HeaderText = "zipcode";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataMember = "usuarios";
-            this.usuariosBindingSource1.DataSource = this.dataSet11;
+            this.mensajesBindingSource.DataMember = "mensajes";
+            this.mensajesBindingSource.DataSource = this.dataSet11;
             // 
             // dataSet11
             // 
@@ -633,6 +623,21 @@
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataMember = "usuarios";
+            this.usuariosBindingSource1.DataSource = this.dataSet11;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // usuariosTableAdapter1
             // 
             this.usuariosTableAdapter1.ClearBeforeFill = true;
@@ -648,16 +653,6 @@
             this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
             this.tableAdapterManager1.ventas_detalleTableAdapter = null;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
@@ -670,7 +665,20 @@
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
-            // Form1
+            // mensajesTableAdapter
+            // 
+            this.mensajesTableAdapter.ClearBeforeFill = true;
+            // 
+            // consultasBindingSource
+            // 
+            this.consultasBindingSource.DataMember = "consultas";
+            this.consultasBindingSource.DataSource = this.dataSet11;
+            // 
+            // consultasTableAdapter
+            // 
+            this.consultasTableAdapter.ClearBeforeFill = true;
+            // 
+            // FormConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -678,21 +686,23 @@
             this.ClientSize = new System.Drawing.Size(1064, 525);
             this.Controls.Add(this.tableLayoutPanel2);
             this.MinimumSize = new System.Drawing.Size(1080, 564);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "FormConsultas";
+            this.Text = "FormConsultas";
+            this.Load += new System.EventHandler(this.FormConsultas_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -711,16 +721,7 @@
         private pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter usuariosTableAdapter1;
         private pruebaLogin.DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView usuariosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridView consultasDataGridView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TNameA;
         private System.Windows.Forms.Label label1;
@@ -745,5 +746,15 @@
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.BindingSource mensajesBindingSource;
+        private pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter mensajesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mensaje;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn leido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource consultasBindingSource;
+        private pruebaLogin.DataSet1TableAdapters.consultasTableAdapter consultasTableAdapter;
     }
 }
