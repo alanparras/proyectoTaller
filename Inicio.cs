@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoTallerG8
 {
-    public partial class Form1 : Form
+    public partial class Inicio : Form
     {
-        public Form1()
+        public Inicio()
         {
             InitializeComponent();
         }
@@ -105,7 +105,7 @@ namespace ProyectoTallerG8
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            var Form1 = new Form1();
+            var Form1 = new Inicio();
             Form1.Show();
             this.Hide();
         }

@@ -12,9 +12,9 @@ using BCrypt.Net;
 
 namespace ProyectoTallerG8
 {
-    public partial class nombreMarca : Form
+    public partial class Login : Form
     {
-        public nombreMarca()
+        public Login()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace ProyectoTallerG8
 
         private void BLogin_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Inicio form = new Inicio();
 
             // Aseguramos que el evento form_closing se suscribe antes de mostrar el formulario
             form.FormClosing += form_closing;
