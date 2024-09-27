@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoTallerG8
 {
-    public partial class nombreMarca : Form
+    public partial class Login : Form
     {
-        public nombreMarca()
+        public Login()
         {
             InitializeComponent();
         }
@@ -35,6 +35,29 @@ namespace ProyectoTallerG8
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BLogin_Click(object sender, EventArgs e)
+        {
+            Inicio form = new Inicio();
+
+            form.Show();
+            this.Hide();
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
