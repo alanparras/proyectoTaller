@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BLogin = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.LPass = new System.Windows.Forms.Label();
             this.TUser = new System.Windows.Forms.TextBox();
             this.LUser = new System.Windows.Forms.Label();
-            this.BCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(294, 372);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_2);
+            // 
+            // BCancelar
+            // 
+            this.BCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.BCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BCancelar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCancelar.ForeColor = System.Drawing.Color.White;
+            this.BCancelar.Location = new System.Drawing.Point(51, 319);
+            this.BCancelar.Name = "BCancelar";
+            this.BCancelar.Size = new System.Drawing.Size(193, 32);
+            this.BCancelar.TabIndex = 8;
+            this.BCancelar.Text = "Cancelar";
+            this.BCancelar.UseVisualStyleBackColor = false;
+            this.BCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // label1
             // 
@@ -157,24 +176,6 @@
             this.LUser.Size = new System.Drawing.Size(58, 23);
             this.LUser.TabIndex = 0;
             this.LUser.Text = "Usuario";
-            // 
-            // BCancelar
-            // 
-            this.BCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BCancelar.BackColor = System.Drawing.Color.Firebrick;
-            this.BCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BCancelar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCancelar.ForeColor = System.Drawing.Color.White;
-            this.BCancelar.Location = new System.Drawing.Point(51, 319);
-            this.BCancelar.Name = "BCancelar";
-            this.BCancelar.Size = new System.Drawing.Size(193, 32);
-            this.BCancelar.TabIndex = 8;
-            this.BCancelar.Text = "Cancelar";
-            this.BCancelar.UseVisualStyleBackColor = false;
-            this.BCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // Login
             // 

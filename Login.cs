@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCrypt.Net;
+using pruebaLogin;
 
 namespace ProyectoTallerG8
 {
@@ -113,6 +114,11 @@ namespace ProyectoTallerG8
         private void BCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
