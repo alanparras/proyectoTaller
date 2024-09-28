@@ -46,10 +46,10 @@ namespace ProyectoTallerG8
 
         private void BLogin_Click_1(object sender, EventArgs e)
         {
-            Inicio form = new Inicio();
+            Inicio form_inicio = new Inicio();
 
             // Aseguramos que el evento form_closing se suscribe antes de mostrar el formulario
-            form.FormClosing += form_closing;
+            form_inicio.FormClosing += form_closing;
 
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString;
             string usuario = TUser.Text;
@@ -73,7 +73,7 @@ namespace ProyectoTallerG8
                         if (BCrypt.Net.BCrypt.Verify(pass, storedHash) && perfilId != 0)
                         {
                             // Caso de éxito: Mostrar la nueva ventana y ocultar la actual
-                            form.Show();
+                            form_inicio.Show();
                             this.Hide();
                         }
                         else if (perfilId == 0)
