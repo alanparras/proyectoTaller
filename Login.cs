@@ -44,7 +44,7 @@ namespace ProyectoTallerG8
 
         }
 
-        private void BLogin_Click(object sender, EventArgs e)
+        private void BLogin_Click_1(object sender, EventArgs e)
         {
             Inicio form = new Inicio();
 
@@ -108,6 +108,11 @@ namespace ProyectoTallerG8
         private void LPass_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
