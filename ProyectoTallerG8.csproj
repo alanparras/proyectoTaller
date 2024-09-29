@@ -115,6 +115,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\LogoGio.png" />
     <EmbeddedResource Include="FormConsultas.resx">
       <DependentUpon>FormConsultas.cs</DependentUpon>
     </EmbeddedResource>
