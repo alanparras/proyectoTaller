@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.PropertyGridInternal;
+using System.Windows.Media;
 using CapaEntidades;
 using CapaNegocio;
 using ProyectoTallerG8.Utilidades;
@@ -122,22 +124,85 @@ namespace ProyectoTallerG8
 
         private void BRegisterUser_Click(object sender, EventArgs e)
         {
-            usuariosDataGridView.Rows.Add(new object[] {
-                "",
-                TID_user.Text,
-                TNombre.Text, 
-                TApellido.Text, 
-                ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString(),
-                ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString(),
-                ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString(),
-                TUser.Text,
-                TPass.Text,
-                TEmail.Text, 
-                TDomicilio.Text, 
-                TCP.Text
-            });
+            string mensaje = string.Empty;
 
-            VaciarCampos();
+            //MessageBox.Show("TID_user.Text: " + TID_user.Text);
+            //MessageBox.Show("TCP.Text: " + TCP.Text);
+            //MessageBox.Show("CBperfiles.SelectedItem: " + ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString());
+            //MessageBox.Show("CBEstado.SelectedItem: " + ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString());
+
+
+            Usuario objUser = new Usuario()
+            {
+                id_usuario = Convert.ToInt32(TID_user.Text),
+                nombre = TNombre.Text,
+                apellido = TApellido.Text,
+                objPerfil = new Perfil() { id_perfil = Convert.ToInt32(((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor) },
+                baja = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString(),
+                user = TUser.Text,
+                pass = TPass.Text,
+                email = TEmail.Text,
+                domicilio = TDomicilio.Text,
+                CP = Convert.ToInt32(TCP.Text),
+            };
+
+            if (objUser.id_usuario == 0)
+            {
+                int idusuarioregistrado = new Usuario_negocio().Registrar(objUser, out mensaje);
+
+                if(idusuarioregistrado != 0)
+                {
+                    usuariosDataGridView.Rows.Add(new object[] {
+                        "",
+                        idusuarioregistrado,
+                        TNombre.Text,
+                        TApellido.Text,
+                        ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString(),
+                        ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString(),
+                        ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString(),
+                        TUser.Text,
+                        TPass.Text,
+                        TEmail.Text,
+                        TDomicilio.Text,
+                        TCP.Text
+                    });
+
+                    VaciarCampos();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+            else
+            {
+                bool resultado = new Usuario_negocio().Editar(objUser, out mensaje);
+
+                if (resultado)
+                {
+                    DataGridViewRow row = usuariosDataGridView.Rows[Convert.ToInt32(TIndice.Text)];
+
+                    row.Cells["id_user"].Value = TID_user.Text;
+                    row.Cells["nombre"].Value = TNombre.Text;
+                    row.Cells["apellido"].Value = TApellido.Text;
+                    row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString();
+                    row.Cells["Perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString();
+                    row.Cells["baja"].Value = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString();
+                    row.Cells["email"].Value = TEmail.Text;
+                    row.Cells["user"].Value = TUser.Text;
+                    row.Cells["pass"].Value = TPass;
+                    row.Cells["domicilio"].Value = TDomicilio.Text;
+                    row.Cells["CP"].Value = TCP.Text;
+
+                    VaciarCampos();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+
+
         }
 
         private bool ValidarCampos()
@@ -241,6 +306,44 @@ namespace ProyectoTallerG8
 
         private void CBModificarPerfil_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void TID_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BEliminar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(TModificarID_user.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Usuario objusuario = new Usuario()
+                    {
+                        id_usuario = Convert.ToInt32(TModificarID_user.Text)
+                    };
+
+                    bool respuesta = new Usuario_negocio().Eliminar(objusuario, out mensaje);
+
+                    if (respuesta)
+                    {
+                        usuariosDataGridView.Rows.RemoveAt(Convert.ToInt32(TBModificarIndice.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+            
 
         }
     }
