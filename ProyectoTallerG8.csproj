@@ -211,12 +211,12 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
-      <Project>{6feec8d3-98a8-4416-8b73-74e91bc47d31}</Project>
+    <ProjectReference Include="CapaEntidadesFinal\CapaEntidades.csproj">
+      <Project>{3dd3070f-bbcf-4e52-9fd6-a4cda24f88e9}</Project>
       <Name>CapaEntidades</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{9a25a350-fd93-4487-a874-0802a0529d95}</Project>
+    <ProjectReference Include="CapaNegocioFinal\CapaNegocio.csproj">
+      <Project>{859b0db0-bf8a-44c1-a70a-1b73b733ed2f}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
