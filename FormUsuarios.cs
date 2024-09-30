@@ -31,7 +31,9 @@ namespace ProyectoTallerG8
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            // TODO: esta línea de código carga datos en la tabla 'dataSet11.perfiles' Puede moverla o quitarla según sea necesario.
+            this.perfilesTableAdapter1.Fill(this.dataSet11.perfiles);
+
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.usuarios' Puede moverla o quitarla según sea necesario.
             this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
 
@@ -40,6 +42,9 @@ namespace ProyectoTallerG8
             CBEstado.DisplayMember = "Texto";
             CBEstado.ValueMember = "Valor";
             CBEstado.SelectedIndex = 0;
+
+
+            
 
         }
 
@@ -67,6 +72,47 @@ namespace ProyectoTallerG8
 
 
         private void BRegisterUser_Click(object sender, EventArgs e)
+        {
+            if (ValidarTextBox())
+            {
+                try
+                {
+                    this.usuariosTableAdapter1.Update(this.dataSet11.usuarios);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se guardo / " +  ex.Message, "Atención");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los campos");
+            }
+
+        }
+
+        private bool ValidarTextBox()
+        {
+            if (string.IsNullOrWhiteSpace(TNombre.Text) || 
+                string.IsNullOrWhiteSpace(TApellido.Text) || 
+                string.IsNullOrWhiteSpace(TEmail.Text) ||
+                string.IsNullOrWhiteSpace(TPass.Text) ||
+                string.IsNullOrWhiteSpace(TPassConf.Text) ||
+                string.IsNullOrWhiteSpace(TUser.Text) ||
+                string.IsNullOrWhiteSpace(CBperfiles.Text) ||
+                string.IsNullOrWhiteSpace(CBEstado.Text) ||
+                string.IsNullOrWhiteSpace(TDomicilio.Text) ||
+                string.IsNullOrWhiteSpace(TCP.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void CBEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
