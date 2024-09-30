@@ -219,6 +219,14 @@
       <Project>{859b0db0-bf8a-44c1-a70a-1b73b733ed2f}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+    <ProjectReference Include="CapaEntidadesFinal\CapaEntidadesFinal.csproj">
+      <Project>{3dd3070f-bbcf-4e52-9fd6-a4cda24f88e9}</Project>
+      <Name>CapaEntidadesFinal</Name>
+    </ProjectReference>
+    <ProjectReference Include="CapaNegocioFinal\CapaNegocioFinal.csproj">
+      <Project>{859b0db0-bf8a-44c1-a70a-1b73b733ed2f}</Project>
+      <Name>CapaNegocioFinal</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaEntidades", "CapaEntida
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocioFinal\CapaNegocio.csproj", "{859B0DB0-BF8A-44C1-A70A-1B73B733ED2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaEntidadesFinal", "CapaEntidadesFinal\CapaEntidadesFinal.csproj", "{3DD3070F-BBCF-4E52-9FD6-A4CDA24F88E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocioFinal", "CapaNegocioFinal\CapaNegocioFinal.csproj", "{859B0DB0-BF8A-44C1-A70A-1B73B733ED2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
