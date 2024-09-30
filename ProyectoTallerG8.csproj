@@ -130,6 +130,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionSelectUsuario.cs" />
+    <None Include="Resources\checkbox.png" />
     <None Include="Resources\LogoGio.png" />
     <EmbeddedResource Include="FormConsultas.resx">
       <DependentUpon>FormConsultas.cs</DependentUpon>

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
-
+using System.Windows.Forms.PropertyGridInternal;
 using CapaEntidades;
 using CapaNegocio;
 using ProyectoTallerG8.Utilidades;
@@ -37,14 +38,26 @@ namespace ProyectoTallerG8
             CBEstado.ValueMember = "Valor";
             CBEstado.SelectedIndex = 0;
 
+            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = "NO", Texto = "Dado de Alta" });
+            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = "SI", Texto = "Dado de Baja" });
+            CBModificarEstado.DisplayMember = "Texto";
+            CBModificarEstado.ValueMember = "Valor";
+
             List<Perfil> listaPerfil = new Perfil_negocio().Listar();
             foreach (Perfil item in listaPerfil)
             {
                 CBperfiles.Items.Add(new OpcionSelectUsuario() { Valor = item.id_perfil, Texto = item.descripcion });
+                CBModificarPerfil.Items.Add(new OpcionSelectUsuario() { Valor = item.id_perfil, Texto = item.descripcion });
             }
             CBperfiles.DisplayMember = "Texto";
             CBperfiles.ValueMember = "Valor";
             CBperfiles.SelectedIndex = 0;
+
+            CBModificarPerfil.DisplayMember = "Texto";
+            CBModificarPerfil.ValueMember = "Valor";
+            CBModificarPerfil.SelectedIndex = 0;
+
+
 
 
             //Muestra todos los usuarios
@@ -72,6 +85,7 @@ namespace ProyectoTallerG8
 
         private void VaciarCampos()
         {
+            TID_user.Text = "-1";
             TNombre.Text = "";
             TApellido.Text = "";
             TEmail.Text = "";
@@ -126,7 +140,7 @@ namespace ProyectoTallerG8
             VaciarCampos();
         }
 
-        private bool ValidarTextBox()
+        private bool ValidarCampos()
         {
             if (string.IsNullOrWhiteSpace(TNombre.Text) || 
                 string.IsNullOrWhiteSpace(TApellido.Text) || 
@@ -154,15 +168,80 @@ namespace ProyectoTallerG8
 
         private void usuariosDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex < 0)
             {
                 return;
             }
 
-            if (true)
+            if (e.ColumnIndex == 0)
             {
-                
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = pruebaLogin.Properties.Resources.checkbox.Width;
+                var h = pruebaLogin.Properties.Resources.checkbox.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - w) / 2;
+
+                e.Graphics.DrawImage(pruebaLogin.Properties.Resources.checkbox, new Rectangle(x, y, w, h));
+                e.Handled = true;
             }
+        }
+
+        private void usuariosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (usuariosDataGridView.Columns[e.ColumnIndex].Name == "btnSeleccionar")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    TCUsuarios.SelectedIndex = 1;
+
+                    TBModificarIndice.Text = indice.ToString();
+
+                    TModificarID_user.Text = usuariosDataGridView.Rows[indice].Cells["id_user"].Value.ToString();
+                    TModificarNombre.Text = usuariosDataGridView.Rows[indice].Cells["nombre"].Value.ToString();
+                    TModificarAp.Text = usuariosDataGridView.Rows[indice].Cells["apellido"].Value.ToString();
+                    TModificarEmail.Text = usuariosDataGridView.Rows[indice].Cells["email"].Value.ToString();
+                    TModificarUser.Text = usuariosDataGridView.Rows[indice].Cells["user"].Value.ToString();
+                    TModificarPass.Text = usuariosDataGridView.Rows[indice].Cells["pass"].Value.ToString();
+                    TModificarPassConfirm.Text = usuariosDataGridView.Rows[indice].Cells["pass"].Value.ToString();
+                    TModificarDomicilio.Text = usuariosDataGridView.Rows[indice].Cells["domicilio"].Value.ToString();
+                    TModificarCP.Text = usuariosDataGridView.Rows[indice].Cells["CP"].Value.ToString();
+
+                    foreach (OpcionSelectUsuario opcionSelect in CBModificarPerfil.Items)
+                    {
+                        if (Convert.ToInt32(opcionSelect.Valor) == Convert.ToInt32(usuariosDataGridView.Rows[indice].Cells["id_perfil"].Value))
+                        {
+                            int indice_select = CBModificarPerfil.Items.IndexOf(opcionSelect);
+                            CBModificarPerfil.SelectedIndex = indice_select;
+                            break;
+                        }   
+                    }
+
+                    foreach (OpcionSelectUsuario opcionSelect in CBModificarEstado.Items)
+                    {
+                        if (opcionSelect.Valor.ToString() == usuariosDataGridView.Rows[indice].Cells["baja"].Value.ToString())
+                        {
+                            int indice_select = CBModificarEstado.Items.IndexOf(opcionSelect);
+                            CBModificarEstado.SelectedIndex = indice_select;
+                            break;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        private void PanelModificarUser_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CBModificarPerfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

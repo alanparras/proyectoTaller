@@ -55,7 +55,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.TCUsuarios = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.PanelAltaUser = new System.Windows.Forms.Panel();
             this.TID_user = new System.Windows.Forms.TextBox();
@@ -82,10 +82,10 @@
             this.LUser = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PanelModificarUser = new System.Windows.Forms.Panel();
+            this.CBModificarPerfil = new System.Windows.Forms.ComboBox();
             this.LModificarEstado = new System.Windows.Forms.Label();
             this.CBModificarEstado = new System.Windows.Forms.ComboBox();
-            this.LModificarRol = new System.Windows.Forms.Label();
-            this.CBModificarRol = new System.Windows.Forms.ComboBox();
+            this.LModificarPerfil = new System.Windows.Forms.Label();
             this.TModificarPassConfirm = new System.Windows.Forms.TextBox();
             this.LModificarPassConfirm = new System.Windows.Forms.Label();
             this.TModificarCP = new System.Windows.Forms.TextBox();
@@ -110,13 +110,15 @@
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
+            this.TModificarID_user = new System.Windows.Forms.TextBox();
+            this.TBModificarIndice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.TCUsuarios.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.PanelAltaUser.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -219,12 +221,13 @@
             this.usuariosDataGridView.ReadOnly = true;
             this.usuariosDataGridView.Size = new System.Drawing.Size(1076, 268);
             this.usuariosDataGridView.TabIndex = 4;
+            this.usuariosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuariosDataGridView_CellContentClick);
             this.usuariosDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.usuariosDataGridView_CellPainting);
             // 
             // btnSeleccionar
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -313,7 +316,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.97297F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.02703F));
             this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tabControl1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.TCUsuarios, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -368,18 +371,18 @@
             this.label16.TabIndex = 4;
             this.label16.Text = "Buscar...";
             // 
-            // tabControl1
+            // TCUsuarios
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(607, 414);
-            this.tabControl1.TabIndex = 8;
+            this.TCUsuarios.Controls.Add(this.tabPage1);
+            this.TCUsuarios.Controls.Add(this.tabPage2);
+            this.TCUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TCUsuarios.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TCUsuarios.Location = new System.Drawing.Point(3, 3);
+            this.TCUsuarios.Multiline = true;
+            this.TCUsuarios.Name = "TCUsuarios";
+            this.TCUsuarios.SelectedIndex = 0;
+            this.TCUsuarios.Size = new System.Drawing.Size(607, 414);
+            this.TCUsuarios.TabIndex = 8;
             // 
             // tabPage1
             // 
@@ -433,11 +436,10 @@
             this.TID_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TID_user.Location = new System.Drawing.Point(38, 320);
             this.TID_user.Name = "TID_user";
-            this.TID_user.PasswordChar = '*';
+            this.TID_user.ReadOnly = true;
             this.TID_user.Size = new System.Drawing.Size(28, 27);
             this.TID_user.TabIndex = 26;
             this.TID_user.UseSystemPasswordChar = true;
-            this.TID_user.Visible = false;
             // 
             // CBEstado
             // 
@@ -691,10 +693,12 @@
             // PanelModificarUser
             // 
             this.PanelModificarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.PanelModificarUser.Controls.Add(this.TBModificarIndice);
+            this.PanelModificarUser.Controls.Add(this.TModificarID_user);
+            this.PanelModificarUser.Controls.Add(this.CBModificarPerfil);
             this.PanelModificarUser.Controls.Add(this.LModificarEstado);
             this.PanelModificarUser.Controls.Add(this.CBModificarEstado);
-            this.PanelModificarUser.Controls.Add(this.LModificarRol);
-            this.PanelModificarUser.Controls.Add(this.CBModificarRol);
+            this.PanelModificarUser.Controls.Add(this.LModificarPerfil);
             this.PanelModificarUser.Controls.Add(this.TModificarPassConfirm);
             this.PanelModificarUser.Controls.Add(this.LModificarPassConfirm);
             this.PanelModificarUser.Controls.Add(this.TModificarCP);
@@ -717,6 +721,19 @@
             this.PanelModificarUser.Name = "PanelModificarUser";
             this.PanelModificarUser.Size = new System.Drawing.Size(593, 377);
             this.PanelModificarUser.TabIndex = 8;
+            this.PanelModificarUser.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelModificarUser_Paint);
+            // 
+            // CBModificarPerfil
+            // 
+            this.CBModificarPerfil.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.CBModificarPerfil.DisplayMember = "id_perfiles";
+            this.CBModificarPerfil.FormattingEnabled = true;
+            this.CBModificarPerfil.Location = new System.Drawing.Point(307, 107);
+            this.CBModificarPerfil.Name = "CBModificarPerfil";
+            this.CBModificarPerfil.Size = new System.Drawing.Size(231, 26);
+            this.CBModificarPerfil.TabIndex = 46;
+            this.CBModificarPerfil.ValueMember = "id_perfiles";
+            this.CBModificarPerfil.SelectedIndexChanged += new System.EventHandler(this.CBModificarPerfil_SelectedIndexChanged);
             // 
             // LModificarEstado
             // 
@@ -738,25 +755,16 @@
             this.CBModificarEstado.Size = new System.Drawing.Size(232, 26);
             this.CBModificarEstado.TabIndex = 43;
             // 
-            // LModificarRol
+            // LModificarPerfil
             // 
-            this.LModificarRol.AutoSize = true;
-            this.LModificarRol.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarRol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarRol.Location = new System.Drawing.Point(303, 79);
-            this.LModificarRol.Name = "LModificarRol";
-            this.LModificarRol.Size = new System.Drawing.Size(30, 23);
-            this.LModificarRol.TabIndex = 42;
-            this.LModificarRol.Text = "Rol";
-            // 
-            // CBModificarRol
-            // 
-            this.CBModificarRol.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.CBModificarRol.FormattingEnabled = true;
-            this.CBModificarRol.Location = new System.Drawing.Point(307, 105);
-            this.CBModificarRol.Name = "CBModificarRol";
-            this.CBModificarRol.Size = new System.Drawing.Size(232, 26);
-            this.CBModificarRol.TabIndex = 41;
+            this.LModificarPerfil.AutoSize = true;
+            this.LModificarPerfil.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.LModificarPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LModificarPerfil.Location = new System.Drawing.Point(303, 79);
+            this.LModificarPerfil.Name = "LModificarPerfil";
+            this.LModificarPerfil.Size = new System.Drawing.Size(43, 23);
+            this.LModificarPerfil.TabIndex = 42;
+            this.LModificarPerfil.Text = "Perfil";
             // 
             // TModificarPassConfirm
             // 
@@ -996,6 +1004,29 @@
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
+            // TModificarID_user
+            // 
+            this.TModificarID_user.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TModificarID_user.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TModificarID_user.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TModificarID_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TModificarID_user.Location = new System.Drawing.Point(79, 329);
+            this.TModificarID_user.Name = "TModificarID_user";
+            this.TModificarID_user.Size = new System.Drawing.Size(36, 27);
+            this.TModificarID_user.TabIndex = 47;
+            // 
+            // TBModificarIndice
+            // 
+            this.TBModificarIndice.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TBModificarIndice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TBModificarIndice.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBModificarIndice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TBModificarIndice.Location = new System.Drawing.Point(36, 329);
+            this.TBModificarIndice.Name = "TBModificarIndice";
+            this.TBModificarIndice.Size = new System.Drawing.Size(36, 27);
+            this.TBModificarIndice.TabIndex = 48;
+            this.TBModificarIndice.Text = "-1";
+            // 
             // FormUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1015,7 +1046,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.TCUsuarios.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.PanelAltaUser.ResumeLayout(false);
             this.PanelAltaUser.PerformLayout();
@@ -1050,7 +1081,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl TCUsuarios;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel PanelAltaUser;
         private System.Windows.Forms.Button BRegisterUser;
@@ -1060,8 +1091,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label LModificarEstado;
         private System.Windows.Forms.ComboBox CBModificarEstado;
-        private System.Windows.Forms.Label LModificarRol;
-        private System.Windows.Forms.ComboBox CBModificarRol;
+        private System.Windows.Forms.Label LModificarPerfil;
         private System.Windows.Forms.TextBox TModificarPassConfirm;
         private System.Windows.Forms.Label LModificarPassConfirm;
         private System.Windows.Forms.TextBox TModificarCP;
@@ -1100,6 +1130,7 @@
         private pruebaLogin.DataSet1TableAdapters.perfilesTableAdapter perfilesTableAdapter1;
         private System.Windows.Forms.ComboBox CBEstado;
         private System.Windows.Forms.ComboBox CBperfiles;
+        private System.Windows.Forms.TextBox TID_user;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_user;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -1112,6 +1143,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn CP;
-        private System.Windows.Forms.TextBox TID_user;
+        private System.Windows.Forms.ComboBox CBModificarPerfil;
+        private System.Windows.Forms.TextBox TModificarID_user;
+        private System.Windows.Forms.TextBox TBModificarIndice;
     }
 }
