@@ -1,16 +1,10 @@
-﻿using ProyectoTallerG8;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-using pruebaLogin.Utilidades;
+using CapaEntidades;
+using CapaNegocio;
+using ProyectoTallerG8.Utilidades;
 
 namespace ProyectoTallerG8
 {
@@ -43,11 +37,52 @@ namespace ProyectoTallerG8
             CBEstado.ValueMember = "Valor";
             CBEstado.SelectedIndex = 0;
 
+            List<Perfil> listaPerfil = new Perfil_negocio().Listar();
+            foreach (Perfil item in listaPerfil)
+            {
+                CBperfiles.Items.Add(new OpcionSelectUsuario() { Valor = item.id_perfil, Texto = item.descripcion });
+            }
+            CBperfiles.DisplayMember = "Texto";
+            CBperfiles.ValueMember = "Valor";
+            CBperfiles.SelectedIndex = 0;
 
-            
+
+            //Muestra todos los usuarios
+            List<Usuario> listaUsuario = new Usuario_negocio().Listar();
+            //Console.WriteLine($"Número de usuarios encontrados: {listaUsuario.Count}");
+            foreach (Usuario item in listaUsuario)
+            {
+                usuariosDataGridView.Rows.Add(new object[] {
+                    "", 
+                    item.id_usuario, 
+                    item.nombre, 
+                    item.apellido,
+                    item.objPerfil.id_perfil, 
+                    item.objPerfil.descripcion, 
+                    item.baja,
+                    item.user, 
+                    item.pass,
+                    item.email, 
+                    item.domicilio,
+                    item.CP
+                });
+            }
 
         }
 
+        private void VaciarCampos()
+        {
+            TNombre.Text = "";
+            TApellido.Text = "";
+            TEmail.Text = "";
+            TPass.Text = "";
+            TPassConf.Text = "";
+            TUser.Text = "";
+            CBperfiles.SelectedIndex = 0;
+            CBEstado.SelectedIndex = 0;
+            TDomicilio.Text = "";
+            TCP.Text = "";
+        }
 
         private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
@@ -73,22 +108,22 @@ namespace ProyectoTallerG8
 
         private void BRegisterUser_Click(object sender, EventArgs e)
         {
-            if (ValidarTextBox())
-            {
-                try
-                {
-                    this.usuariosTableAdapter1.Update(this.dataSet11.usuarios);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("No se guardo / " +  ex.Message, "Atención");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Debe completar todos los campos");
-            }
+            usuariosDataGridView.Rows.Add(new object[] {
+                "",
+                TID_user.Text,
+                TNombre.Text, 
+                TApellido.Text, 
+                ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString(),
+                ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString(),
+                ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString(),
+                TUser.Text,
+                TPass.Text,
+                TEmail.Text, 
+                TDomicilio.Text, 
+                TCP.Text
+            });
 
+            VaciarCampos();
         }
 
         private bool ValidarTextBox()
