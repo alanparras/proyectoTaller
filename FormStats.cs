@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
-//using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ProyectoTallerG8
 {
@@ -63,12 +65,12 @@ namespace ProyectoTallerG8
             if (!showingTotalSales)
             {
                 chartVentas.ChartAreas[0].AxisY.LabelStyle.Format = "0"; // Formato entero para evitar decimales
-                chartVentas.ChartAreas[0].AxisY.Interval = 1; // Intervalo de 1 en el eje Y para evitar duplicados
+                series.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             }
             else
             {
                 chartVentas.ChartAreas[0].AxisY.LabelStyle.Format = "C"; // Formato de moneda si es total de ingresos
-                chartVentas.ChartAreas[0].AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+                series.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             }
 
             // Conexión a la base de datos
@@ -139,6 +141,148 @@ namespace ProyectoTallerG8
                 // Si la fecha final es menor a la fecha inicial, deshabilitar el botón
                 btnLoadChart.Enabled = false;
             }
+        }
+
+        private void btnLoadEmployeeChart_Click(object sender, EventArgs e)
+        {
+            showingTotalSales = !showingTotalSales; // Alterna entre las dos métricas
+            LoadEmployeeSalesChart();
+        }
+
+        private void LoadEmployeeSalesChart()
+        {
+            // Limpiar los datos previos del gráfico
+            chartVentasEmpleados.Series.Clear(); // Cambiar el nombre del gráfico
+            chartVentasEmpleados.ChartAreas[0].AxisX.Title = "Fecha";
+            chartVentasEmpleados.ChartAreas[0].AxisY.Title = showingTotalSales ? "Ingresos Totales ($)" : "Número de Ventas";
+
+            // Crear una serie para el gráfico de ventas por empleado
+            
+
+            // Configurar el eje Y según lo que estemos mostrando
+            /*if (!showingTotalSales)
+            {
+                
+                
+            }
+            else
+            {
+                // Para ingresos totales en dinero
+                chartVentasEmpleados.ChartAreas[0].AxisY.LabelStyle.Format = "C"; // Formato de moneda
+                seriesEmpleados.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            }*/
+
+            // Conexión a la base de datos
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString; // Reemplaza con tu cadena de conexión
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query;
+
+                if (showingTotalSales)
+                {
+                    // Consulta para el total de ventas (dinero) por empleado
+                    query = @"
+                SELECT u.id AS usuario_id, u.nombre, vc.fecha, SUM(vc.total_venta) AS total 
+                FROM ventas_cabecera vc
+                JOIN usuarios u ON vc.usuario_id = u.id 
+                WHERE u.perfil_id = 3 AND vc.fecha BETWEEN @startDate AND @endDate 
+                GROUP BY u.id, u.nombre, vc.fecha";
+                }
+                else
+                {
+                    // Consulta para el número de ventas por empleado
+                    query = @"
+                SELECT u.id AS usuario_id, u.nombre, vc.fecha, COUNT(*) AS total 
+                FROM ventas_cabecera vc
+                JOIN usuarios u ON vc.usuario_id = u.id 
+                WHERE u.perfil_id = 3 AND vc.fecha BETWEEN @startDate AND @endDate 
+                GROUP BY u.id, u.nombre, vc.fecha";
+                }
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Parámetros de la consulta
+                    cmd.Parameters.AddWithValue("@startDate", dtpStartDateE.Value);
+                    cmd.Parameters.AddWithValue("@endDate", dtpEndDateE.Value);
+
+                    // Abrir la conexión
+                    con.Open();
+
+                    // Ejecutar la consulta y cargar los datos
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        var employeeColors = new Dictionary<int, Color>();
+                        int colorIndex = 0;
+
+                        while (reader.Read())
+                        {
+                            DateTime fecha = Convert.ToDateTime(reader["fecha"]);
+                            double total = Convert.ToDouble(reader["total"]);
+                            int usuarioId = Convert.ToInt32(reader["usuario_id"]);
+                            string nombre = reader["nombre"].ToString();
+
+                            // Crear una serie para cada empleado si no existe
+                            if (!employeeColors.ContainsKey(usuarioId))
+                            {
+                                var seriesEmpleados = chartVentasEmpleados.Series.Add(nombre);
+                                seriesEmpleados.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.RangeColumn;
+                                seriesEmpleados.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+                                seriesEmpleados.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+
+                                // Asignar un color único a la serie
+                                seriesEmpleados.Color = GetColor(colorIndex);
+                                employeeColors[usuarioId] = seriesEmpleados.Color;
+                                colorIndex++;
+                            }
+
+                            // Añadir puntos al gráfico
+                            var series = chartVentasEmpleados.Series[nombre];
+                            series.Points.AddXY(fecha, total);
+                        }
+                    }
+
+                    // Cerrar la conexión
+                    con.Close();
+                }
+            }
+
+            // Configurar el eje Y según lo que estemos mostrando
+            if (!showingTotalSales)
+            {
+                // Para número de ventas por día
+                chartVentasEmpleados.ChartAreas[0].AxisY.LabelStyle.Format = "0"; // Formato entero para evitar decimales
+                labelMetricE.Text = "Ventas por dia";
+
+            }
+            else
+            {
+                // Para ingresos totales en dinero
+                chartVentasEmpleados.ChartAreas[0].AxisY.LabelStyle.Format = "C"; // Formato de moneda
+                labelMetricE.Text = "Ingresos por dia";
+            }
+
+
+        }
+
+        private Color GetColor(int index)
+        {
+            // Array de colores
+            Color[] colors = new Color[]
+            {
+        Color.Red,
+        Color.Blue,
+        Color.Green,
+        Color.Orange,
+        Color.Purple,
+        Color.Brown,
+        Color.Cyan,
+        Color.Magenta,
+        Color.Yellow,
+        Color.Gray
+            };
+
+            // Devolver color basado en el índice
+            return colors[index % colors.Length];
         }
     }
 }

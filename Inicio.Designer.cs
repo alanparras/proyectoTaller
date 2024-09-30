@@ -114,6 +114,7 @@
             this.StatsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.StatsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.StatsButton.UseVisualStyleBackColor = false;
+            this.StatsButton.Click += new System.EventHandler(this.StatsButton_Click);
             // 
             // ProductsButton
             // 
