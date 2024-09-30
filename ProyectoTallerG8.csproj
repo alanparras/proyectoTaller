@@ -140,6 +140,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilidades\OpcionSelectUsuario.cs" />
+    <None Include="Resources\checkbox.png" />
     <None Include="Resources\LogoGio.png" />
     <EmbeddedResource Include="FormConsultas.resx">
       <DependentUpon>FormConsultas.cs</DependentUpon>
@@ -224,12 +225,12 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
-      <Project>{6feec8d3-98a8-4416-8b73-74e91bc47d31}</Project>
+    <ProjectReference Include="CapaEntidades\CapaEntidades.csproj">
+      <Project>{176a63cf-bae9-4e91-9fc9-dbe0f3f02373}</Project>
       <Name>CapaEntidades</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{9a25a350-fd93-4487-a874-0802a0529d95}</Project>
+    <ProjectReference Include="CapaNegocio\CapaNegocio.csproj">
+      <Project>{5edcde2a-2715-473c-8db7-23359f237791}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
