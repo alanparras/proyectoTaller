@@ -151,5 +151,18 @@ namespace ProyectoTallerG8
         {
 
         }
+
+        private void usuariosDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                return;
+            }
+
+            if (true)
+            {
+                
+            }
+        }
     }
 }

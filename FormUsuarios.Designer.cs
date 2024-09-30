@@ -58,6 +58,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.PanelAltaUser = new System.Windows.Forms.Panel();
+            this.TID_user = new System.Windows.Forms.TextBox();
             this.CBEstado = new System.Windows.Forms.ComboBox();
             this.CBperfiles = new System.Windows.Forms.ComboBox();
             this.LEstado = new System.Windows.Forms.Label();
@@ -105,7 +106,6 @@
             this.perfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.perfilesTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.perfilesTableAdapter();
-            this.TID_user = new System.Windows.Forms.TextBox();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
@@ -219,6 +219,7 @@
             this.usuariosDataGridView.ReadOnly = true;
             this.usuariosDataGridView.Size = new System.Drawing.Size(1076, 268);
             this.usuariosDataGridView.TabIndex = 4;
+            this.usuariosDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.usuariosDataGridView_CellPainting);
             // 
             // btnSeleccionar
             // 
@@ -423,6 +424,20 @@
             this.PanelAltaUser.Name = "PanelAltaUser";
             this.PanelAltaUser.Size = new System.Drawing.Size(593, 377);
             this.PanelAltaUser.TabIndex = 7;
+            // 
+            // TID_user
+            // 
+            this.TID_user.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TID_user.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TID_user.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TID_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TID_user.Location = new System.Drawing.Point(38, 320);
+            this.TID_user.Name = "TID_user";
+            this.TID_user.PasswordChar = '*';
+            this.TID_user.Size = new System.Drawing.Size(28, 27);
+            this.TID_user.TabIndex = 26;
+            this.TID_user.UseSystemPasswordChar = true;
+            this.TID_user.Visible = false;
             // 
             // CBEstado
             // 
@@ -958,20 +973,6 @@
             // perfilesTableAdapter1
             // 
             this.perfilesTableAdapter1.ClearBeforeFill = true;
-            // 
-            // TID_user
-            // 
-            this.TID_user.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TID_user.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TID_user.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TID_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TID_user.Location = new System.Drawing.Point(38, 320);
-            this.TID_user.Name = "TID_user";
-            this.TID_user.PasswordChar = '*';
-            this.TID_user.Size = new System.Drawing.Size(28, 27);
-            this.TID_user.TabIndex = 26;
-            this.TID_user.UseSystemPasswordChar = true;
-            this.TID_user.Visible = false;
             // 
             // usuariosBindingSource
             // 
