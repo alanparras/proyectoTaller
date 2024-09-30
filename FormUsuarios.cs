@@ -182,17 +182,17 @@ namespace ProyectoTallerG8
                 {
                     DataGridViewRow row = usuariosDataGridView.Rows[Convert.ToInt32(TIndice.Text)];
 
-                    row.Cells["id_user"].Value = TID_user.Text;
-                    row.Cells["nombre"].Value = TNombre.Text;
-                    row.Cells["apellido"].Value = TApellido.Text;
+                    row.Cells["id_user"].Value = TModificarID_user.Text;
+                    row.Cells["nombre"].Value = TModificarNombre.Text;
+                    row.Cells["apellido"].Value = TModificarAp.Text;
                     row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString();
                     row.Cells["Perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString();
                     row.Cells["baja"].Value = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString();
-                    row.Cells["email"].Value = TEmail.Text;
-                    row.Cells["user"].Value = TUser.Text;
-                    row.Cells["pass"].Value = TPass;
-                    row.Cells["domicilio"].Value = TDomicilio.Text;
-                    row.Cells["CP"].Value = TCP.Text;
+                    row.Cells["email"].Value = TModificarEmail.Text;
+                    row.Cells["user"].Value = TModificarUser.Text;
+                    row.Cells["pass"].Value = TModificarPass;
+                    row.Cells["domicilio"].Value = TModificarDomicilio.Text;
+                    row.Cells["CP"].Value = TModificarCP.Text;
 
                     VaciarCampos();
                 }
@@ -345,6 +345,50 @@ namespace ProyectoTallerG8
             }
             
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+
+            Usuario objUser = new Usuario()
+            {
+                id_usuario = Convert.ToInt32(TModificarID_user.Text),
+                nombre = TModificarNombre.Text,
+                apellido = TModificarAp.Text,
+                objPerfil = new Perfil() { id_perfil = Convert.ToInt32(((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Valor) },
+                baja = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor.ToString(),
+                user = TModificarUser.Text,
+                pass = TModificarPass.Text,
+                email = TModificarEmail.Text,
+                domicilio = TModificarDomicilio.Text,
+                CP = Convert.ToInt32(TModificarCP.Text),
+            };
+
+            bool resultado = new Usuario_negocio().Editar(objUser, out mensaje);
+
+            if (resultado)
+            {
+                DataGridViewRow row = usuariosDataGridView.Rows[Convert.ToInt32(TBModificarIndice.Text)];
+
+                row.Cells["id_user"].Value = TModificarID_user.Text;
+                row.Cells["nombre"].Value = TModificarNombre.Text;
+                row.Cells["apellido"].Value = TModificarAp.Text;
+                row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString();
+                row.Cells["Perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString();
+                row.Cells["baja"].Value = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString();
+                row.Cells["email"].Value = TModificarEmail.Text;
+                row.Cells["user"].Value = TModificarUser.Text;
+                row.Cells["pass"].Value = TModificarPass;
+                row.Cells["domicilio"].Value = TModificarDomicilio.Text;
+                row.Cells["CP"].Value = TModificarCP.Text;
+
+                VaciarCampos();
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
         }
     }
 }

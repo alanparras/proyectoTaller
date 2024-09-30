@@ -58,6 +58,7 @@
             this.TCUsuarios = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.PanelAltaUser = new System.Windows.Forms.Panel();
+            this.TIndice = new System.Windows.Forms.TextBox();
             this.TID_user = new System.Windows.Forms.TextBox();
             this.CBEstado = new System.Windows.Forms.ComboBox();
             this.CBperfiles = new System.Windows.Forms.ComboBox();
@@ -82,6 +83,7 @@
             this.LUser = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PanelModificarUser = new System.Windows.Forms.Panel();
+            this.BEliminar = new System.Windows.Forms.Button();
             this.TBModificarIndice = new System.Windows.Forms.TextBox();
             this.TModificarID_user = new System.Windows.Forms.TextBox();
             this.CBModificarPerfil = new System.Windows.Forms.ComboBox();
@@ -104,16 +106,14 @@
             this.LModificarPass = new System.Windows.Forms.Label();
             this.TModificarUser = new System.Windows.Forms.TextBox();
             this.LModificarUsuario = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.perfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.perfilesTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.perfilesTableAdapter();
-            this.TIndice = new System.Windows.Forms.TextBox();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
-            this.BEliminar = new System.Windows.Forms.Button();
+            this.BModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -431,6 +431,19 @@
             this.PanelAltaUser.Size = new System.Drawing.Size(593, 377);
             this.PanelAltaUser.TabIndex = 7;
             // 
+            // TIndice
+            // 
+            this.TIndice.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TIndice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TIndice.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TIndice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TIndice.Location = new System.Drawing.Point(39, 328);
+            this.TIndice.Name = "TIndice";
+            this.TIndice.Size = new System.Drawing.Size(36, 27);
+            this.TIndice.TabIndex = 49;
+            this.TIndice.Text = "-1";
+            this.TIndice.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // TID_user
             // 
             this.TID_user.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -720,13 +733,27 @@
             this.PanelModificarUser.Controls.Add(this.LModificarPass);
             this.PanelModificarUser.Controls.Add(this.TModificarUser);
             this.PanelModificarUser.Controls.Add(this.LModificarUsuario);
-            this.PanelModificarUser.Controls.Add(this.button1);
+            this.PanelModificarUser.Controls.Add(this.BModificar);
             this.PanelModificarUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelModificarUser.Location = new System.Drawing.Point(3, 3);
             this.PanelModificarUser.Name = "PanelModificarUser";
             this.PanelModificarUser.Size = new System.Drawing.Size(593, 377);
             this.PanelModificarUser.TabIndex = 8;
             this.PanelModificarUser.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelModificarUser_Paint);
+            // 
+            // BEliminar
+            // 
+            this.BEliminar.BackColor = System.Drawing.Color.IndianRed;
+            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BEliminar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEliminar.ForeColor = System.Drawing.Color.White;
+            this.BEliminar.Location = new System.Drawing.Point(290, 342);
+            this.BEliminar.Name = "BEliminar";
+            this.BEliminar.Size = new System.Drawing.Size(143, 32);
+            this.BEliminar.TabIndex = 49;
+            this.BEliminar.Text = "Eliminar";
+            this.BEliminar.UseVisualStyleBackColor = false;
+            this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
             // 
             // TBModificarIndice
             // 
@@ -972,19 +999,6 @@
             this.LModificarUsuario.TabIndex = 25;
             this.LModificarUsuario.Text = "Usuario";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(439, 342);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 32);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Modificar Usuario";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // perfilesBindingSource
             // 
             this.perfilesBindingSource.DataMember = "perfiles";
@@ -1010,19 +1024,6 @@
             // 
             this.perfilesTableAdapter1.ClearBeforeFill = true;
             // 
-            // TIndice
-            // 
-            this.TIndice.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TIndice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TIndice.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TIndice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TIndice.Location = new System.Drawing.Point(39, 328);
-            this.TIndice.Name = "TIndice";
-            this.TIndice.Size = new System.Drawing.Size(36, 27);
-            this.TIndice.TabIndex = 49;
-            this.TIndice.Text = "-1";
-            this.TIndice.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "usuarios";
@@ -1045,19 +1046,19 @@
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
-            // BEliminar
+            // BModificar
             // 
-            this.BEliminar.BackColor = System.Drawing.Color.IndianRed;
-            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BEliminar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEliminar.ForeColor = System.Drawing.Color.White;
-            this.BEliminar.Location = new System.Drawing.Point(290, 342);
-            this.BEliminar.Name = "BEliminar";
-            this.BEliminar.Size = new System.Drawing.Size(143, 32);
-            this.BEliminar.TabIndex = 49;
-            this.BEliminar.Text = "Eliminar";
-            this.BEliminar.UseVisualStyleBackColor = false;
-            this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
+            this.BModificar.BackColor = System.Drawing.Color.Gray;
+            this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BModificar.ForeColor = System.Drawing.Color.White;
+            this.BModificar.Location = new System.Drawing.Point(439, 342);
+            this.BModificar.Name = "BModificar";
+            this.BModificar.Size = new System.Drawing.Size(143, 32);
+            this.BModificar.TabIndex = 21;
+            this.BModificar.Text = "Modificar Usuario";
+            this.BModificar.UseVisualStyleBackColor = false;
+            this.BModificar.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormUsuarios
             // 
@@ -1119,7 +1120,6 @@
         private System.Windows.Forms.Button BRegisterUser;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel PanelModificarUser;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label LModificarEstado;
         private System.Windows.Forms.ComboBox CBModificarEstado;
@@ -1180,5 +1180,6 @@
         private System.Windows.Forms.TextBox TBModificarIndice;
         private System.Windows.Forms.TextBox TIndice;
         private System.Windows.Forms.Button BEliminar;
+        private System.Windows.Forms.Button BModificar;
     }
 }
