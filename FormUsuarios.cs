@@ -7,12 +7,14 @@ using System.Windows.Forms.PropertyGridInternal;
 using System.Windows.Media;
 using CapaEntidades;
 using CapaNegocio;
+using FontAwesome.Sharp;
 using ProyectoTallerG8.Utilidades;
 
 namespace ProyectoTallerG8
 {
     public partial class FormUsuarios : Form
     {
+       
         public FormUsuarios()
         {
             InitializeComponent();
@@ -126,11 +128,10 @@ namespace ProyectoTallerG8
         {
             string mensaje = string.Empty;
 
-            //MessageBox.Show("TID_user.Text: " + TID_user.Text);
-            //MessageBox.Show("TCP.Text: " + TCP.Text);
-            //MessageBox.Show("CBperfiles.SelectedItem: " + ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString());
-            //MessageBox.Show("CBEstado.SelectedItem: " + ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString());
-
+            MessageBox.Show("TID_user.Text: " + TID_user.Text);
+            MessageBox.Show("TCP.Text: " + TCP.Text);
+            MessageBox.Show("CBperfiles.SelectedItem: " + Convert.ToInt32(((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor));
+            MessageBox.Show("CBEstado.SelectedItem: " + ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString());
 
             Usuario objUser = new Usuario()
             {
@@ -143,7 +144,7 @@ namespace ProyectoTallerG8
                 pass = TPass.Text,
                 email = TEmail.Text,
                 domicilio = TDomicilio.Text,
-                CP = Convert.ToInt32(TCP.Text),
+                CP = Convert.ToInt32(TCP.Text)
             };
 
             if (objUser.id_usuario == 0)
