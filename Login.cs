@@ -47,6 +47,7 @@ namespace ProyectoTallerG8
 
         private void BLogin_Click_1(object sender, EventArgs e)
         {
+
             Inicio form_inicio = new Inicio();
 
             // Aseguramos que el evento form_closing se suscribe antes de mostrar el formulario
