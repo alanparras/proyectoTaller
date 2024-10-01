@@ -66,5 +66,9 @@ namespace pruebaLogin
             AbrirFormulario((IconButton)sender, new FormStats());
         }
 
+        private void ConsultasButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconButton)sender, new FormConsultas());
+        }
     }
 }
