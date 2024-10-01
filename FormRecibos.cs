@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoTallerG8
 {
-    public partial class FormMensajes : Form
+    public partial class FormRecibos : Form
     {
-        public FormMensajes()
+        public FormRecibos()
         {
             InitializeComponent();
         }
@@ -27,8 +27,14 @@ namespace ProyectoTallerG8
 
         }
 
-        private void FormMensajes_Load(object sender, EventArgs e)
+        private void FormRecibos_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet11.cabeceras_individuales' Puede moverla o quitarla según sea necesario.
+            this.cabeceras_individualesTableAdapter.Fill(this.dataSet11.cabeceras_individuales);
+            // TODO: esta línea de código carga datos en la tabla 'dataSet11.detalles_individuales' Puede moverla o quitarla según sea necesario.
+            this.detalles_individualesTableAdapter.Fill(this.dataSet11.detalles_individuales);
+            // TODO: esta línea de código carga datos en la tabla 'dataSet11.recibos' Puede moverla o quitarla según sea necesario.
+            this.recibosTableAdapter.Fill(this.dataSet11.recibos);
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.mensajes' Puede moverla o quitarla según sea necesario.
             this.mensajesTableAdapter.Fill(this.dataSet11.mensajes);
 
@@ -116,6 +122,16 @@ namespace ProyectoTallerG8
         }
 
         private void ConsultasButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void usuariosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

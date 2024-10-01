@@ -1,6 +1,6 @@
 ﻿namespace ProyectoTallerG8
 {
-    partial class FormUsuarios
+    partial class FormProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -37,19 +37,7 @@
             this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.usuariosDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productospcBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +46,8 @@
             this.TCUsuarios = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.PanelAltaUser = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.TIndice = new System.Windows.Forms.TextBox();
             this.TID_user = new System.Windows.Forms.TextBox();
             this.CBEstado = new System.Windows.Forms.ComboBox();
@@ -67,8 +57,6 @@
             this.BRegisterUser = new System.Windows.Forms.Button();
             this.TPassConf = new System.Windows.Forms.TextBox();
             this.LPassConf = new System.Windows.Forms.Label();
-            this.TCP = new System.Windows.Forms.TextBox();
-            this.LCP = new System.Windows.Forms.Label();
             this.TDomicilio = new System.Windows.Forms.TextBox();
             this.LDomicilio = new System.Windows.Forms.Label();
             this.TEmail = new System.Windows.Forms.TextBox();
@@ -79,29 +67,29 @@
             this.LNombre = new System.Windows.Forms.Label();
             this.TPass = new System.Windows.Forms.TextBox();
             this.LPass = new System.Windows.Forms.Label();
-            this.TUser = new System.Windows.Forms.TextBox();
-            this.LUser = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PanelModificarUser = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.BEliminar = new System.Windows.Forms.Button();
             this.TBModificarIndice = new System.Windows.Forms.TextBox();
             this.TModificarID_user = new System.Windows.Forms.TextBox();
-            this.CBModificarPerfil = new System.Windows.Forms.ComboBox();
-            this.LModificarEstado = new System.Windows.Forms.Label();
-            this.CBModificarEstado = new System.Windows.Forms.ComboBox();
-            this.LModificarPerfil = new System.Windows.Forms.Label();
-            this.TModificarCP = new System.Windows.Forms.TextBox();
-            this.LModificarCP = new System.Windows.Forms.Label();
-            this.TModificarDomicilio = new System.Windows.Forms.TextBox();
-            this.LModificarDomicio = new System.Windows.Forms.Label();
-            this.TModificarEmail = new System.Windows.Forms.TextBox();
-            this.LModificarEmail = new System.Windows.Forms.Label();
-            this.TModificarAp = new System.Windows.Forms.TextBox();
-            this.LModificarApellido = new System.Windows.Forms.Label();
-            this.TModificarNombre = new System.Windows.Forms.TextBox();
-            this.LModificarNombre = new System.Windows.Forms.Label();
-            this.TModificarUser = new System.Windows.Forms.TextBox();
-            this.LModificarUsuario = new System.Windows.Forms.Label();
             this.BModificar = new System.Windows.Forms.Button();
             this.perfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -110,10 +98,24 @@
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
+            this.productos_pcTableAdapter = new pruebaLogin.DataSet1TableAdapters.productos_pcTableAdapter();
+            this.usuariosDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bajaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productospcBindingSource)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.TCUsuarios.SuspendLayout();
@@ -125,6 +127,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // usuariosBindingSource1
@@ -173,139 +176,10 @@
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
-            // usuariosDataGridView
+            // productospcBindingSource
             // 
-            this.usuariosDataGridView.AllowUserToAddRows = false;
-            this.usuariosDataGridView.AllowUserToDeleteRows = false;
-            this.usuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.usuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.usuariosDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.usuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.usuariosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.usuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnSeleccionar,
-            this.id_user,
-            this.nombre,
-            this.apellido,
-            this.id_perfil,
-            this.Perfil,
-            this.baja,
-            this.user,
-            this.pass,
-            this.email,
-            this.domicilio,
-            this.CP});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.usuariosDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.usuariosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usuariosDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.usuariosDataGridView.Location = new System.Drawing.Point(3, 429);
-            this.usuariosDataGridView.MultiSelect = false;
-            this.usuariosDataGridView.Name = "usuariosDataGridView";
-            this.usuariosDataGridView.ReadOnly = true;
-            this.usuariosDataGridView.Size = new System.Drawing.Size(1076, 268);
-            this.usuariosDataGridView.TabIndex = 4;
-            this.usuariosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuariosDataGridView_CellContentClick);
-            this.usuariosDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.usuariosDataGridView_CellPainting);
-            // 
-            // btnSeleccionar
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.HeaderText = "Seleccionar";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btnSeleccionar.Text = "";
-            // 
-            // id_user
-            // 
-            this.id_user.HeaderText = "ID de Usuario";
-            this.id_user.Name = "id_user";
-            this.id_user.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // id_perfil
-            // 
-            this.id_perfil.DataPropertyName = "perfil_id";
-            this.id_perfil.HeaderText = "id_perfil";
-            this.id_perfil.Name = "id_perfil";
-            this.id_perfil.ReadOnly = true;
-            this.id_perfil.Visible = false;
-            // 
-            // Perfil
-            // 
-            this.Perfil.HeaderText = "Perfil";
-            this.Perfil.Name = "Perfil";
-            this.Perfil.ReadOnly = true;
-            // 
-            // baja
-            // 
-            this.baja.DataPropertyName = "baja";
-            this.baja.HeaderText = "Dado de baja";
-            this.baja.Name = "baja";
-            this.baja.ReadOnly = true;
-            // 
-            // user
-            // 
-            this.user.HeaderText = "Usuario";
-            this.user.Name = "user";
-            this.user.ReadOnly = true;
-            // 
-            // pass
-            // 
-            this.pass.HeaderText = "Pass";
-            this.pass.Name = "pass";
-            this.pass.ReadOnly = true;
-            this.pass.Visible = false;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            this.domicilio.ReadOnly = true;
-            // 
-            // CP
-            // 
-            this.CP.HeaderText = "Código postal";
-            this.CP.Name = "CP";
-            this.CP.ReadOnly = true;
+            this.productospcBindingSource.DataMember = "productos_pc";
+            this.productospcBindingSource.DataSource = this.dataSet11;
             // 
             // tableLayoutPanel4
             // 
@@ -391,13 +265,15 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(599, 383);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Alta de Usuario";
+            this.tabPage1.Text = "Alta de Producto";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // PanelAltaUser
             // 
             this.PanelAltaUser.AutoScroll = true;
             this.PanelAltaUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.PanelAltaUser.Controls.Add(this.comboBox1);
+            this.PanelAltaUser.Controls.Add(this.label1);
             this.PanelAltaUser.Controls.Add(this.TIndice);
             this.PanelAltaUser.Controls.Add(this.TID_user);
             this.PanelAltaUser.Controls.Add(this.CBEstado);
@@ -407,8 +283,6 @@
             this.PanelAltaUser.Controls.Add(this.BRegisterUser);
             this.PanelAltaUser.Controls.Add(this.TPassConf);
             this.PanelAltaUser.Controls.Add(this.LPassConf);
-            this.PanelAltaUser.Controls.Add(this.TCP);
-            this.PanelAltaUser.Controls.Add(this.LCP);
             this.PanelAltaUser.Controls.Add(this.TDomicilio);
             this.PanelAltaUser.Controls.Add(this.LDomicilio);
             this.PanelAltaUser.Controls.Add(this.TEmail);
@@ -419,13 +293,33 @@
             this.PanelAltaUser.Controls.Add(this.LNombre);
             this.PanelAltaUser.Controls.Add(this.TPass);
             this.PanelAltaUser.Controls.Add(this.LPass);
-            this.PanelAltaUser.Controls.Add(this.TUser);
-            this.PanelAltaUser.Controls.Add(this.LUser);
             this.PanelAltaUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelAltaUser.Location = new System.Drawing.Point(3, 3);
             this.PanelAltaUser.Name = "PanelAltaUser";
             this.PanelAltaUser.Size = new System.Drawing.Size(593, 377);
             this.PanelAltaUser.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.comboBox1.DisplayMember = "id_perfiles";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(310, 52);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(231, 26);
+            this.comboBox1.TabIndex = 52;
+            this.comboBox1.ValueMember = "id_perfiles";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(305, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 23);
+            this.label1.TabIndex = 51;
+            this.label1.Text = "Categoria";
             // 
             // TIndice
             // 
@@ -459,7 +353,6 @@
             this.CBEstado.Name = "CBEstado";
             this.CBEstado.Size = new System.Drawing.Size(232, 26);
             this.CBEstado.TabIndex = 25;
-            this.CBEstado.SelectedIndexChanged += new System.EventHandler(this.CBEstado_SelectedIndexChanged);
             // 
             // CBperfiles
             // 
@@ -490,9 +383,9 @@
             this.LPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LPerfil.Location = new System.Drawing.Point(305, 79);
             this.LPerfil.Name = "LPerfil";
-            this.LPerfil.Size = new System.Drawing.Size(43, 23);
+            this.LPerfil.Size = new System.Drawing.Size(102, 23);
             this.LPerfil.TabIndex = 22;
-            this.LPerfil.Text = "Perfil";
+            this.LPerfil.Text = "Sub-Categoria";
             // 
             // BRegisterUser
             // 
@@ -504,9 +397,8 @@
             this.BRegisterUser.Name = "BRegisterUser";
             this.BRegisterUser.Size = new System.Drawing.Size(143, 32);
             this.BRegisterUser.TabIndex = 20;
-            this.BRegisterUser.Text = "Registrar Usuario";
+            this.BRegisterUser.Text = "Registrar Producto";
             this.BRegisterUser.UseVisualStyleBackColor = false;
-            this.BRegisterUser.Click += new System.EventHandler(this.BRegisterUser_Click);
             // 
             // TPassConf
             // 
@@ -528,31 +420,9 @@
             this.LPassConf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LPassConf.Location = new System.Drawing.Point(35, 244);
             this.LPassConf.Name = "LPassConf";
-            this.LPassConf.Size = new System.Drawing.Size(150, 23);
+            this.LPassConf.Size = new System.Drawing.Size(49, 23);
             this.LPassConf.TabIndex = 18;
-            this.LPassConf.Text = "Confirmar Contraseña";
-            // 
-            // TCP
-            // 
-            this.TCP.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TCP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TCP.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TCP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TCP.Location = new System.Drawing.Point(309, 271);
-            this.TCP.Name = "TCP";
-            this.TCP.Size = new System.Drawing.Size(232, 27);
-            this.TCP.TabIndex = 17;
-            // 
-            // LCP
-            // 
-            this.LCP.AutoSize = true;
-            this.LCP.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LCP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LCP.Location = new System.Drawing.Point(305, 246);
-            this.LCP.Name = "LCP";
-            this.LCP.Size = new System.Drawing.Size(94, 23);
-            this.LCP.TabIndex = 16;
-            this.LCP.Text = "Codigo Postal";
+            this.LPassConf.Text = "Precio";
             // 
             // TDomicilio
             // 
@@ -572,9 +442,9 @@
             this.LDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LDomicilio.Location = new System.Drawing.Point(305, 190);
             this.LDomicilio.Name = "LDomicilio";
-            this.LDomicilio.Size = new System.Drawing.Size(67, 23);
+            this.LDomicilio.Size = new System.Drawing.Size(45, 23);
             this.LDomicilio.TabIndex = 14;
-            this.LDomicilio.Text = "Domicilio";
+            this.LDomicilio.Text = "Stock";
             // 
             // TEmail
             // 
@@ -594,9 +464,9 @@
             this.LEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LEmail.Location = new System.Drawing.Point(35, 134);
             this.LEmail.Name = "LEmail";
-            this.LEmail.Size = new System.Drawing.Size(52, 23);
+            this.LEmail.Size = new System.Drawing.Size(50, 23);
             this.LEmail.TabIndex = 12;
-            this.LEmail.Text = "E-mail";
+            this.LEmail.Text = "Marca";
             // 
             // TApellido
             // 
@@ -616,9 +486,10 @@
             this.LApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LApellido.Location = new System.Drawing.Point(35, 81);
             this.LApellido.Name = "LApellido";
-            this.LApellido.Size = new System.Drawing.Size(60, 23);
+            this.LApellido.Size = new System.Drawing.Size(83, 23);
             this.LApellido.TabIndex = 10;
-            this.LApellido.Text = "Apellido";
+            this.LApellido.Text = "Descripción";
+            this.LApellido.Click += new System.EventHandler(this.LApellido_Click);
             // 
             // TNombre
             // 
@@ -662,31 +533,9 @@
             this.LPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LPass.Location = new System.Drawing.Point(35, 188);
             this.LPass.Name = "LPass";
-            this.LPass.Size = new System.Drawing.Size(82, 23);
+            this.LPass.Size = new System.Drawing.Size(54, 23);
             this.LPass.TabIndex = 6;
-            this.LPass.Text = "Contraseña";
-            // 
-            // TUser
-            // 
-            this.TUser.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TUser.Location = new System.Drawing.Point(309, 51);
-            this.TUser.Name = "TUser";
-            this.TUser.Size = new System.Drawing.Size(232, 27);
-            this.TUser.TabIndex = 5;
-            // 
-            // LUser
-            // 
-            this.LUser.AutoSize = true;
-            this.LUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LUser.Location = new System.Drawing.Point(305, 25);
-            this.LUser.Name = "LUser";
-            this.LUser.Size = new System.Drawing.Size(58, 23);
-            this.LUser.TabIndex = 4;
-            this.LUser.Text = "Usuario";
+            this.LPass.Text = "Modelo";
             // 
             // tabPage2
             // 
@@ -696,31 +545,33 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(599, 383);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Modificar Usuario";
+            this.tabPage2.Text = "Modificar Producto";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // PanelModificarUser
             // 
             this.PanelModificarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.PanelModificarUser.Controls.Add(this.comboBox2);
+            this.PanelModificarUser.Controls.Add(this.label2);
+            this.PanelModificarUser.Controls.Add(this.comboBox3);
+            this.PanelModificarUser.Controls.Add(this.comboBox4);
+            this.PanelModificarUser.Controls.Add(this.label3);
+            this.PanelModificarUser.Controls.Add(this.label4);
+            this.PanelModificarUser.Controls.Add(this.textBox1);
+            this.PanelModificarUser.Controls.Add(this.label5);
+            this.PanelModificarUser.Controls.Add(this.textBox2);
+            this.PanelModificarUser.Controls.Add(this.label6);
+            this.PanelModificarUser.Controls.Add(this.textBox3);
+            this.PanelModificarUser.Controls.Add(this.label7);
+            this.PanelModificarUser.Controls.Add(this.textBox4);
+            this.PanelModificarUser.Controls.Add(this.label9);
+            this.PanelModificarUser.Controls.Add(this.textBox5);
+            this.PanelModificarUser.Controls.Add(this.label10);
+            this.PanelModificarUser.Controls.Add(this.textBox6);
+            this.PanelModificarUser.Controls.Add(this.label11);
             this.PanelModificarUser.Controls.Add(this.BEliminar);
             this.PanelModificarUser.Controls.Add(this.TBModificarIndice);
             this.PanelModificarUser.Controls.Add(this.TModificarID_user);
-            this.PanelModificarUser.Controls.Add(this.CBModificarPerfil);
-            this.PanelModificarUser.Controls.Add(this.LModificarEstado);
-            this.PanelModificarUser.Controls.Add(this.CBModificarEstado);
-            this.PanelModificarUser.Controls.Add(this.LModificarPerfil);
-            this.PanelModificarUser.Controls.Add(this.TModificarCP);
-            this.PanelModificarUser.Controls.Add(this.LModificarCP);
-            this.PanelModificarUser.Controls.Add(this.TModificarDomicilio);
-            this.PanelModificarUser.Controls.Add(this.LModificarDomicio);
-            this.PanelModificarUser.Controls.Add(this.TModificarEmail);
-            this.PanelModificarUser.Controls.Add(this.LModificarEmail);
-            this.PanelModificarUser.Controls.Add(this.TModificarAp);
-            this.PanelModificarUser.Controls.Add(this.LModificarApellido);
-            this.PanelModificarUser.Controls.Add(this.TModificarNombre);
-            this.PanelModificarUser.Controls.Add(this.LModificarNombre);
-            this.PanelModificarUser.Controls.Add(this.TModificarUser);
-            this.PanelModificarUser.Controls.Add(this.LModificarUsuario);
             this.PanelModificarUser.Controls.Add(this.BModificar);
             this.PanelModificarUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelModificarUser.Location = new System.Drawing.Point(3, 3);
@@ -728,6 +579,207 @@
             this.PanelModificarUser.Size = new System.Drawing.Size(593, 377);
             this.PanelModificarUser.TabIndex = 8;
             this.PanelModificarUser.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelModificarUser_Paint);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.comboBox2.DisplayMember = "id_perfiles";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(307, 36);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(231, 26);
+            this.comboBox2.TabIndex = 70;
+            this.comboBox2.ValueMember = "id_perfiles";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(302, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 23);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Categoria";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource1, "baja", true));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(306, 144);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(232, 26);
+            this.comboBox3.TabIndex = 68;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.comboBox4.DisplayMember = "id_perfiles";
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(307, 88);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(231, 26);
+            this.comboBox4.TabIndex = 67;
+            this.comboBox4.ValueMember = "id_perfiles";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(302, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 23);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "Estado";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label4.Location = new System.Drawing.Point(302, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 23);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "Sub-Categoria";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox1.Location = new System.Drawing.Point(36, 253);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(232, 27);
+            this.textBox1.TabIndex = 64;
+            this.textBox1.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label5.Location = new System.Drawing.Point(32, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 23);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Precio";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox2.Location = new System.Drawing.Point(306, 200);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(232, 27);
+            this.textBox2.TabIndex = 62;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.Location = new System.Drawing.Point(302, 174);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 23);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Stock";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox3.Location = new System.Drawing.Point(36, 143);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(232, 27);
+            this.textBox3.TabIndex = 60;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label7.Location = new System.Drawing.Point(32, 118);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 23);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Marca";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox4.Location = new System.Drawing.Point(36, 90);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(232, 27);
+            this.textBox4.TabIndex = 58;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label9.Location = new System.Drawing.Point(32, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 23);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Descripción";
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox5.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox5.Location = new System.Drawing.Point(36, 35);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(232, 27);
+            this.textBox5.TabIndex = 56;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label10.Location = new System.Drawing.Point(31, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 23);
+            this.label10.TabIndex = 55;
+            this.label10.Text = "Nombre";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox6.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox6.Location = new System.Drawing.Point(36, 198);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.PasswordChar = '*';
+            this.textBox6.Size = new System.Drawing.Size(232, 27);
+            this.textBox6.TabIndex = 54;
+            this.textBox6.UseSystemPasswordChar = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label11.Location = new System.Drawing.Point(32, 172);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 23);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "Modelo";
             // 
             // BEliminar
             // 
@@ -765,181 +817,6 @@
             this.TModificarID_user.Name = "TModificarID_user";
             this.TModificarID_user.Size = new System.Drawing.Size(36, 27);
             this.TModificarID_user.TabIndex = 47;
-            // 
-            // CBModificarPerfil
-            // 
-            this.CBModificarPerfil.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.CBModificarPerfil.DisplayMember = "id_perfiles";
-            this.CBModificarPerfil.FormattingEnabled = true;
-            this.CBModificarPerfil.Location = new System.Drawing.Point(307, 107);
-            this.CBModificarPerfil.Name = "CBModificarPerfil";
-            this.CBModificarPerfil.Size = new System.Drawing.Size(231, 26);
-            this.CBModificarPerfil.TabIndex = 46;
-            this.CBModificarPerfil.ValueMember = "id_perfiles";
-            this.CBModificarPerfil.SelectedIndexChanged += new System.EventHandler(this.CBModificarPerfil_SelectedIndexChanged);
-            // 
-            // LModificarEstado
-            // 
-            this.LModificarEstado.AutoSize = true;
-            this.LModificarEstado.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarEstado.Location = new System.Drawing.Point(303, 134);
-            this.LModificarEstado.Name = "LModificarEstado";
-            this.LModificarEstado.Size = new System.Drawing.Size(52, 23);
-            this.LModificarEstado.TabIndex = 44;
-            this.LModificarEstado.Text = "Estado";
-            // 
-            // CBModificarEstado
-            // 
-            this.CBModificarEstado.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.CBModificarEstado.FormattingEnabled = true;
-            this.CBModificarEstado.Location = new System.Drawing.Point(307, 160);
-            this.CBModificarEstado.Name = "CBModificarEstado";
-            this.CBModificarEstado.Size = new System.Drawing.Size(232, 26);
-            this.CBModificarEstado.TabIndex = 43;
-            // 
-            // LModificarPerfil
-            // 
-            this.LModificarPerfil.AutoSize = true;
-            this.LModificarPerfil.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarPerfil.Location = new System.Drawing.Point(303, 79);
-            this.LModificarPerfil.Name = "LModificarPerfil";
-            this.LModificarPerfil.Size = new System.Drawing.Size(43, 23);
-            this.LModificarPerfil.TabIndex = 42;
-            this.LModificarPerfil.Text = "Perfil";
-            // 
-            // TModificarCP
-            // 
-            this.TModificarCP.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarCP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarCP.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarCP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarCP.Location = new System.Drawing.Point(307, 271);
-            this.TModificarCP.Name = "TModificarCP";
-            this.TModificarCP.Size = new System.Drawing.Size(232, 27);
-            this.TModificarCP.TabIndex = 38;
-            // 
-            // LModificarCP
-            // 
-            this.LModificarCP.AutoSize = true;
-            this.LModificarCP.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarCP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarCP.Location = new System.Drawing.Point(303, 246);
-            this.LModificarCP.Name = "LModificarCP";
-            this.LModificarCP.Size = new System.Drawing.Size(94, 23);
-            this.LModificarCP.TabIndex = 37;
-            this.LModificarCP.Text = "Codigo Postal";
-            // 
-            // TModificarDomicilio
-            // 
-            this.TModificarDomicilio.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarDomicilio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarDomicilio.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarDomicilio.Location = new System.Drawing.Point(307, 216);
-            this.TModificarDomicilio.Name = "TModificarDomicilio";
-            this.TModificarDomicilio.Size = new System.Drawing.Size(232, 27);
-            this.TModificarDomicilio.TabIndex = 36;
-            // 
-            // LModificarDomicio
-            // 
-            this.LModificarDomicio.AutoSize = true;
-            this.LModificarDomicio.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarDomicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarDomicio.Location = new System.Drawing.Point(303, 190);
-            this.LModificarDomicio.Name = "LModificarDomicio";
-            this.LModificarDomicio.Size = new System.Drawing.Size(67, 23);
-            this.LModificarDomicio.TabIndex = 35;
-            this.LModificarDomicio.Text = "Domicilio";
-            // 
-            // TModificarEmail
-            // 
-            this.TModificarEmail.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarEmail.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarEmail.Location = new System.Drawing.Point(37, 159);
-            this.TModificarEmail.Name = "TModificarEmail";
-            this.TModificarEmail.Size = new System.Drawing.Size(232, 27);
-            this.TModificarEmail.TabIndex = 34;
-            // 
-            // LModificarEmail
-            // 
-            this.LModificarEmail.AutoSize = true;
-            this.LModificarEmail.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarEmail.Location = new System.Drawing.Point(33, 134);
-            this.LModificarEmail.Name = "LModificarEmail";
-            this.LModificarEmail.Size = new System.Drawing.Size(52, 23);
-            this.LModificarEmail.TabIndex = 33;
-            this.LModificarEmail.Text = "E-mail";
-            // 
-            // TModificarAp
-            // 
-            this.TModificarAp.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarAp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarAp.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarAp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarAp.Location = new System.Drawing.Point(37, 106);
-            this.TModificarAp.Name = "TModificarAp";
-            this.TModificarAp.Size = new System.Drawing.Size(232, 27);
-            this.TModificarAp.TabIndex = 32;
-            // 
-            // LModificarApellido
-            // 
-            this.LModificarApellido.AutoSize = true;
-            this.LModificarApellido.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarApellido.Location = new System.Drawing.Point(33, 81);
-            this.LModificarApellido.Name = "LModificarApellido";
-            this.LModificarApellido.Size = new System.Drawing.Size(60, 23);
-            this.LModificarApellido.TabIndex = 31;
-            this.LModificarApellido.Text = "Apellido";
-            // 
-            // TModificarNombre
-            // 
-            this.TModificarNombre.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarNombre.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarNombre.Location = new System.Drawing.Point(37, 51);
-            this.TModificarNombre.Name = "TModificarNombre";
-            this.TModificarNombre.Size = new System.Drawing.Size(232, 27);
-            this.TModificarNombre.TabIndex = 30;
-            // 
-            // LModificarNombre
-            // 
-            this.LModificarNombre.AutoSize = true;
-            this.LModificarNombre.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LModificarNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarNombre.Location = new System.Drawing.Point(32, 26);
-            this.LModificarNombre.Name = "LModificarNombre";
-            this.LModificarNombre.Size = new System.Drawing.Size(58, 23);
-            this.LModificarNombre.TabIndex = 29;
-            this.LModificarNombre.Text = "Nombre";
-            // 
-            // TModificarUser
-            // 
-            this.TModificarUser.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarUser.Location = new System.Drawing.Point(307, 51);
-            this.TModificarUser.Name = "TModificarUser";
-            this.TModificarUser.Size = new System.Drawing.Size(232, 27);
-            this.TModificarUser.TabIndex = 26;
-            // 
-            // LModificarUsuario
-            // 
-            this.LModificarUsuario.AutoSize = true;
-            this.LModificarUsuario.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LModificarUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LModificarUsuario.Location = new System.Drawing.Point(303, 25);
-            this.LModificarUsuario.Name = "LModificarUsuario";
-            this.LModificarUsuario.Size = new System.Drawing.Size(58, 23);
-            this.LModificarUsuario.TabIndex = 25;
-            this.LModificarUsuario.Text = "Usuario";
             // 
             // BModificar
             // 
@@ -1002,7 +879,152 @@
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
-            // FormUsuarios
+            // productos_pcTableAdapter
+            // 
+            this.productos_pcTableAdapter.ClearBeforeFill = true;
+            // 
+            // usuariosDataGridView
+            // 
+            this.usuariosDataGridView.AllowUserToAddRows = false;
+            this.usuariosDataGridView.AllowUserToDeleteRows = false;
+            this.usuariosDataGridView.AutoGenerateColumns = false;
+            this.usuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.usuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.usuariosDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.usuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.usuariosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.usuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnSeleccionar,
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.categoriaDataGridViewTextBoxColumn,
+            this.subcategoriaDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.modeloDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn,
+            this.stockDataGridViewTextBoxColumn,
+            this.bajaDataGridViewTextBoxColumn,
+            this.visitasDataGridViewTextBoxColumn});
+            this.usuariosDataGridView.DataSource = this.productospcBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.usuariosDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.usuariosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usuariosDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.usuariosDataGridView.Location = new System.Drawing.Point(3, 429);
+            this.usuariosDataGridView.MultiSelect = false;
+            this.usuariosDataGridView.Name = "usuariosDataGridView";
+            this.usuariosDataGridView.ReadOnly = true;
+            this.usuariosDataGridView.Size = new System.Drawing.Size(1076, 268);
+            this.usuariosDataGridView.TabIndex = 6;
+            // 
+            // btnSeleccionar
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.HeaderText = "Seleccionar";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnSeleccionar.Text = "";
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoriaDataGridViewTextBoxColumn
+            // 
+            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "categoria";
+            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoría";
+            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // subcategoriaDataGridViewTextBoxColumn
+            // 
+            this.subcategoriaDataGridViewTextBoxColumn.DataPropertyName = "subcategoria";
+            this.subcategoriaDataGridViewTextBoxColumn.HeaderText = "Subcategoría";
+            this.subcategoriaDataGridViewTextBoxColumn.Name = "subcategoriaDataGridViewTextBoxColumn";
+            this.subcategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // modeloDataGridViewTextBoxColumn
+            // 
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            this.modeloDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bajaDataGridViewTextBoxColumn
+            // 
+            this.bajaDataGridViewTextBoxColumn.DataPropertyName = "baja";
+            this.bajaDataGridViewTextBoxColumn.HeaderText = "Baja";
+            this.bajaDataGridViewTextBoxColumn.Name = "bajaDataGridViewTextBoxColumn";
+            this.bajaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // visitasDataGridViewTextBoxColumn
+            // 
+            this.visitasDataGridViewTextBoxColumn.DataPropertyName = "visitas";
+            this.visitasDataGridViewTextBoxColumn.HeaderText = "Visitas";
+            this.visitasDataGridViewTextBoxColumn.Name = "visitasDataGridViewTextBoxColumn";
+            this.visitasDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1010,14 +1032,14 @@
             this.ClientSize = new System.Drawing.Size(1088, 706);
             this.Controls.Add(this.tableLayoutPanel2);
             this.MinimumSize = new System.Drawing.Size(1080, 564);
-            this.Name = "FormUsuarios";
+            this.Name = "FormProductos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productospcBindingSource)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1033,6 +1055,7 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1050,7 +1073,6 @@
         private pruebaLogin.DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
         
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView usuariosDataGridView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
@@ -1063,27 +1085,10 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel PanelModificarUser;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label LModificarEstado;
-        private System.Windows.Forms.ComboBox CBModificarEstado;
-        private System.Windows.Forms.Label LModificarPerfil;
-        private System.Windows.Forms.TextBox TModificarCP;
-        private System.Windows.Forms.Label LModificarCP;
-        private System.Windows.Forms.TextBox TModificarDomicilio;
-        private System.Windows.Forms.Label LModificarDomicio;
-        private System.Windows.Forms.TextBox TModificarEmail;
-        private System.Windows.Forms.Label LModificarEmail;
-        private System.Windows.Forms.TextBox TModificarAp;
-        private System.Windows.Forms.Label LModificarApellido;
-        private System.Windows.Forms.TextBox TModificarNombre;
-        private System.Windows.Forms.Label LModificarNombre;
-        private System.Windows.Forms.TextBox TModificarUser;
-        private System.Windows.Forms.Label LModificarUsuario;
         private System.Windows.Forms.Label LEstado;
         private System.Windows.Forms.Label LPerfil;
         private System.Windows.Forms.TextBox TPassConf;
         private System.Windows.Forms.Label LPassConf;
-        private System.Windows.Forms.TextBox TCP;
-        private System.Windows.Forms.Label LCP;
         private System.Windows.Forms.TextBox TDomicilio;
         private System.Windows.Forms.Label LDomicilio;
         private System.Windows.Forms.TextBox TEmail;
@@ -1094,30 +1099,50 @@
         private System.Windows.Forms.Label LNombre;
         private System.Windows.Forms.TextBox TPass;
         private System.Windows.Forms.Label LPass;
-        private System.Windows.Forms.TextBox TUser;
-        private System.Windows.Forms.Label LUser;
         private System.Windows.Forms.BindingSource perfilesBindingSource;
         private pruebaLogin.DataSet1TableAdapters.perfilesTableAdapter perfilesTableAdapter1;
         private System.Windows.Forms.ComboBox CBEstado;
         private System.Windows.Forms.ComboBox CBperfiles;
-        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_user;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_perfil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn baja;
-        private System.Windows.Forms.DataGridViewTextBoxColumn user;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pass;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CP;
-        private System.Windows.Forms.ComboBox CBModificarPerfil;
         private System.Windows.Forms.TextBox TModificarID_user;
         private System.Windows.Forms.TextBox TBModificarIndice;
         private System.Windows.Forms.Button BEliminar;
         private System.Windows.Forms.Button BModificar;
         private System.Windows.Forms.TextBox TIndice;
         private System.Windows.Forms.TextBox TID_user;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource productospcBindingSource;
+        private pruebaLogin.DataSet1TableAdapters.productos_pcTableAdapter productos_pcTableAdapter;
+        private System.Windows.Forms.DataGridView usuariosDataGridView;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subcategoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bajaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitasDataGridViewTextBoxColumn;
     }
 }

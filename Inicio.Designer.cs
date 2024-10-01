@@ -92,6 +92,7 @@
             this.ReceiptsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ReceiptsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ReceiptsButton.UseVisualStyleBackColor = false;
+            this.ReceiptsButton.Click += new System.EventHandler(this.ReceiptsButton_Click);
             // 
             // StatsButton
             // 
@@ -137,6 +138,7 @@
             this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ProductsButton.UseVisualStyleBackColor = false;
+            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
             // 
             // MsgButton
             // 

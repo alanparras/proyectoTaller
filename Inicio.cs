@@ -70,5 +70,15 @@ namespace pruebaLogin
         {
             AbrirFormulario((IconButton)sender, new FormConsultas());
         }
+
+        private void ReceiptsButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconButton)sender, new FormRecibos());
+        }
+
+        private void ProductsButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconButton)sender, new FormProductos());
+        }
     }
 }
