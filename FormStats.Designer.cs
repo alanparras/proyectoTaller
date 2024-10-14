@@ -55,21 +55,23 @@
             this.tabRendEmp = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.labelMetricE = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLoadEmployeeChart = new System.Windows.Forms.Button();
             this.dtpEndDateE = new System.Windows.Forms.DateTimePicker();
             this.dtpStartDateE = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.chartVentasEmpleados = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.perfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.perfilesTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.perfilesTableAdapter();
             this.ventas_cabeceraTableAdapter = new pruebaLogin.DataSet1TableAdapters.ventas_cabeceraTableAdapter();
-            this.chartVentasEmpleados = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -82,9 +84,9 @@
             this.tabRendEmp.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartVentasEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.perfilesBindingSource)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartVentasEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
@@ -303,6 +305,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.cmbEmpleados);
             this.panel1.Controls.Add(this.labelMetricE);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnLoadEmployeeChart);
@@ -315,12 +319,20 @@
             this.panel1.Size = new System.Drawing.Size(372, 506);
             this.panel1.TabIndex = 8;
             // 
+            // cmbEmpleados
+            // 
+            this.cmbEmpleados.FormattingEnabled = true;
+            this.cmbEmpleados.Location = new System.Drawing.Point(7, 123);
+            this.cmbEmpleados.Name = "cmbEmpleados";
+            this.cmbEmpleados.Size = new System.Drawing.Size(235, 26);
+            this.cmbEmpleados.TabIndex = 24;
+            // 
             // labelMetricE
             // 
             this.labelMetricE.AutoSize = true;
             this.labelMetricE.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
             this.labelMetricE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelMetricE.Location = new System.Drawing.Point(114, 143);
+            this.labelMetricE.Location = new System.Drawing.Point(114, 226);
             this.labelMetricE.Name = "labelMetricE";
             this.labelMetricE.Size = new System.Drawing.Size(113, 23);
             this.labelMetricE.TabIndex = 23;
@@ -331,7 +343,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.Location = new System.Drawing.Point(3, 143);
+            this.label3.Location = new System.Drawing.Point(3, 226);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 23);
             this.label3.TabIndex = 22;
@@ -343,7 +355,7 @@
             this.btnLoadEmployeeChart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoadEmployeeChart.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadEmployeeChart.ForeColor = System.Drawing.Color.White;
-            this.btnLoadEmployeeChart.Location = new System.Drawing.Point(7, 90);
+            this.btnLoadEmployeeChart.Location = new System.Drawing.Point(7, 191);
             this.btnLoadEmployeeChart.Name = "btnLoadEmployeeChart";
             this.btnLoadEmployeeChart.Size = new System.Drawing.Size(195, 32);
             this.btnLoadEmployeeChart.TabIndex = 21;
@@ -377,6 +389,23 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Buscar en el siguiente rango de fechas";
             // 
+            // chartVentasEmpleados
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chartVentasEmpleados.ChartAreas.Add(chartArea2);
+            this.chartVentasEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.chartVentasEmpleados.Legends.Add(legend2);
+            this.chartVentasEmpleados.Location = new System.Drawing.Point(3, 3);
+            this.chartVentasEmpleados.Name = "chartVentasEmpleados";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartVentasEmpleados.Series.Add(series2);
+            this.chartVentasEmpleados.Size = new System.Drawing.Size(654, 506);
+            this.chartVentasEmpleados.TabIndex = 9;
+            this.chartVentasEmpleados.Text = "chart1";
+            // 
             // perfilesBindingSource
             // 
             this.perfilesBindingSource.DataMember = "perfiles";
@@ -406,23 +435,6 @@
             // 
             this.ventas_cabeceraTableAdapter.ClearBeforeFill = true;
             // 
-            // chartVentasEmpleados
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chartVentasEmpleados.ChartAreas.Add(chartArea2);
-            this.chartVentasEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartVentasEmpleados.Legends.Add(legend2);
-            this.chartVentasEmpleados.Location = new System.Drawing.Point(3, 3);
-            this.chartVentasEmpleados.Name = "chartVentasEmpleados";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartVentasEmpleados.Series.Add(series2);
-            this.chartVentasEmpleados.Size = new System.Drawing.Size(654, 506);
-            this.chartVentasEmpleados.TabIndex = 9;
-            this.chartVentasEmpleados.Text = "chart1";
-            // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "usuarios";
@@ -444,6 +456,17 @@
             this.tableAdapterManager.mensajesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(3, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 23);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Filtrar por Empleado";
             // 
             // FormStats
             // 
@@ -470,10 +493,10 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartVentasEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.perfilesBindingSource)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartVentasEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -491,7 +514,7 @@
         private System.Windows.Forms.BindingSource usuariosBindingSource1;
         private pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter usuariosTableAdapter1;
         private pruebaLogin.DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
-        private pruebaLogin.DataSet1TableAdapters.TableAdapterManager perfilesTableAdapter;
+        
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.BindingSource perfilesBindingSource;
@@ -519,5 +542,7 @@
         private System.Windows.Forms.DateTimePicker dtpStartDateE;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVentasEmpleados;
+        private System.Windows.Forms.ComboBox cmbEmpleados;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,4 +1,6 @@
-﻿using FontAwesome.Sharp;
+﻿using CapaEntidades;
+using CapaNegocio;
+using FontAwesome.Sharp;
 using ProyectoTallerG8;
 using System;
 using System.Collections.Generic;
@@ -15,11 +17,14 @@ namespace pruebaLogin
 {
     public partial class Inicio : Form
     {
+        private static Usuario usuarioActual;
         private static IconButton BotonActivo = null;
         private static Form FormularioActivo = null;
 
+
         public Inicio()
         {
+            //usuarioActual = objUser;
             InitializeComponent();
         }
 
@@ -67,9 +72,30 @@ namespace pruebaLogin
             AbrirFormulario((IconButton)sender, new FormStats());
         }
 
-        private void ConsultasButton_Click(object sender, EventArgs e)
+        private void Inicio_Load(object sender, EventArgs e)
         {
-            AbrirFormulario((IconButton)sender, new FormConsultas());
+            //List<Permiso> ListaPermisos = new Permiso_negocio().Listar(usuarioActual.id_usuario);
+
+            //foreach (IconMenuItem iconMenu in menu.RowStyles)
+            //{
+            //    bool encontrado = ListaPermisos.Any(m => m.nombreAcceso ==  iconMenu.Name);
+
+            //    if (encontrado == false)
+            //    {
+            //        iconMenu.Visible = false;
+            //    }
+            //}
+
+        }
+
+        private void ReceiptsButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconButton)sender, new FormRecibos());
+        }
+
+        private void ProductsButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconButton)sender, new FormProductos());
         }
 
         private void UsersButton_Paint(object sender, PaintEventArgs e)

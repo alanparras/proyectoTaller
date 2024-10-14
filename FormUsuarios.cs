@@ -7,12 +7,14 @@ using System.Windows.Forms.PropertyGridInternal;
 using System.Windows.Media;
 using CapaEntidades;
 using CapaNegocio;
+using FontAwesome.Sharp;
 using ProyectoTallerG8.Utilidades;
 
 namespace ProyectoTallerG8
 {
     public partial class FormUsuarios : Form
     {
+       
         public FormUsuarios()
         {
             InitializeComponent();
@@ -126,11 +128,10 @@ namespace ProyectoTallerG8
         {
             string mensaje = string.Empty;
 
-            //MessageBox.Show("TID_user.Text: " + TID_user.Text);
-            //MessageBox.Show("TCP.Text: " + TCP.Text);
-            //MessageBox.Show("CBperfiles.SelectedItem: " + ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString());
-            //MessageBox.Show("CBEstado.SelectedItem: " + ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString());
-
+            MessageBox.Show("TID_user.Text: " + TID_user.Text);
+            MessageBox.Show("TCP.Text: " + TCP.Text);
+            MessageBox.Show("CBperfiles.SelectedItem: " + Convert.ToInt32(((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor));
+            MessageBox.Show("CBEstado.SelectedItem: " + ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString());
 
             Usuario objUser = new Usuario()
             {
@@ -143,7 +144,7 @@ namespace ProyectoTallerG8
                 pass = TPass.Text,
                 email = TEmail.Text,
                 domicilio = TDomicilio.Text,
-                CP = Convert.ToInt32(TCP.Text),
+                CP = Convert.ToInt32(TCP.Text)
             };
 
             if (objUser.id_usuario == 0)
@@ -190,9 +191,9 @@ namespace ProyectoTallerG8
                     row.Cells["baja"].Value = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString();
                     row.Cells["email"].Value = TModificarEmail.Text;
                     row.Cells["user"].Value = TModificarUser.Text;
-                    row.Cells["pass"].Value = TModificarPass;
+                    
                     row.Cells["domicilio"].Value = TModificarDomicilio.Text;
-                    row.Cells["CP"].Value = TModificarCP.Text;
+                    
 
                     VaciarCampos();
                 }
@@ -269,8 +270,7 @@ namespace ProyectoTallerG8
                     TModificarAp.Text = usuariosDataGridView.Rows[indice].Cells["apellido"].Value.ToString();
                     TModificarEmail.Text = usuariosDataGridView.Rows[indice].Cells["email"].Value.ToString();
                     TModificarUser.Text = usuariosDataGridView.Rows[indice].Cells["user"].Value.ToString();
-                    TModificarPass.Text = usuariosDataGridView.Rows[indice].Cells["pass"].Value.ToString();
-                    TModificarPassConfirm.Text = usuariosDataGridView.Rows[indice].Cells["pass"].Value.ToString();
+                    
                     TModificarDomicilio.Text = usuariosDataGridView.Rows[indice].Cells["domicilio"].Value.ToString();
                     TModificarCP.Text = usuariosDataGridView.Rows[indice].Cells["CP"].Value.ToString();
 
@@ -359,7 +359,7 @@ namespace ProyectoTallerG8
                 objPerfil = new Perfil() { id_perfil = Convert.ToInt32(((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Valor) },
                 baja = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor.ToString(),
                 user = TModificarUser.Text,
-                pass = TModificarPass.Text,
+                
                 email = TModificarEmail.Text,
                 domicilio = TModificarDomicilio.Text,
                 CP = Convert.ToInt32(TModificarCP.Text),
@@ -379,7 +379,7 @@ namespace ProyectoTallerG8
                 row.Cells["baja"].Value = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString();
                 row.Cells["email"].Value = TModificarEmail.Text;
                 row.Cells["user"].Value = TModificarUser.Text;
-                row.Cells["pass"].Value = TModificarPass;
+                
                 row.Cells["domicilio"].Value = TModificarDomicilio.Text;
                 row.Cells["CP"].Value = TModificarCP.Text;
 
