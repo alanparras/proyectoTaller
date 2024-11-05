@@ -304,6 +304,95 @@ SELECT id_perfiles, descripcion FROM perfiles WHERE (id_perfiles = @id_perfiles)
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="recibosTableAdapter" GeneratorDataComponentClassName="recibosTableAdapter" Name="recibos" UserDataComponentName="recibosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_piazza_giovanniConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ventas_cabecera.fecha, ventas_cabecera.total_venta, usuarios.nombre, usuarios.apellido, productos_pc.nombre AS nombreProd, ventas_detalle.cantidad, ventas_detalle.precio AS precioU, productos_pc.descripcion, 
+                         usuarios.zipcode, ventas_cabecera.id
+FROM            ventas_detalle INNER JOIN
+                         productos_pc ON ventas_detalle.producto_id = productos_pc.id INNER JOIN
+                         ventas_cabecera INNER JOIN
+                         usuarios ON ventas_cabecera.usuario_id = usuarios.id ON ventas_detalle.venta_id = ventas_cabecera.id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="total_venta" DataSetColumn="total_venta" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="nombreProd" DataSetColumn="nombreProd" />
+              <Mapping SourceColumn="precioU" DataSetColumn="precioU" />
+              <Mapping SourceColumn="zipcode" DataSetColumn="zipcode" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="detalles_individualesTableAdapter" GeneratorDataComponentClassName="detalles_individualesTableAdapter" Name="detalles_individuales" UserDataComponentName="detalles_individualesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_piazza_giovanniConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ventas_detalle.cantidad, ventas_detalle.precio AS subtotal, productos_pc.nombre, productos_pc.descripcion, productos_pc.precio AS precioU
+FROM            ventas_detalle INNER JOIN
+                         productos_pc ON ventas_detalle.producto_id = productos_pc.id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cantidad" DataSetColumn="cantidad" />
+              <Mapping SourceColumn="subtotal" DataSetColumn="subtotal" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="precioU" DataSetColumn="precioU" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="db_piazza_giovanniConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataById" GeneratorSourceName="FillById" GetMethodModifier="Public" GetMethodName="GetDataById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataById" UserSourceName="FillById">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ventas_detalle.cantidad, ventas_detalle.precio AS subtotal, productos_pc.nombre, productos_pc.descripcion, productos_pc.precio AS precioU
+FROM            ventas_detalle INNER JOIN
+                         productos_pc ON ventas_detalle.producto_id = productos_pc.id
+WHERE venta_id = @id</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="venta_id" DataSourceName="db_piazza_giovanni.dbo.ventas_detalle" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="venta_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cabeceras_individualesTableAdapter" GeneratorDataComponentClassName="cabeceras_individualesTableAdapter" Name="cabeceras_individuales" UserDataComponentName="cabeceras_individualesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_piazza_giovanniConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ventas_cabecera.id, ventas_cabecera.fecha, usuarios.nombre, usuarios.apellido, usuarios.zipcode, ventas_cabecera.total_venta
+FROM            ventas_cabecera INNER JOIN
+                         usuarios ON ventas_cabecera.usuario_id = usuarios.id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="zipcode" DataSetColumn="zipcode" />
+              <Mapping SourceColumn="total_venta" DataSetColumn="total_venta" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -545,6 +634,93 @@ SELECT id_perfiles, descripcion FROM perfiles WHERE (id_perfiles = @id_perfiles)
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="recibos" msprop:Generator_RowEvHandlerName="recibosRowChangeEventHandler" msprop:Generator_RowDeletedName="recibosRowDeleted" msprop:Generator_RowDeletingName="recibosRowDeleting" msprop:Generator_RowEvArgName="recibosRowChangeEvent" msprop:Generator_TablePropName="recibos" msprop:Generator_RowChangedName="recibosRowChanged" msprop:Generator_RowChangingName="recibosRowChanging" msprop:Generator_TableClassName="recibosDataTable" msprop:Generator_RowClassName="recibosRow" msprop:Generator_TableVarName="tablerecibos" msprop:Generator_UserTableName="recibos">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="total_venta" msprop:Generator_ColumnPropNameInRow="total_venta" msprop:Generator_ColumnPropNameInTable="total_ventaColumn" msprop:Generator_ColumnVarNameInTable="columntotal_venta" msprop:Generator_UserColumnName="total_venta" type="xs:decimal" />
+              <xs:element name="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_UserColumnName="apellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_UserColumnName="cantidad" type="xs:int" />
+              <xs:element name="descripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombreProd" msprop:Generator_ColumnPropNameInRow="nombreProd" msprop:Generator_ColumnPropNameInTable="nombreProdColumn" msprop:Generator_ColumnVarNameInTable="columnnombreProd" msprop:Generator_UserColumnName="nombreProd">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precioU" msprop:Generator_ColumnPropNameInRow="precioU" msprop:Generator_ColumnPropNameInTable="precioUColumn" msprop:Generator_ColumnVarNameInTable="columnprecioU" msprop:Generator_UserColumnName="precioU" type="xs:decimal" />
+              <xs:element name="zipcode" msprop:Generator_ColumnPropNameInRow="zipcode" msprop:Generator_ColumnPropNameInTable="zipcodeColumn" msprop:Generator_ColumnVarNameInTable="columnzipcode" msprop:Generator_UserColumnName="zipcode" type="xs:int" />
+              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detalles_individuales" msprop:Generator_RowEvHandlerName="detalles_individualesRowChangeEventHandler" msprop:Generator_RowDeletedName="detalles_individualesRowDeleted" msprop:Generator_RowDeletingName="detalles_individualesRowDeleting" msprop:Generator_RowEvArgName="detalles_individualesRowChangeEvent" msprop:Generator_TablePropName="detalles_individuales" msprop:Generator_RowChangedName="detalles_individualesRowChanged" msprop:Generator_RowChangingName="detalles_individualesRowChanging" msprop:Generator_TableClassName="detalles_individualesDataTable" msprop:Generator_RowClassName="detalles_individualesRow" msprop:Generator_TableVarName="tabledetalles_individuales" msprop:Generator_UserTableName="detalles_individuales">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_UserColumnName="cantidad" type="xs:int" />
+              <xs:element name="subtotal" msprop:Generator_ColumnPropNameInRow="subtotal" msprop:Generator_ColumnPropNameInTable="subtotalColumn" msprop:Generator_ColumnVarNameInTable="columnsubtotal" msprop:Generator_UserColumnName="subtotal" type="xs:decimal" />
+              <xs:element name="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_UserColumnName="descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="precioU" msprop:Generator_ColumnPropNameInRow="precioU" msprop:Generator_ColumnPropNameInTable="precioUColumn" msprop:Generator_ColumnVarNameInTable="columnprecioU" msprop:Generator_UserColumnName="precioU" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cabeceras_individuales" msprop:Generator_RowEvHandlerName="cabeceras_individualesRowChangeEventHandler" msprop:Generator_RowDeletedName="cabeceras_individualesRowDeleted" msprop:Generator_RowDeletingName="cabeceras_individualesRowDeleting" msprop:Generator_RowEvArgName="cabeceras_individualesRowChangeEvent" msprop:Generator_TablePropName="cabeceras_individuales" msprop:Generator_RowChangedName="cabeceras_individualesRowChanged" msprop:Generator_RowChangingName="cabeceras_individualesRowChanging" msprop:Generator_TableClassName="cabeceras_individualesDataTable" msprop:Generator_RowClassName="cabeceras_individualesRow" msprop:Generator_TableVarName="tablecabeceras_individuales" msprop:Generator_UserTableName="cabeceras_individuales">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="nombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_UserColumnName="apellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="zipcode" msprop:Generator_ColumnPropNameInRow="zipcode" msprop:Generator_ColumnPropNameInTable="zipcodeColumn" msprop:Generator_ColumnVarNameInTable="columnzipcode" msprop:Generator_UserColumnName="zipcode" type="xs:int" />
+              <xs:element name="total_venta" msprop:Generator_ColumnPropNameInRow="total_venta" msprop:Generator_ColumnPropNameInTable="total_ventaColumn" msprop:Generator_ColumnVarNameInTable="columntotal_venta" msprop:Generator_UserColumnName="total_venta" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

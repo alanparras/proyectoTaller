@@ -17,8 +17,15 @@ namespace ProyectoTallerG8
             dtpStartDate.ValueChanged += new EventHandler(DateTimePickers_ValueChanged);
             dtpEndDate.ValueChanged += new EventHandler(DateTimePickers_ValueChanged);
 
+            dtpStartDateE.ValueChanged += new EventHandler(DateTimePickersE_ValueChanged);
+            dtpEndDateE.ValueChanged += new EventHandler(DateTimePickersE_ValueChanged);
+
             // Inicialmente comprobar la validez de las fechas
             ValidateDates();
+
+            LoadEmployees();
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -128,6 +135,11 @@ namespace ProyectoTallerG8
             ValidateDates();
         }
 
+        private void DateTimePickersE_ValueChanged(object sender, EventArgs e)
+        {
+            ValidateDatesE();
+        }
+
         // Método que comprueba si la fecha final es mayor o igual a la fecha inicial
         private void ValidateDates()
         {
@@ -140,6 +152,20 @@ namespace ProyectoTallerG8
             {
                 // Si la fecha final es menor a la fecha inicial, deshabilitar el botón
                 btnLoadChart.Enabled = false;
+            }
+        }
+
+        private void ValidateDatesE()
+        {
+            if (dtpEndDateE.Value >= dtpStartDate.Value)
+            {
+                // Si la fecha final es válida, habilitar el botón
+                btnLoadEmployeeChart.Enabled = true;
+            }
+            else
+            {
+                // Si la fecha final es menor a la fecha inicial, deshabilitar el botón
+                btnLoadEmployeeChart.Enabled = false;
             }
         }
 
@@ -156,54 +182,65 @@ namespace ProyectoTallerG8
             chartVentasEmpleados.ChartAreas[0].AxisX.Title = "Fecha";
             chartVentasEmpleados.ChartAreas[0].AxisY.Title = showingTotalSales ? "Ingresos Totales ($)" : "Número de Ventas";
 
-            // Crear una serie para el gráfico de ventas por empleado
-            
+            // Obtener el empleado seleccionado
 
-            // Configurar el eje Y según lo que estemos mostrando
-            /*if (!showingTotalSales)
+            string selectedEmployeeId = null;
+            bool filterByEmployee = false;
+
+            int comboBoxItemId = cmbEmpleados.SelectedIndex;
+            if (comboBoxItemId == 0)
             {
-                
-                
+                selectedEmployeeId = "Todos";
+
             }
             else
             {
-                // Para ingresos totales en dinero
-                chartVentasEmpleados.ChartAreas[0].AxisY.LabelStyle.Format = "C"; // Formato de moneda
-                seriesEmpleados.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            }*/
+                selectedEmployeeId = ((ComboBoxItem)(cmbEmpleados.SelectedItem)).Value;
+                filterByEmployee = true;
+            }
 
             // Conexión a la base de datos
-            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString; // Reemplaza con tu cadena de conexión
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query;
 
                 if (showingTotalSales)
                 {
-                    // Consulta para el total de ventas (dinero) por empleado
+                    // Consulta para total de ingresos por empleado
                     query = @"
                 SELECT u.id AS usuario_id, u.nombre, vc.fecha, SUM(vc.total_venta) AS total 
                 FROM ventas_cabecera vc
                 JOIN usuarios u ON vc.usuario_id = u.id 
-                WHERE u.perfil_id = 3 AND vc.fecha BETWEEN @startDate AND @endDate 
-                GROUP BY u.id, u.nombre, vc.fecha";
+                WHERE u.perfil_id = 3 AND vc.fecha BETWEEN @startDate AND @endDate ";
                 }
                 else
                 {
-                    // Consulta para el número de ventas por empleado
+                    // Consulta para número de ventas por empleado
                     query = @"
                 SELECT u.id AS usuario_id, u.nombre, vc.fecha, COUNT(*) AS total 
                 FROM ventas_cabecera vc
                 JOIN usuarios u ON vc.usuario_id = u.id 
-                WHERE u.perfil_id = 3 AND vc.fecha BETWEEN @startDate AND @endDate 
-                GROUP BY u.id, u.nombre, vc.fecha";
+                WHERE u.perfil_id = 3 AND vc.fecha BETWEEN @startDate AND @endDate ";
                 }
+
+                // Añadir condición para filtrar por empleado si es necesario
+                if (filterByEmployee)
+                {
+                    query += " AND u.id = @selectedEmployeeId ";
+                }
+
+                query += " GROUP BY u.id, u.nombre, vc.fecha";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     // Parámetros de la consulta
-                    cmd.Parameters.AddWithValue("@startDate", dtpStartDateE.Value);
-                    cmd.Parameters.AddWithValue("@endDate", dtpEndDateE.Value);
+                    cmd.Parameters.AddWithValue("@startDate", dtpStartDate.Value);
+                    cmd.Parameters.AddWithValue("@endDate", dtpEndDate.Value);
+                    if (filterByEmployee)
+                    {
+                        cmd.Parameters.AddWithValue("@selectedEmployeeId", selectedEmployeeId);
+                    }
 
                     // Abrir la conexión
                     con.Open();
@@ -284,5 +321,51 @@ namespace ProyectoTallerG8
             // Devolver color basado en el índice
             return colors[index % colors.Length];
         }
+
+        private void LoadEmployees()
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT id, nombre FROM usuarios WHERE perfil_id = 3"; // Selecciona empleados con perfil_id 3
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        cmbEmpleados.Items.Clear();
+                        cmbEmpleados.Items.Add("Todos"); // Opción para ver todos los empleados
+
+                        while (reader.Read())
+                        {
+                            cmbEmpleados.Items.Add(new ComboBoxItem
+                            {
+                                Text = reader["nombre"].ToString(),
+                                Value = reader["id"].ToString()
+                            });
+                        }
+
+                        cmbEmpleados.SelectedIndex = 0; // Selecciona la primera opción por defecto
+                    }
+
+                    con.Close();
+                }
+            }
+        }
+
+        // Clase para gestionar los ítems del ComboBox
+        public class ComboBoxItem
+        {
+            public string Text { get; set; }
+            public string Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text; // Muestra el nombre del empleado en el ComboBox
+            }
+        }
+
     }
 }

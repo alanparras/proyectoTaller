@@ -59,6 +59,7 @@
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
             this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
             this.consultasTableAdapter = new pruebaLogin.DataSet1TableAdapters.consultasTableAdapter();
+            this.BModificar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).BeginInit();
@@ -99,8 +100,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.47748F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.25048F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.96917F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.63063F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1058, 519);
             this.tableLayoutPanel1.TabIndex = 4;
@@ -146,10 +147,10 @@
             this.consultasDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.consultasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consultasDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.consultasDataGridView.Location = new System.Drawing.Point(3, 275);
+            this.consultasDataGridView.Location = new System.Drawing.Point(3, 160);
             this.consultasDataGridView.Name = "consultasDataGridView";
             this.consultasDataGridView.ReadOnly = true;
-            this.consultasDataGridView.Size = new System.Drawing.Size(1052, 210);
+            this.consultasDataGridView.Size = new System.Drawing.Size(1052, 326);
             this.consultasDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -244,12 +245,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel1.Controls.Add(this.BModificar);
             this.panel1.Controls.Add(this.TUserA);
             this.panel1.Controls.Add(this.LUser);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1052, 266);
+            this.panel1.Size = new System.Drawing.Size(1052, 151);
             this.panel1.TabIndex = 5;
             // 
             // TUserA
@@ -331,6 +333,19 @@
             // 
             this.consultasTableAdapter.ClearBeforeFill = true;
             // 
+            // BModificar
+            // 
+            this.BModificar.BackColor = System.Drawing.Color.Gray;
+            this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BModificar.ForeColor = System.Drawing.Color.White;
+            this.BModificar.Location = new System.Drawing.Point(14, 62);
+            this.BModificar.Name = "BModificar";
+            this.BModificar.Size = new System.Drawing.Size(143, 32);
+            this.BModificar.TabIndex = 23;
+            this.BModificar.Text = "Enviar Respuesta";
+            this.BModificar.UseVisualStyleBackColor = false;
+            // 
             // FormConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,5 +405,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn respuesta;
         private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
         private System.Windows.Forms.DataGridViewTextBoxColumn updated_at;
+        private System.Windows.Forms.Button BModificar;
     }
 }
