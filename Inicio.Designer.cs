@@ -182,7 +182,6 @@
             this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ConsultasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ConsultasButton.UseVisualStyleBackColor = false;
-            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
             // 
             // UsersButton
             // 
