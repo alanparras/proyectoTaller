@@ -46,7 +46,7 @@ namespace CapaDatos
                                 user = dataReader["usuario"].ToString(),
                                 pass = dataReader["pass"].ToString(),
                                 objPerfil = new Perfil() { id_perfil = Convert.ToInt32(dataReader["id_perfiles"]), descripcion = dataReader["descripcion"].ToString() },
-                                baja = dataReader["baja"].ToString(),
+                                baja = Convert.ToBoolean(dataReader["baja"]),
                             });
                         }
                     }

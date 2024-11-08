@@ -34,16 +34,16 @@ namespace ProyectoTallerG8
             this.perfilesTableAdapter1.Fill(this.dataSet11.perfiles);
 
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.usuarios' Puede moverla o quitarla según sea necesario.
-            this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
+            //this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
 
-            CBEstado.Items.Add(new OpcionSelectUsuario() { Valor = "NO", Texto = "Dado de Alta" });
-            CBEstado.Items.Add(new OpcionSelectUsuario() { Valor = "SI", Texto = "Dado de Baja"});
+            CBEstado.Items.Add(new OpcionSelectUsuario() { Valor = 0, Texto = "Dado de Alta" });
+            CBEstado.Items.Add(new OpcionSelectUsuario() { Valor = 1, Texto = "Dado de Baja"});
             CBEstado.DisplayMember = "Texto";
             CBEstado.ValueMember = "Valor";
             CBEstado.SelectedIndex = 0;
 
-            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = "NO", Texto = "Dado de Alta" });
-            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = "SI", Texto = "Dado de Baja" });
+            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = 0, Texto = "Dado de Alta" });
+            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = 1, Texto = "Dado de Baja" });
             CBModificarEstado.DisplayMember = "Texto";
             CBModificarEstado.ValueMember = "Valor";
 
@@ -76,7 +76,7 @@ namespace ProyectoTallerG8
                     item.apellido,
                     item.objPerfil.id_perfil, 
                     item.objPerfil.descripcion, 
-                    item.baja,
+                    item.baja == true ? "Dado de Baja" : "Dado de Alta",
                     item.user, 
                     item.pass,
                     item.email, 
@@ -100,6 +100,18 @@ namespace ProyectoTallerG8
             CBEstado.SelectedIndex = 0;
             TDomicilio.Text = "";
             TCP.Text = "";
+
+            TModificarID_user.Text = "-1";
+            TModificarNombre.Text = "";
+            TModificarAp.Text = "";
+            TModificarEmail.Text = "";
+            TModificarPass.Text = "";
+            TModificarConfirmPass.Text = "";
+            TModificarUser.Text = "";
+            CBModificarPerfil.SelectedIndex = 0;
+            CBModificarEstado.SelectedIndex = 0;
+            TModificarDomicilio.Text = "";
+            TModificarCP.Text = "";
         }
 
         private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
@@ -139,18 +151,19 @@ namespace ProyectoTallerG8
                 nombre = TNombre.Text,
                 apellido = TApellido.Text,
                 objPerfil = new Perfil() { id_perfil = Convert.ToInt32(((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor) },
-                baja = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString(),
+                baja = Convert.ToInt32(((OpcionSelectUsuario)CBEstado.SelectedItem).Valor) == 1 ? true : false,
                 user = TUser.Text,
                 pass = TPass.Text,
                 email = TEmail.Text,
                 domicilio = TDomicilio.Text,
-                CP = Convert.ToInt32(TCP.Text)
+                CP = Convert.ToInt32(TCP.Text),
             };
 
+            int idusuarioregistrado = new Usuario_negocio().Registrar(objUser, out mensaje);
+
+            
             if (objUser.id_usuario == 0)
             {
-                int idusuarioregistrado = new Usuario_negocio().Registrar(objUser, out mensaje);
-
                 if(idusuarioregistrado != 0)
                 {
                     usuariosDataGridView.Rows.Add(new object[] {
@@ -186,14 +199,14 @@ namespace ProyectoTallerG8
                     row.Cells["id_user"].Value = TModificarID_user.Text;
                     row.Cells["nombre"].Value = TModificarNombre.Text;
                     row.Cells["apellido"].Value = TModificarAp.Text;
-                    row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString();
-                    row.Cells["Perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString();
-                    row.Cells["baja"].Value = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString();
+                    row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Valor.ToString();
+                    row.Cells["perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Texto.ToString();
+                    row.Cells["baja"].Value = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor.ToString();
                     row.Cells["email"].Value = TModificarEmail.Text;
                     row.Cells["user"].Value = TModificarUser.Text;
-                    
+
                     row.Cells["domicilio"].Value = TModificarDomicilio.Text;
-                    
+
 
                     VaciarCampos();
                 }
@@ -270,7 +283,9 @@ namespace ProyectoTallerG8
                     TModificarAp.Text = usuariosDataGridView.Rows[indice].Cells["apellido"].Value.ToString();
                     TModificarEmail.Text = usuariosDataGridView.Rows[indice].Cells["email"].Value.ToString();
                     TModificarUser.Text = usuariosDataGridView.Rows[indice].Cells["user"].Value.ToString();
-                    
+                    TModificarPass.Text = usuariosDataGridView.Rows[indice].Cells["pass"].Value.ToString();
+                    TModificarConfirmPass.Text = usuariosDataGridView.Rows[indice].Cells["pass"].Value.ToString();
+
                     TModificarDomicilio.Text = usuariosDataGridView.Rows[indice].Cells["domicilio"].Value.ToString();
                     TModificarCP.Text = usuariosDataGridView.Rows[indice].Cells["CP"].Value.ToString();
 
@@ -347,7 +362,7 @@ namespace ProyectoTallerG8
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BModificar_click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
 
@@ -357,8 +372,9 @@ namespace ProyectoTallerG8
                 nombre = TModificarNombre.Text,
                 apellido = TModificarAp.Text,
                 objPerfil = new Perfil() { id_perfil = Convert.ToInt32(((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Valor) },
-                baja = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor.ToString(),
+                baja = Convert.ToInt32(((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor) == 1 ? true : false,
                 user = TModificarUser.Text,
+                pass = TModificarPass.Text,
                 
                 email = TModificarEmail.Text,
                 domicilio = TModificarDomicilio.Text,
@@ -374,12 +390,13 @@ namespace ProyectoTallerG8
                 row.Cells["id_user"].Value = TModificarID_user.Text;
                 row.Cells["nombre"].Value = TModificarNombre.Text;
                 row.Cells["apellido"].Value = TModificarAp.Text;
-                row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString();
-                row.Cells["Perfil"].Value = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString();
-                row.Cells["baja"].Value = ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString();
+                row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Valor.ToString();
+                row.Cells["perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Texto.ToString();
+                row.Cells["baja"].Value = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Texto.ToString();
                 row.Cells["email"].Value = TModificarEmail.Text;
                 row.Cells["user"].Value = TModificarUser.Text;
-                
+                row.Cells["pass"].Value = TModificarPass.Text;
+
                 row.Cells["domicilio"].Value = TModificarDomicilio.Text;
                 row.Cells["CP"].Value = TModificarCP.Text;
 
@@ -389,6 +406,16 @@ namespace ProyectoTallerG8
             {
                 MessageBox.Show(mensaje);
             }
+        }
+
+        private void TModificarDomicilio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TIndice_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
