@@ -150,7 +150,7 @@ namespace ProyectoTallerG8
                 id_usuario = Convert.ToInt32(TID_user.Text),
                 nombre = TNombre.Text,
                 apellido = TApellido.Text,
-                objPerfil = new Perfil() { id_perfil = Convert.ToInt32(((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor) },
+                objPerfil = new Perfil() { id_perfil = Convert.ToInt32(((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor), descripcion = ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto },
                 baja = Convert.ToInt32(((OpcionSelectUsuario)CBEstado.SelectedItem).Valor) == 1 ? true : false,
                 user = TUser.Text,
                 pass = TPass.Text,

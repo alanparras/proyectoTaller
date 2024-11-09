@@ -22,10 +22,25 @@ namespace pruebaLogin
         private static Form FormularioActivo = null;
 
 
-        public Inicio()
+        public Inicio(Usuario objUser)
         {
-            //usuarioActual = objUser;
+            usuarioActual = objUser;
             InitializeComponent();
+        }
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            List<Permiso> ListaPermisos = new Permiso_negocio().Listar(usuarioActual.id_usuario);
+
+            foreach (Control control in menu.Controls)
+            {
+                if (control is IconButton iconMenu)
+                {
+                    bool encontrado = ListaPermisos.Any(m => m.nombreAcceso == iconMenu.Name);
+
+                    // Si el permiso no se encuentra, oculta el botón
+                    iconMenu.Visible = encontrado;
+                }
+            }
         }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
@@ -72,21 +87,6 @@ namespace pruebaLogin
             AbrirFormulario((IconButton)sender, new FormStats());
         }
 
-        private void Inicio_Load(object sender, EventArgs e)
-        {
-            //List<Permiso> ListaPermisos = new Permiso_negocio().Listar(usuarioActual.id_usuario);
-
-            //foreach (IconMenuItem iconMenu in menu.RowStyles)
-            //{
-            //    bool encontrado = ListaPermisos.Any(m => m.nombreAcceso ==  iconMenu.Name);
-
-            //    if (encontrado == false)
-            //    {
-            //        iconMenu.Visible = false;
-            //    }
-            //}
-
-        }
 
         private void ReceiptsButton_Click(object sender, EventArgs e)
         {

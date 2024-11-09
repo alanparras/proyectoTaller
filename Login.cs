@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using BCrypt.Net;
 using pruebaLogin;
 
+using CapaEntidades;
+using CapaNegocio;
+
 namespace ProyectoTallerG8
 {
     public partial class Login : Form
@@ -47,11 +50,10 @@ namespace ProyectoTallerG8
 
         private void BLogin_Click_1(object sender, EventArgs e)
         {
+            List<Usuario> TEST = new Usuario_negocio().Listar();
+            
 
-            Inicio form_inicio = new Inicio();
-
-            // Aseguramos que el evento form_closing se suscribe antes de mostrar el formulario
-            form_inicio.FormClosing += form_closing;
+            
 
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString;
             string usuario = TUser.Text;
@@ -70,13 +72,29 @@ namespace ProyectoTallerG8
                     {
                         string storedHash = reader["pass"].ToString();
                         int perfilId = Convert.ToInt32(reader["perfil_id"]);
+                        Usuario ousuario = new Usuario_negocio().Listar().Where(u => u.user == TUser.Text && u.pass == storedHash).FirstOrDefault();
+                        Inicio form_inicio = new Inicio(ousuario);
 
-                        // Verificamos la contraseña y que el perfil_id sea distinto de 0
-                        if (BCrypt.Net.BCrypt.Verify(pass, storedHash) && perfilId != 0)
+                        // Verificamos si la contraseña está hasheada o en texto claro
+                        bool isAuthenticated = false;
+                        if (storedHash.Length == 60) // Longitud típica de un hash BCrypt
+                        {
+                            isAuthenticated = BCrypt.Net.BCrypt.Verify(pass, storedHash);
+                        }
+                        else
+                        {
+                            isAuthenticated = pass == storedHash; // Compara directamente si no está hasheada
+                        }
+
+                        // Verificamos si la autenticación fue exitosa y que el perfil_id sea distinto de 0
+                        if (isAuthenticated && perfilId != 0)
                         {
                             // Caso de éxito: Mostrar la nueva ventana y ocultar la actual
                             form_inicio.Show();
                             this.Hide();
+
+                            // Aseguramos que el evento form_closing se suscribe antes de mostrar el formulario
+                            form_inicio.FormClosing += form_closing;
                         }
                         else if (perfilId == 0)
                         {

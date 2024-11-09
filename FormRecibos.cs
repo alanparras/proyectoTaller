@@ -39,7 +39,7 @@ namespace ProyectoTallerG8
             this.mensajesTableAdapter.Fill(this.dataSet11.mensajes);
 
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.usuarios' Puede moverla o quitarla según sea necesario.
-            this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
+            //this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

@@ -16,7 +16,7 @@ namespace ProyectoTallerG8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pruebaLogin.Inicio());
+            Application.Run(new Login());
         }
     }
 }
