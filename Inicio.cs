@@ -29,6 +29,19 @@ namespace pruebaLogin
         }
         private void Inicio_Load(object sender, EventArgs e)
         {
+            if (usuarioActual == null)
+            {
+                Console.WriteLine("El objeto usuarioActual es null.");
+            }
+            else if (usuarioActual.id_usuario == 0)
+            {
+                Console.WriteLine("El id_usuario no es válido.");
+            }
+            else
+            {
+                Console.WriteLine("Usuario válido. ID: " + usuarioActual.id_usuario);
+            }
+
             List<Permiso> ListaPermisos = new Permiso_negocio().Listar(usuarioActual.id_usuario);
 
             foreach (Control control in menu.Controls)
