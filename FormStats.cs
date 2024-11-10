@@ -622,8 +622,6 @@ namespace ProyectoTallerG8
             }
         }
 
-
-
         private void TSearchProduct_TextChanged(object sender, EventArgs e)
         {
             // Obtener el texto ingresado en el TextBox
