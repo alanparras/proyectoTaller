@@ -12,7 +12,7 @@ namespace CapaEntidades
         public string nombre { get; set; }
         public string apellido { get; set; }
         public Perfil objPerfil { get; set; }
-        public string baja { get; set; }
+        public bool baja { get; set; }
         public string user { get; set; }
         public string pass { get; set; }
         public string email { get; set; }

@@ -35,10 +35,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet11 = new pruebaLogin.DataSet1();
-            this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
-            this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabVentas = new System.Windows.Forms.TabPage();
@@ -52,9 +51,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.chartVentas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ventascabeceraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new pruebaLogin.DataSet1();
             this.tabRendEmp = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.labelMetricE = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,17 +64,33 @@
             this.dtpStartDateE = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.chartVentasEmpleados = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.perfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSearchProductChart = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TSearchProduct = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbProductos = new System.Windows.Forms.ComboBox();
+            this.labelMetricP = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnLoadProductChart = new System.Windows.Forms.Button();
+            this.dtpEndDateP = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDateP = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.chartProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
+            this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
+            this.perfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.perfilesTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.perfilesTableAdapter();
             this.ventas_cabeceraTableAdapter = new pruebaLogin.DataSet1TableAdapters.ventas_cabeceraTableAdapter();
+            this.labelWarning = new System.Windows.Forms.Label();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabVentas.SuspendLayout();
@@ -81,41 +98,21 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventascabeceraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.tabRendEmp.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentasEmpleados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.perfilesBindingSource)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProducts)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfilesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataMember = "usuarios";
-            this.usuariosBindingSource1.DataSource = this.dataSet11;
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter1
-            // 
-            this.usuariosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.consultasTableAdapter = null;
-            this.tableAdapterManager1.mensajesTableAdapter = null;
-            this.tableAdapterManager1.perfilesTableAdapter = null;
-            this.tableAdapterManager1.productos_pcTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = pruebaLogin.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
-            this.tableAdapterManager1.ventas_detalleTableAdapter = null;
             // 
             // tableLayoutPanel1
             // 
@@ -139,6 +136,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabVentas);
             this.tabControl1.Controls.Add(this.tabRendEmp);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
@@ -213,7 +211,7 @@
             // 
             // btnLoadChart
             // 
-            this.btnLoadChart.BackColor = System.Drawing.Color.Gray;
+            this.btnLoadChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
             this.btnLoadChart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoadChart.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadChart.ForeColor = System.Drawing.Color.White;
@@ -276,6 +274,11 @@
             this.ventascabeceraBindingSource.DataMember = "ventas_cabecera";
             this.ventascabeceraBindingSource.DataSource = this.dataSet11;
             // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tabRendEmp
             // 
             this.tabRendEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -285,7 +288,7 @@
             this.tabRendEmp.Padding = new System.Windows.Forms.Padding(3);
             this.tabRendEmp.Size = new System.Drawing.Size(1044, 518);
             this.tabRendEmp.TabIndex = 1;
-            this.tabRendEmp.Text = "Rendimiento";
+            this.tabRendEmp.Text = "Rendimiento por Empleado";
             // 
             // tableLayoutPanel4
             // 
@@ -319,6 +322,17 @@
             this.panel1.Size = new System.Drawing.Size(372, 506);
             this.panel1.TabIndex = 8;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(3, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 23);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Filtrar por Empleado";
+            // 
             // cmbEmpleados
             // 
             this.cmbEmpleados.FormattingEnabled = true;
@@ -351,7 +365,7 @@
             // 
             // btnLoadEmployeeChart
             // 
-            this.btnLoadEmployeeChart.BackColor = System.Drawing.Color.Gray;
+            this.btnLoadEmployeeChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
             this.btnLoadEmployeeChart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoadEmployeeChart.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadEmployeeChart.ForeColor = System.Drawing.Color.White;
@@ -406,10 +420,187 @@
             this.chartVentasEmpleados.TabIndex = 9;
             this.chartVentasEmpleados.Text = "chart1";
             // 
-            // perfilesBindingSource
+            // tabPage1
             // 
-            this.perfilesBindingSource.DataMember = "perfiles";
-            this.perfilesBindingSource.DataSource = this.dataSet11;
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabPage1.Controls.Add(this.tableLayoutPanel5);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1044, 518);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Productos";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.8921F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.1079F));
+            this.tableLayoutPanel5.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.chartProducts, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1038, 512);
+            this.tableLayoutPanel5.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel3.Controls.Add(this.labelWarning);
+            this.panel3.Controls.Add(this.btnSearchProductChart);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.TSearchProduct);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.cmbProductos);
+            this.panel3.Controls.Add(this.labelMetricP);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.btnLoadProductChart);
+            this.panel3.Controls.Add(this.dtpEndDateP);
+            this.panel3.Controls.Add(this.dtpStartDateP);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(770, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(265, 506);
+            this.panel3.TabIndex = 8;
+            // 
+            // btnSearchProductChart
+            // 
+            this.btnSearchProductChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.btnSearchProductChart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearchProductChart.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchProductChart.ForeColor = System.Drawing.Color.White;
+            this.btnSearchProductChart.Location = new System.Drawing.Point(7, 249);
+            this.btnSearchProductChart.Name = "btnSearchProductChart";
+            this.btnSearchProductChart.Size = new System.Drawing.Size(195, 32);
+            this.btnSearchProductChart.TabIndex = 28;
+            this.btnSearchProductChart.Text = "Buscar";
+            this.btnSearchProductChart.UseVisualStyleBackColor = false;
+            this.btnSearchProductChart.Click += new System.EventHandler(this.btnSearchProductChart_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.Location = new System.Drawing.Point(3, 152);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 23);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Buscar Producto";
+            // 
+            // TSearchProduct
+            // 
+            this.TSearchProduct.BackColor = System.Drawing.Color.White;
+            this.TSearchProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TSearchProduct.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TSearchProduct.ForeColor = System.Drawing.Color.Black;
+            this.TSearchProduct.Location = new System.Drawing.Point(7, 178);
+            this.TSearchProduct.Name = "TSearchProduct";
+            this.TSearchProduct.Size = new System.Drawing.Size(235, 27);
+            this.TSearchProduct.TabIndex = 26;
+            this.TSearchProduct.TextChanged += new System.EventHandler(this.TSearchProduct_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label5.Location = new System.Drawing.Point(3, 97);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 23);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Filtrar por Producto";
+            // 
+            // cmbProductos
+            // 
+            this.cmbProductos.FormattingEnabled = true;
+            this.cmbProductos.Location = new System.Drawing.Point(7, 123);
+            this.cmbProductos.Name = "cmbProductos";
+            this.cmbProductos.Size = new System.Drawing.Size(235, 26);
+            this.cmbProductos.TabIndex = 24;
+            // 
+            // labelMetricP
+            // 
+            this.labelMetricP.AutoSize = true;
+            this.labelMetricP.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.labelMetricP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelMetricP.Location = new System.Drawing.Point(114, 322);
+            this.labelMetricP.Name = "labelMetricP";
+            this.labelMetricP.Size = new System.Drawing.Size(52, 23);
+            this.labelMetricP.TabIndex = 23;
+            this.labelMetricP.Text = "Visitas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label7.Location = new System.Drawing.Point(3, 322);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 23);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Métrica Actual:";
+            // 
+            // btnLoadProductChart
+            // 
+            this.btnLoadProductChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.btnLoadProductChart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLoadProductChart.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadProductChart.ForeColor = System.Drawing.Color.White;
+            this.btnLoadProductChart.Location = new System.Drawing.Point(7, 287);
+            this.btnLoadProductChart.Name = "btnLoadProductChart";
+            this.btnLoadProductChart.Size = new System.Drawing.Size(195, 32);
+            this.btnLoadProductChart.TabIndex = 21;
+            this.btnLoadProductChart.Text = "Alternar Métrica";
+            this.btnLoadProductChart.UseVisualStyleBackColor = false;
+            this.btnLoadProductChart.Click += new System.EventHandler(this.btnLoadProductChart_Click);
+            // 
+            // dtpEndDateP
+            // 
+            this.dtpEndDateP.Location = new System.Drawing.Point(7, 58);
+            this.dtpEndDateP.Name = "dtpEndDateP";
+            this.dtpEndDateP.Size = new System.Drawing.Size(235, 26);
+            this.dtpEndDateP.TabIndex = 6;
+            // 
+            // dtpStartDateP
+            // 
+            this.dtpStartDateP.Location = new System.Drawing.Point(7, 26);
+            this.dtpStartDateP.Name = "dtpStartDateP";
+            this.dtpStartDateP.Size = new System.Drawing.Size(235, 26);
+            this.dtpStartDateP.TabIndex = 5;
+            this.dtpStartDateP.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(256, 23);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Buscar en el siguiente rango de fechas";
+            // 
+            // chartProducts
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chartProducts.ChartAreas.Add(chartArea3);
+            this.chartProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.chartProducts.Legends.Add(legend3);
+            this.chartProducts.Location = new System.Drawing.Point(3, 3);
+            this.chartProducts.Name = "chartProducts";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartProducts.Series.Add(series3);
+            this.chartProducts.Size = new System.Drawing.Size(761, 506);
+            this.chartProducts.TabIndex = 9;
+            this.chartProducts.Text = "chart1";
             // 
             // tableLayoutPanel2
             // 
@@ -427,6 +618,32 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1064, 561);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataMember = "usuarios";
+            this.usuariosBindingSource1.DataSource = this.dataSet11;
+            // 
+            // usuariosTableAdapter1
+            // 
+            this.usuariosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.consultasTableAdapter = null;
+            this.tableAdapterManager1.mensajesTableAdapter = null;
+            this.tableAdapterManager1.perfilesTableAdapter = null;
+            this.tableAdapterManager1.productos_pcTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = pruebaLogin.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
+            this.tableAdapterManager1.ventas_detalleTableAdapter = null;
+            // 
+            // perfilesBindingSource
+            // 
+            this.perfilesBindingSource.DataMember = "perfiles";
+            this.perfilesBindingSource.DataSource = this.dataSet11;
+            // 
             // perfilesTableAdapter1
             // 
             this.perfilesTableAdapter1.ClearBeforeFill = true;
@@ -434,6 +651,16 @@
             // ventas_cabeceraTableAdapter
             // 
             this.ventas_cabeceraTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelWarning
+            // 
+            this.labelWarning.AutoSize = true;
+            this.labelWarning.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.labelWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelWarning.Location = new System.Drawing.Point(3, 392);
+            this.labelWarning.Name = "labelWarning";
+            this.labelWarning.Size = new System.Drawing.Size(0, 23);
+            this.labelWarning.TabIndex = 30;
             // 
             // usuariosBindingSource
             // 
@@ -457,17 +684,6 @@
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(3, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 23);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Filtrar por Empleado";
-            // 
             // FormStats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,8 +695,6 @@
             this.Name = "FormStats";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabVentas.ResumeLayout(false);
@@ -489,14 +703,21 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventascabeceraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.tabRendEmp.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartVentasEmpleados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.perfilesBindingSource)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProducts)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfilesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -544,5 +765,21 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVentasEmpleados;
         private System.Windows.Forms.ComboBox cmbEmpleados;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbProductos;
+        private System.Windows.Forms.Label labelMetricP;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnLoadProductChart;
+        private System.Windows.Forms.DateTimePicker dtpEndDateP;
+        private System.Windows.Forms.DateTimePicker dtpStartDateP;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProducts;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TSearchProduct;
+        private System.Windows.Forms.Button btnSearchProductChart;
+        private System.Windows.Forms.Label labelWarning;
     }
 }

@@ -22,28 +22,31 @@ namespace CapaDatosFinal
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select p.id_permiso, p.nombreAcceso from Permiso p");
-                    query.AppendLine("inner join perfiles r on r.id_perfiles = p.id_perfil");
-                    query.AppendLine("inner join usuarios u on u.perfil_id = r.id_perfiles");
-                    query.AppendLine("where u.id = @idusuario");
+                    query.AppendLine("SELECT pr.id_perfiles, p.nombreAcceso FROM permiso p");
+                    query.AppendLine("INNER JOIN perfiles pr ON pr.id_perfiles = p.id_perfil");
+                    query.AppendLine("INNER JOIN usuarios u ON u.perfil_id = pr.id_perfiles");
+                    query.AppendLine("WHERE u.id = @idusuario");
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
-                    cmd.Parameters.AddWithValue("id", idusuario);
-                    cmd.CommandType = CommandType.Text;
-
-                    oconexion.Open();
-
-                    using (SqlDataReader dataReader = cmd.ExecuteReader())
+                    using (SqlCommand cmd = new SqlCommand(query.ToString(), oconexion))
                     {
-                        while (dataReader.Read())
+                        cmd.Parameters.Add("@idusuario", SqlDbType.Int).Value = idusuario; // Ajusta SqlDbType según el tipo de idusuario
+                        cmd.CommandType = CommandType.Text;
+
+                        oconexion.Open();
+
+                        using (SqlDataReader dataReader = cmd.ExecuteReader())
                         {
-                            lista.Add(new Permiso()
+                            while (dataReader.Read())
                             {
-                                objPerfil = new Perfil() { id_perfil = Convert.ToInt32(dataReader["id_perfiles"])},
-                                nombreAcceso = dataReader["nombreAcceso"].ToString(),
-                            });
+                                lista.Add(new Permiso()
+                                {
+                                    objPerfil = new Perfil() { id_perfil = Convert.ToInt32(dataReader["id_perfiles"]) },
+                                    nombreAcceso = dataReader["nombreAcceso"].ToString(),
+                                });
+                            }
                         }
                     }
+
                 }
                 catch (Exception ex)
                 {
