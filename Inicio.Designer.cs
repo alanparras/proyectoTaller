@@ -31,14 +31,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.menu = new System.Windows.Forms.TableLayoutPanel();
             this.BackupButton = new FontAwesome.Sharp.IconButton();
-            this.LogOutButton = new FontAwesome.Sharp.IconButton();
             this.ReceiptsButton = new FontAwesome.Sharp.IconButton();
             this.StatsButton = new FontAwesome.Sharp.IconButton();
             this.ProductsButton = new FontAwesome.Sharp.IconButton();
             this.MsgButton = new FontAwesome.Sharp.IconButton();
             this.ConsultasButton = new FontAwesome.Sharp.IconButton();
-            this.UsersButton = new FontAwesome.Sharp.IconButton();
             this.contenedor = new System.Windows.Forms.Panel();
+            this.LogOutButton = new FontAwesome.Sharp.IconButton();
+            this.UserButton = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel2.SuspendLayout();
             this.menu.SuspendLayout();
             this.SuspendLayout();
@@ -78,7 +78,7 @@
             this.menu.Controls.Add(this.ProductsButton, 0, 3);
             this.menu.Controls.Add(this.MsgButton, 0, 2);
             this.menu.Controls.Add(this.ConsultasButton, 0, 1);
-            this.menu.Controls.Add(this.UsersButton, 0, 0);
+            this.menu.Controls.Add(this.UserButton, 0, 0);
             this.menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menu.Location = new System.Drawing.Point(3, 3);
             this.menu.Name = "menu";
@@ -91,8 +91,160 @@
             this.menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.menu.Size = new System.Drawing.Size(151, 555);
+            this.menu.Size = new System.Drawing.Size(94, 509);
             this.menu.TabIndex = 5;
+            // 
+            // BackupButton
+            // 
+            this.BackupButton.AutoSize = true;
+            this.BackupButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.BackupButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackupButton.FlatAppearance.BorderSize = 0;
+            this.BackupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackupButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackupButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.BackupButton.IconChar = FontAwesome.Sharp.IconChar.GroupArrowsRotate;
+            this.BackupButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.BackupButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BackupButton.Location = new System.Drawing.Point(3, 501);
+            this.BackupButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.BackupButton.Name = "BackupButton";
+            this.BackupButton.Size = new System.Drawing.Size(88, 77);
+            this.BackupButton.TabIndex = 13;
+            this.BackupButton.Text = "Restauración";
+            this.BackupButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BackupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BackupButton.UseVisualStyleBackColor = false;
+            // 
+            // ReceiptsButton
+            // 
+            this.ReceiptsButton.AutoSize = true;
+            this.ReceiptsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ReceiptsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.ReceiptsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ReceiptsButton.FlatAppearance.BorderSize = 0;
+            this.ReceiptsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReceiptsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReceiptsButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ReceiptsButton.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            this.ReceiptsButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.ReceiptsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ReceiptsButton.Location = new System.Drawing.Point(3, 418);
+            this.ReceiptsButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.ReceiptsButton.Name = "ReceiptsButton";
+            this.ReceiptsButton.Size = new System.Drawing.Size(88, 77);
+            this.ReceiptsButton.TabIndex = 10;
+            this.ReceiptsButton.Text = "Recibos";
+            this.ReceiptsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ReceiptsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ReceiptsButton.UseVisualStyleBackColor = false;
+            this.ReceiptsButton.Click += new System.EventHandler(this.ReceiptsButton_Click);
+            // 
+            // StatsButton
+            // 
+            this.StatsButton.AutoSize = true;
+            this.StatsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.StatsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.StatsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatsButton.FlatAppearance.BorderSize = 0;
+            this.StatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StatsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatsButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.StatsButton.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            this.StatsButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.StatsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.StatsButton.Location = new System.Drawing.Point(3, 335);
+            this.StatsButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.StatsButton.Name = "StatsButton";
+            this.StatsButton.Size = new System.Drawing.Size(88, 77);
+            this.StatsButton.TabIndex = 9;
+            this.StatsButton.Text = "Estadísticas";
+            this.StatsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.StatsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.StatsButton.UseVisualStyleBackColor = false;
+            this.StatsButton.Click += new System.EventHandler(this.StatsButton_Click);
+            // 
+            // ProductsButton
+            // 
+            this.ProductsButton.AutoSize = true;
+            this.ProductsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ProductsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.ProductsButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductsButton.FlatAppearance.BorderSize = 0;
+            this.ProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductsButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ProductsButton.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
+            this.ProductsButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.ProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ProductsButton.Location = new System.Drawing.Point(3, 252);
+            this.ProductsButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.ProductsButton.Name = "ProductsButton";
+            this.ProductsButton.Size = new System.Drawing.Size(88, 77);
+            this.ProductsButton.TabIndex = 8;
+            this.ProductsButton.Text = "Productos";
+            this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ProductsButton.UseVisualStyleBackColor = false;
+            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
+            // 
+            // MsgButton
+            // 
+            this.MsgButton.AutoSize = true;
+            this.MsgButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.MsgButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.MsgButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MsgButton.FlatAppearance.BorderSize = 0;
+            this.MsgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MsgButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MsgButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.MsgButton.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            this.MsgButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.MsgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MsgButton.Location = new System.Drawing.Point(3, 169);
+            this.MsgButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.MsgButton.Name = "MsgButton";
+            this.MsgButton.Size = new System.Drawing.Size(88, 77);
+            this.MsgButton.TabIndex = 7;
+            this.MsgButton.Text = "Mensajes";
+            this.MsgButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MsgButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MsgButton.UseVisualStyleBackColor = false;
+            this.MsgButton.Click += new System.EventHandler(this.MsgButton_Click);
+            // 
+            // ConsultasButton
+            // 
+            this.ConsultasButton.AutoSize = true;
+            this.ConsultasButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ConsultasButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ConsultasButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ConsultasButton.FlatAppearance.BorderSize = 0;
+            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultasButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultasButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ConsultasButton.IconChar = FontAwesome.Sharp.IconChar.FileText;
+            this.ConsultasButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.ConsultasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ConsultasButton.Location = new System.Drawing.Point(3, 86);
+            this.ConsultasButton.MinimumSize = new System.Drawing.Size(90, 57);
+            this.ConsultasButton.Name = "ConsultasButton";
+            this.ConsultasButton.Size = new System.Drawing.Size(90, 77);
+            this.ConsultasButton.TabIndex = 6;
+            this.ConsultasButton.Text = "Consultas";
+            this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ConsultasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ConsultasButton.UseVisualStyleBackColor = false;
+            // 
+            // contenedor
+            // 
+            this.contenedor.BackgroundImage = global::pruebaLogin.Properties.Resources.LogoGio;
+            this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(103, 3);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(731, 509);
+            this.contenedor.TabIndex = 6;
             // 
             // BackupButton
             // 
@@ -141,170 +293,38 @@
             this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.LogOutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.LogOutButton.UseVisualStyleBackColor = false;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
-            // ReceiptsButton
+            // UserButton
             // 
-            this.ReceiptsButton.AutoSize = true;
-            this.ReceiptsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ReceiptsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.ReceiptsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReceiptsButton.FlatAppearance.BorderSize = 0;
-            this.ReceiptsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReceiptsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceiptsButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ReceiptsButton.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            this.ReceiptsButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.ReceiptsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ReceiptsButton.IconSize = 40;
-            this.ReceiptsButton.Location = new System.Drawing.Point(3, 348);
-            this.ReceiptsButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.ReceiptsButton.Name = "ReceiptsButton";
-            this.ReceiptsButton.Size = new System.Drawing.Size(145, 63);
-            this.ReceiptsButton.TabIndex = 10;
-            this.ReceiptsButton.Text = "Recibos";
-            this.ReceiptsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ReceiptsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ReceiptsButton.UseVisualStyleBackColor = false;
-            this.ReceiptsButton.Click += new System.EventHandler(this.ReceiptsButton_Click);
-            // 
-            // StatsButton
-            // 
-            this.StatsButton.AutoSize = true;
-            this.StatsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.StatsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.StatsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.StatsButton.FlatAppearance.BorderSize = 0;
-            this.StatsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StatsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatsButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.StatsButton.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
-            this.StatsButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.StatsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.StatsButton.IconSize = 40;
-            this.StatsButton.Location = new System.Drawing.Point(3, 279);
-            this.StatsButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.StatsButton.Name = "StatsButton";
-            this.StatsButton.Size = new System.Drawing.Size(145, 63);
-            this.StatsButton.TabIndex = 9;
-            this.StatsButton.Text = "Estadísticas";
-            this.StatsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.StatsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.StatsButton.UseVisualStyleBackColor = false;
-            this.StatsButton.Click += new System.EventHandler(this.StatsButton_Click);
-            // 
-            // ProductsButton
-            // 
-            this.ProductsButton.AutoSize = true;
-            this.ProductsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ProductsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.ProductsButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductsButton.FlatAppearance.BorderSize = 0;
-            this.ProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProductsButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductsButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ProductsButton.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
-            this.ProductsButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.ProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ProductsButton.IconSize = 40;
-            this.ProductsButton.Location = new System.Drawing.Point(3, 210);
-            this.ProductsButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(145, 63);
-            this.ProductsButton.TabIndex = 8;
-            this.ProductsButton.Text = "Productos";
-            this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ProductsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ProductsButton.UseVisualStyleBackColor = false;
-            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
-            // 
-            // MsgButton
-            // 
-            this.MsgButton.AutoSize = true;
-            this.MsgButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.MsgButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.MsgButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MsgButton.FlatAppearance.BorderSize = 0;
-            this.MsgButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MsgButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MsgButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.MsgButton.IconChar = FontAwesome.Sharp.IconChar.Envelope;
-            this.MsgButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.MsgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MsgButton.IconSize = 40;
-            this.MsgButton.Location = new System.Drawing.Point(3, 141);
-            this.MsgButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.MsgButton.Name = "MsgButton";
-            this.MsgButton.Size = new System.Drawing.Size(145, 63);
-            this.MsgButton.TabIndex = 7;
-            this.MsgButton.Text = "Mensajes";
-            this.MsgButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MsgButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.MsgButton.UseVisualStyleBackColor = false;
-            this.MsgButton.Click += new System.EventHandler(this.MsgButton_Click);
-            // 
-            // ConsultasButton
-            // 
-            this.ConsultasButton.AutoSize = true;
-            this.ConsultasButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ConsultasButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.ConsultasButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ConsultasButton.FlatAppearance.BorderSize = 0;
-            this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultasButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultasButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.ConsultasButton.IconChar = FontAwesome.Sharp.IconChar.FileText;
-            this.ConsultasButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.ConsultasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ConsultasButton.IconSize = 40;
-            this.ConsultasButton.Location = new System.Drawing.Point(3, 72);
-            this.ConsultasButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.ConsultasButton.Name = "ConsultasButton";
-            this.ConsultasButton.Size = new System.Drawing.Size(145, 63);
-            this.ConsultasButton.TabIndex = 6;
-            this.ConsultasButton.Text = "Consultas";
-            this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ConsultasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.ConsultasButton.UseVisualStyleBackColor = false;
-            // 
-            // UsersButton
-            
-            this.UsersButton.AutoSize = true;
-            this.UsersButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.UsersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.UsersButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UsersButton.FlatAppearance.BorderSize = 0;
-            this.UsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UsersButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.UsersButton.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            this.UsersButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.UsersButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.UsersButton.IconSize = 40;
-            this.UsersButton.Location = new System.Drawing.Point(3, 3);
-            this.UsersButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.UsersButton.Name = "UsersButton";
-            this.UsersButton.Size = new System.Drawing.Size(145, 63);
-            this.UsersButton.TabIndex = 5;
-            this.UsersButton.Text = "Usuarios";
-            this.UsersButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.UsersButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.UsersButton.UseVisualStyleBackColor = false;
-            this.UsersButton.Click += new System.EventHandler(this.UsersButton_Click);
-            // 
-            // contenedor
-            // 
-            this.contenedor.BackgroundImage = global::pruebaLogin.Properties.Resources.LogoGio;
-            this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(160, 3);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(901, 555);
-            this.contenedor.TabIndex = 6;
+            this.UserButton.AutoSize = true;
+            this.UserButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.UserButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserButton.FlatAppearance.BorderSize = 0;
+            this.UserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.UserButton.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            this.UserButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.UserButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UserButton.Location = new System.Drawing.Point(3, 3);
+            this.UserButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.UserButton.Name = "UserButton";
+            this.UserButton.Size = new System.Drawing.Size(88, 77);
+            this.UserButton.TabIndex = 5;
+            this.UserButton.Text = "Usuarios";
+            this.UserButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.UserButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.UserButton.UseVisualStyleBackColor = false;
+            this.UserButton.Click += new System.EventHandler(this.UsersButton_Click);
+            this.UserButton.Paint += new System.Windows.Forms.PaintEventHandler(this.UsersButton_Paint);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(837, 515);
             this.ClientSize = new System.Drawing.Size(1064, 561);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "Inicio";
@@ -331,6 +351,6 @@
         private FontAwesome.Sharp.IconButton MsgButton;
         private FontAwesome.Sharp.IconButton ConsultasButton;
         private FontAwesome.Sharp.IconButton LogOutButton;
-        private FontAwesome.Sharp.IconButton UsersButton;
+        private FontAwesome.Sharp.IconButton UserButton;
     }
 }

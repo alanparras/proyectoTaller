@@ -27,6 +27,41 @@ namespace pruebaLogin
             usuarioActual = objUser;
             InitializeComponent();
         }
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            List<Permiso> ListaPermisos = new Permiso_negocio().Listar(usuarioActual.id_usuario);
+
+            foreach (Control control in menu.Controls)
+            {
+                if (control is IconButton iconMenu)
+                {
+                    bool encontrado = ListaPermisos.Any(m => m.nombreAcceso == iconMenu.Name);
+
+                    // Si el permiso no se encuentra, oculta el botón
+                    iconMenu.Visible = encontrado;
+                }
+            }
+
+            LogOutButton.Visible = true;
+
+            // Ajusta el layout según la cantidad de botones visibles
+            int botonesVisibles = menu.Controls.OfType<IconButton>().Count(b => b.Visible);
+
+            menu.RowStyles.Clear();
+            menu.RowCount = botonesVisibles;
+
+            for (int i = 0; i < botonesVisibles; i++)
+            {
+                menu.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / botonesVisibles));
+            }
+
+            //// Ajusta cada botón visible para que ocupe el espacio completo de su celda
+            //foreach (Control control in menu.Controls.OfType<IconButton>().Where(b => b.Visible))
+            //{
+            //    control.Dock = DockStyle.Fill; // Expande el botón para ocupar todo el ancho y alto de su celda
+            //}
+
+        }
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
@@ -72,21 +107,6 @@ namespace pruebaLogin
             AbrirFormulario((IconButton)sender, new FormStats());
         }
 
-        private void Inicio_Load(object sender, EventArgs e)
-        {
-            //List<Permiso> ListaPermisos = new Permiso_negocio().Listar(usuarioActual.id_usuario);
-
-            //foreach (IconMenuItem iconMenu in menu.RowStyles)
-            //{
-            //    bool encontrado = ListaPermisos.Any(m => m.nombreAcceso ==  iconMenu.Name);
-
-            //    if (encontrado == false)
-            //    {
-            //        iconMenu.Visible = false;
-            //    }
-            //}
-
-        }
 
         private void ReceiptsButton_Click(object sender, EventArgs e)
         {
