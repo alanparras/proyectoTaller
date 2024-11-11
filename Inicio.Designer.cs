@@ -49,8 +49,8 @@
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.00717F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.99283F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.81481F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.18519F));
             this.tableLayoutPanel2.Controls.Add(this.menu, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.contenedor, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -59,8 +59,8 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 515F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(837, 515);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 561F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1064, 561);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // menu
@@ -91,7 +91,7 @@
             this.menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.menu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.menu.Size = new System.Drawing.Size(94, 509);
+            this.menu.Size = new System.Drawing.Size(151, 555);
             this.menu.TabIndex = 5;
             // 
             // BackupButton
@@ -107,39 +107,16 @@
             this.BackupButton.IconChar = FontAwesome.Sharp.IconChar.GroupArrowsRotate;
             this.BackupButton.IconColor = System.Drawing.Color.AliceBlue;
             this.BackupButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BackupButton.Location = new System.Drawing.Point(3, 381);
+            this.BackupButton.Location = new System.Drawing.Point(3, 501);
             this.BackupButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.BackupButton.Name = "BackupButton";
-            this.BackupButton.Size = new System.Drawing.Size(88, 57);
+            this.BackupButton.Size = new System.Drawing.Size(88, 77);
             this.BackupButton.TabIndex = 13;
             this.BackupButton.Text = "Restauración";
             this.BackupButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BackupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BackupButton.UseVisualStyleBackColor = false;
-            // 
-            // LogOutButton
-            // 
-            this.LogOutButton.AutoSize = true;
-            this.LogOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.LogOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.LogOutButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LogOutButton.FlatAppearance.BorderSize = 0;
-            this.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogOutButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.LogOutButton.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
-            this.LogOutButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.LogOutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LogOutButton.Location = new System.Drawing.Point(3, 444);
-            this.LogOutButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.LogOutButton.Name = "LogOutButton";
-            this.LogOutButton.Size = new System.Drawing.Size(88, 62);
-            this.LogOutButton.TabIndex = 12;
-            this.LogOutButton.Text = "Cerrar Sesión";
-            this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.LogOutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.LogOutButton.UseVisualStyleBackColor = false;
-            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
+            this.BackupButton.Click += new System.EventHandler(this.BackupButton_Click);
             // 
             // ReceiptsButton
             // 
@@ -154,10 +131,10 @@
             this.ReceiptsButton.IconChar = FontAwesome.Sharp.IconChar.Receipt;
             this.ReceiptsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ReceiptsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ReceiptsButton.Location = new System.Drawing.Point(3, 318);
+            this.ReceiptsButton.Location = new System.Drawing.Point(3, 418);
             this.ReceiptsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.ReceiptsButton.Name = "ReceiptsButton";
-            this.ReceiptsButton.Size = new System.Drawing.Size(88, 57);
+            this.ReceiptsButton.Size = new System.Drawing.Size(88, 77);
             this.ReceiptsButton.TabIndex = 10;
             this.ReceiptsButton.Text = "Recibos";
             this.ReceiptsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -178,10 +155,10 @@
             this.StatsButton.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.StatsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.StatsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.StatsButton.Location = new System.Drawing.Point(3, 255);
+            this.StatsButton.Location = new System.Drawing.Point(3, 335);
             this.StatsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.StatsButton.Name = "StatsButton";
-            this.StatsButton.Size = new System.Drawing.Size(88, 57);
+            this.StatsButton.Size = new System.Drawing.Size(88, 77);
             this.StatsButton.TabIndex = 9;
             this.StatsButton.Text = "Estadísticas";
             this.StatsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -202,10 +179,10 @@
             this.ProductsButton.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
             this.ProductsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ProductsButton.Location = new System.Drawing.Point(3, 192);
+            this.ProductsButton.Location = new System.Drawing.Point(3, 252);
             this.ProductsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(88, 57);
+            this.ProductsButton.Size = new System.Drawing.Size(88, 77);
             this.ProductsButton.TabIndex = 8;
             this.ProductsButton.Text = "Productos";
             this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -226,10 +203,10 @@
             this.MsgButton.IconChar = FontAwesome.Sharp.IconChar.Envelope;
             this.MsgButton.IconColor = System.Drawing.Color.AliceBlue;
             this.MsgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MsgButton.Location = new System.Drawing.Point(3, 129);
+            this.MsgButton.Location = new System.Drawing.Point(3, 169);
             this.MsgButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.MsgButton.Name = "MsgButton";
-            this.MsgButton.Size = new System.Drawing.Size(88, 57);
+            this.MsgButton.Size = new System.Drawing.Size(88, 77);
             this.MsgButton.TabIndex = 7;
             this.MsgButton.Text = "Mensajes";
             this.MsgButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -241,7 +218,7 @@
             // 
             this.ConsultasButton.AutoSize = true;
             this.ConsultasButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ConsultasButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.ConsultasButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
             this.ConsultasButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ConsultasButton.FlatAppearance.BorderSize = 0;
             this.ConsultasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -250,15 +227,49 @@
             this.ConsultasButton.IconChar = FontAwesome.Sharp.IconChar.FileText;
             this.ConsultasButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ConsultasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ConsultasButton.Location = new System.Drawing.Point(3, 66);
+            this.ConsultasButton.Location = new System.Drawing.Point(3, 86);
             this.ConsultasButton.MinimumSize = new System.Drawing.Size(90, 57);
             this.ConsultasButton.Name = "ConsultasButton";
-            this.ConsultasButton.Size = new System.Drawing.Size(90, 57);
+            this.ConsultasButton.Size = new System.Drawing.Size(90, 77);
             this.ConsultasButton.TabIndex = 6;
             this.ConsultasButton.Text = "Consultas";
             this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ConsultasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ConsultasButton.UseVisualStyleBackColor = false;
+            // 
+            // contenedor
+            // 
+            this.contenedor.BackgroundImage = global::pruebaLogin.Properties.Resources.LogoGio;
+            this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(103, 3);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(731, 509);
+            this.contenedor.TabIndex = 6;
+            // 
+            // LogOutButton
+            // 
+            this.LogOutButton.AutoSize = true;
+            this.LogOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.LogOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.LogOutButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogOutButton.FlatAppearance.BorderSize = 0;
+            this.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOutButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.LogOutButton.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
+            this.LogOutButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.LogOutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LogOutButton.Location = new System.Drawing.Point(3, 584);
+            this.LogOutButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(88, 77);
+            this.LogOutButton.TabIndex = 12;
+            this.LogOutButton.Text = "Cerrar Sesión";
+            this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LogOutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.LogOutButton.UseVisualStyleBackColor = false;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // UserButton
             // 
@@ -273,17 +284,27 @@
             this.UserButton.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             this.UserButton.IconColor = System.Drawing.Color.AliceBlue;
             this.UserButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UserButton.IconSize = 40;
             this.UserButton.Location = new System.Drawing.Point(3, 3);
             this.UserButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.UserButton.Name = "UserButton";
-            this.UserButton.Size = new System.Drawing.Size(88, 57);
+            this.UserButton.Size = new System.Drawing.Size(88, 77);
             this.UserButton.TabIndex = 5;
             this.UserButton.Text = "Usuarios";
             this.UserButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UserButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.UserButton.UseVisualStyleBackColor = false;
             this.UserButton.Click += new System.EventHandler(this.UsersButton_Click);
-            this.UserButton.Paint += new System.Windows.Forms.PaintEventHandler(this.UsersButton_Paint);
+            // 
+            // contenedor
+            // 
+            this.contenedor.BackgroundImage = global::pruebaLogin.Properties.Resources.LogoGio;
+            this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contenedor.Location = new System.Drawing.Point(160, 3);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(901, 555);
+            this.contenedor.TabIndex = 6;
             // 
             // contenedor
             // 
@@ -299,7 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(837, 515);
+            this.ClientSize = new System.Drawing.Size(1064, 561);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "Inicio";
             this.Text = "Inicio";

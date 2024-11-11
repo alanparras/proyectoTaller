@@ -290,10 +290,12 @@
             // 
             // TCUsuarios
             // 
+            this.TCUsuarios.AllowDrop = true;
             this.TCUsuarios.Controls.Add(this.tabPage1);
             this.TCUsuarios.Controls.Add(this.tabPage2);
             this.TCUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TCUsuarios.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TCUsuarios.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TCUsuarios.Location = new System.Drawing.Point(3, 3);
             this.TCUsuarios.Multiline = true;
             this.TCUsuarios.Name = "TCUsuarios";
@@ -386,7 +388,7 @@
             this.CBperfiles.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.CBperfiles.DisplayMember = "id_perfiles";
             this.CBperfiles.FormattingEnabled = true;
-            this.CBperfiles.Location = new System.Drawing.Point(310, 104);
+            this.CBperfiles.Location = new System.Drawing.Point(309, 107);
             this.CBperfiles.Name = "CBperfiles";
             this.CBperfiles.Size = new System.Drawing.Size(231, 26);
             this.CBperfiles.TabIndex = 24;
@@ -416,7 +418,7 @@
             // 
             // BRegisterUser
             // 
-            this.BRegisterUser.BackColor = System.Drawing.Color.Gray;
+            this.BRegisterUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
             this.BRegisterUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BRegisterUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BRegisterUser.ForeColor = System.Drawing.Color.White;
@@ -655,7 +657,7 @@
             // 
             // BEliminar
             // 
-            this.BEliminar.BackColor = System.Drawing.Color.IndianRed;
+            this.BEliminar.BackColor = System.Drawing.Color.Firebrick;
             this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BEliminar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BEliminar.ForeColor = System.Drawing.Color.White;
@@ -868,7 +870,7 @@
             // 
             // BModificar
             // 
-            this.BModificar.BackColor = System.Drawing.Color.Gray;
+            this.BModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
             this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BModificar.ForeColor = System.Drawing.Color.White;

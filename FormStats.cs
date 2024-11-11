@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -20,11 +22,18 @@ namespace ProyectoTallerG8
             dtpStartDateE.ValueChanged += new EventHandler(DateTimePickersE_ValueChanged);
             dtpEndDateE.ValueChanged += new EventHandler(DateTimePickersE_ValueChanged);
 
+            dtpStartDateP.ValueChanged += new EventHandler(DateTimePickersP_ValueChanged);
+            dtpEndDateP.ValueChanged += new EventHandler(DateTimePickersP_ValueChanged);
+
             // Inicialmente comprobar la validez de las fechas
             ValidateDates();
 
             LoadEmployees();
 
+            LoadProducts();
+
+            // Añadir un ítem "Todos los productos" con un valor distinto, como -1 o null
+            cmbProductos.Items.Insert(0, new ComboBoxItem { Text = "Todos los productos", Value = null });
 
         }
 
@@ -157,7 +166,7 @@ namespace ProyectoTallerG8
 
         private void ValidateDatesE()
         {
-            if (dtpEndDateE.Value >= dtpStartDate.Value)
+            if (dtpEndDateE.Value >= dtpStartDateE.Value)
             {
                 // Si la fecha final es válida, habilitar el botón
                 btnLoadEmployeeChart.Enabled = true;
@@ -367,5 +376,294 @@ namespace ProyectoTallerG8
             }
         }
 
+        
+        //productos
+        
+        private bool showingViews = true;
+
+        private void btnLoadProductChart_Click(object sender, EventArgs e)
+        {
+            showingViews = !showingViews; // Alterna entre las dos métricas
+            LoadProductStatChart();
+        }
+
+        private void DateTimePickersP_ValueChanged(object sender, EventArgs e)
+        {
+            ValidateDatesP();
+        }
+
+        private void ValidateDatesP()
+        {
+            if (dtpEndDateP.Value >= dtpStartDateP.Value)
+            {
+                // Si la fecha final es válida, habilitar el botón
+                btnSearchProductChart.Enabled = true;
+                btnLoadProductChart.Enabled = true;
+            }
+            else
+            {
+                // Si la fecha final es menor a la fecha inicial, deshabilitar el botón
+                btnSearchProductChart.Enabled = false;
+                btnLoadProductChart.Enabled = false;
+            }
+        }
+
+        private void LoadProducts()
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT id, nombre FROM productos_pc"; // Selecciona productos de la lista
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        cmbProductos.Items.Clear();
+
+                        while (reader.Read())
+                        {
+                            cmbProductos.Items.Add(new ComboBoxItem
+                            {
+                                Text = reader["nombre"].ToString(),
+                                Value = reader["id"].ToString()
+                            });
+                        }
+
+                        cmbProductos.SelectedIndex = 0; // Selecciona la primera opción por defecto
+                    }
+
+                    con.Close();
+                }
+            }
+        }
+
+        // Método que carga los datos en el gráfico
+        private void LoadProductStatChart()
+        {
+            // Limpiar los datos previos del gráfico
+            chartProducts.Series.Clear();
+            chartProducts.ChartAreas[0].AxisX.Title = "Fechas de Venta";
+            chartProducts.ChartAreas[0].AxisY.Title = "Número de Ventas";
+
+            // Configurar selectores de fecha según la vista
+            dtpStartDateP.Enabled = !showingViews;
+            dtpEndDateP.Enabled = !showingViews;
+
+            // Obtener el producto seleccionado
+            string selectedProductId = null;
+            if (cmbProductos.SelectedItem != null && cmbProductos.SelectedItem is ComboBoxItem selectedItem)
+            {
+                if (selectedItem.Value != null)
+                {
+                    selectedProductId = selectedItem.Value; // Obtiene el valor del producto
+                }
+            }
+
+            // Conexión a la base de datos
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query;
+
+                if (showingViews)
+                {
+                    query = @"
+            SELECT p.id AS producto_id, p.nombre, p.visitas 
+            FROM productos_pc p
+            WHERE (@selectedProductId IS NULL OR p.id = @selectedProductId)
+            ORDER BY p.visitas DESC";
+                }
+                else
+                {
+                    query = @"
+            SELECT p.id AS producto_id, p.nombre, vc.fecha, SUM(vd.cantidad) AS total_ventas 
+            FROM productos_pc p
+            JOIN ventas_detalle vd ON p.id = vd.producto_id
+            JOIN ventas_cabecera vc ON vd.venta_id = vc.id
+            WHERE vc.fecha BETWEEN @startDate AND @endDate
+            AND (@selectedProductId IS NULL OR p.id = @selectedProductId)
+            GROUP BY p.id, p.nombre, vc.fecha
+            ORDER BY vc.fecha ASC";
+                }
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Agregar parámetros
+                    cmd.Parameters.AddWithValue("@selectedProductId", (object)selectedProductId ?? DBNull.Value);
+
+                    if (!showingViews)
+                    {
+                        cmd.Parameters.AddWithValue("@startDate", dtpStartDateP.Value);
+                        cmd.Parameters.AddWithValue("@endDate", dtpEndDateP.Value);
+                    }
+
+                    con.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        bool dataFound = false; // Bandera para saber si encontramos datos
+
+                        if (showingViews)
+                        {
+                            // Manejo de datos para visitas
+                            while (reader.Read())
+                            {
+                                string nombre = reader["nombre"].ToString();
+                                int visitas = Convert.ToInt32(reader["visitas"]);
+
+                                // Crear una serie con el nombre del producto
+                                var seriesProducto = chartProducts.Series.Add(nombre);
+                                seriesProducto.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+
+                                // Ajustar grosor de las columnas
+                                seriesProducto.CustomProperties = "PointWidth=2"; // Aumenta el ancho de las columnas
+
+                                // Mostrar los valores en la parte superior
+                                seriesProducto.IsValueShownAsLabel = true;
+
+                                // Agregar el valor de visitas
+                                seriesProducto.Points.AddXY(nombre, visitas);
+
+                                dataFound = true; // Encontramos datos
+                            }
+                        }
+                        else
+                        {
+                            // Manejo de datos para ventas
+                            Dictionary<string, Series> seriesMap = new Dictionary<string, Series>();
+                            List<DateTime> fechas = new List<DateTime>();  // Lista para almacenar todas las fechas
+
+                            while (reader.Read())
+                            {
+                                string nombre = reader["nombre"].ToString();
+                                DateTime fecha = Convert.ToDateTime(reader["fecha"]);
+                                int totalVentas = Convert.ToInt32(reader["total_ventas"]);
+
+                                // Agregar la fecha a la lista de fechas si no está ya incluida
+                                if (!fechas.Contains(fecha))
+                                {
+                                    fechas.Add(fecha);
+                                }
+
+                                // Si no existe una serie para este producto, crearla
+                                if (!seriesMap.ContainsKey(nombre))
+                                {
+                                    var seriesProducto = chartProducts.Series.Add(nombre);
+                                    seriesProducto.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                                    seriesProducto.IsValueShownAsLabel = true; // Mostrar valores
+                                    seriesProducto.CustomProperties = "PointWidth=0.5"; // Ajustar grosor de las columnas
+                                    seriesMap[nombre] = seriesProducto;
+                                }
+
+                                // Agregar el punto de ventas a la serie correspondiente
+                                seriesMap[nombre].Points.AddXY(fecha, totalVentas);
+
+                                dataFound = true; // Encontramos datos
+                            }
+
+                            // Ordenar las fechas de manera ascendente
+                            fechas.Sort();
+
+                            // Mostrar todas las fechas en el eje X
+                            chartProducts.ChartAreas[0].AxisX.Interval = 1;
+                            chartProducts.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";  // Formato de fecha
+
+                            // Limpiar etiquetas anteriores
+                            chartProducts.ChartAreas[0].AxisX.CustomLabels.Clear();
+
+                            // Establecer las fechas como etiquetas en el eje X
+                            for (int i = 0; i < fechas.Count; i++)
+                            {
+                                var fecha = fechas[i];
+                                double xValue = i;  // Establecer la posición en el eje X según el índice
+
+                                chartProducts.ChartAreas[0].AxisX.CustomLabels.Add(new System.Windows.Forms.DataVisualization.Charting.CustomLabel(
+                                    xValue,
+                                    xValue,
+                                    fecha.ToString("dd/MM/yyyy"),
+                                    0,
+                                    System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle.None));
+                            }
+                        }
+
+                        // Si no se encontraron datos, mostrar mensaje de advertencia
+                        if (!dataFound)
+                        {
+                            chartProducts.Visible = false;  // Ocultar el gráfico
+                            labelWarning.Text = "No se encontraron resultados para el producto y el rango de fechas seleccionados.";  // Mostrar mensaje de advertencia
+                        }
+                        else
+                        {
+                            chartProducts.Visible = true;  // Asegurarse de que el gráfico sea visible
+                            labelWarning.Text = "";  // Limpiar mensaje de advertencia
+                        }
+                    }
+
+                    con.Close();
+                }
+            }
+
+            // Configuración del gráfico según lo que estemos mostrando
+            if (showingViews)
+            {
+                chartProducts.ChartAreas[0].AxisY.LabelStyle.Format = "0"; // Formato entero
+                labelMetricP.Text = "Visitas por producto";
+            }
+            else
+            {
+                chartProducts.ChartAreas[0].AxisY.LabelStyle.Format = "0"; // Formato entero
+                chartProducts.ChartAreas[0].AxisX.Interval = 1; // Mostrar todas las fechas
+                chartProducts.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy"; // Formato de fecha en el eje X
+                labelMetricP.Text = "Ventas de productos por fecha";
+            }
+        }
+
+        private void TSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            // Obtener el texto ingresado en el TextBox
+            string searchText = TSearchProduct.Text.Trim().ToLower();
+
+            // Almacenar temporalmente los elementos originales si aún no lo has hecho
+            if (cmbProductos.Tag == null)
+            {
+                cmbProductos.Tag = cmbProductos.Items.Cast<object>().ToList();
+            }
+
+            // Lista original de elementos
+            var originalItems = (List<object>)cmbProductos.Tag;
+
+            // Filtrar los elementos que contienen el texto ingresado
+            var filteredItems = originalItems
+                .OfType<ComboBoxItem>() // Solo elementos ComboBoxItem
+                .Where(item => item.Text.ToLower().Contains(searchText))
+                .ToList();
+
+            // Actualizar el ComboBox con los elementos filtrados
+            cmbProductos.Items.Clear();
+
+            if (filteredItems.Any())
+            {
+                cmbProductos.Items.AddRange(filteredItems.ToArray());
+            }
+            else
+            {
+                cmbProductos.Items.Add("No se encontraron resultados");
+            }
+
+            // Si hay coincidencias, seleccionar automáticamente el primero
+            if (filteredItems.Count > 0)
+            {
+                cmbProductos.SelectedIndex = 0;
+            }
+        }
+
+        private void btnSearchProductChart_Click(object sender, EventArgs e)
+        {
+            LoadProductStatChart();
+        }
     }
 }

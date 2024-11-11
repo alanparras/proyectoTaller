@@ -45,6 +45,7 @@
             this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new pruebaLogin.DataSet1();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BModificar = new System.Windows.Forms.Button();
             this.TUserA = new System.Windows.Forms.TextBox();
             this.LUser = new System.Windows.Forms.Label();
             this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -55,7 +56,6 @@
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
             this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
-            this.BModificar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).BeginInit();
@@ -235,6 +235,19 @@
             this.panel1.Size = new System.Drawing.Size(1052, 153);
             this.panel1.TabIndex = 5;
             // 
+            // BModificar
+            // 
+            this.BModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BModificar.ForeColor = System.Drawing.Color.White;
+            this.BModificar.Location = new System.Drawing.Point(14, 62);
+            this.BModificar.Name = "BModificar";
+            this.BModificar.Size = new System.Drawing.Size(143, 32);
+            this.BModificar.TabIndex = 22;
+            this.BModificar.Text = "Enviar Respuesta";
+            this.BModificar.UseVisualStyleBackColor = false;
+            // 
             // TUserA
             // 
             this.TUserA.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -303,19 +316,6 @@
             // mensajesTableAdapter
             // 
             this.mensajesTableAdapter.ClearBeforeFill = true;
-            // 
-            // BModificar
-            // 
-            this.BModificar.BackColor = System.Drawing.Color.Gray;
-            this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificar.ForeColor = System.Drawing.Color.White;
-            this.BModificar.Location = new System.Drawing.Point(14, 62);
-            this.BModificar.Name = "BModificar";
-            this.BModificar.Size = new System.Drawing.Size(143, 32);
-            this.BModificar.TabIndex = 22;
-            this.BModificar.Text = "Enviar Respuesta";
-            this.BModificar.UseVisualStyleBackColor = false;
             // 
             // FormMensajes
             // 

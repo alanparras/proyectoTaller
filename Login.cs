@@ -51,9 +51,9 @@ namespace ProyectoTallerG8
         private void BLogin_Click_1(object sender, EventArgs e)
         {
             List<Usuario> TEST = new Usuario_negocio().Listar();
-            
 
-            
+
+
 
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["pruebaLogin.Properties.Settings.db_piazza_giovanniConnectionString"].ConnectionString;
             string usuario = TUser.Text;
