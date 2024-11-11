@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.PropertyGridInternal;
@@ -8,6 +9,7 @@ using System.Windows.Media;
 using CapaEntidades;
 using CapaNegocio;
 using ProyectoTallerG8.Utilidades;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProyectoTallerG8
 {
@@ -59,18 +61,6 @@ namespace ProyectoTallerG8
             //Console.WriteLine($"Número de usuarios encontrados: {listaProducto.Count}");
             foreach (Producto item in listaProducto)
             {
-                //if (item.objSubCategoria == null)
-                //{
-                //    item.objSubCategoria.id_subcategoria = 0;
-                //    item.objSubCategoria.descripcion_subcategoria = "Sin subcategoria";
-                
-                //    if (item.objCategoria == null)
-                //    {
-                //        item.objCategoria.id_categoria = 0;
-                //        item.objCategoria.descripcion_categoria = "Sin categoria";
-                //    }
-                //}
-
                 productosDataGridView.Rows.Add(new object[] {
                     "",
                     item.id_producto,
@@ -102,26 +92,50 @@ namespace ProyectoTallerG8
             if (!string.IsNullOrEmpty(searchTerm))
             {
                 // Llama al método FillBySearch con el texto ingresado en el TextBox
-                this.usuariosTableAdapter1.FillBySearch(this.dataSet11.usuarios, searchTerm);
+                //this.usuariosTableAdapter1.FillBySearch(this.dataSet11.usuarios, searchTerm);
             }
             else
             {
                 // Si no hay texto, se cargan todos los registros
-                this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
+                //this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
             }
         }
 
+        private void VaciarCampos()
+        {
+            TID_prod.Text = "-1";
+            TNombre.Text = "";
+            TDescripcion.Text = "";
+            TMarca.Text = "";
+            TModelo.Text = "";
+            TPrecio.Text = "";
+            TStock.Text = "";
+            CBEstado.SelectedIndex = 0;
+            CBCategoria.SelectedIndex = 0;
+            CBSubCategoria.SelectedIndex = 0;
+
+            TModificarID_prod.Text = "-1";
+            TModificarNombre.Text = "";
+            TModificarDescripcion.Text = "";
+            TModificarMarca.Text = "";
+            TModificarModelo.Text = "";
+            TModificarPrecio.Text = "";
+            TModificarStock.Text = "";
+            CBModificarEstado.SelectedIndex = 0;
+            CBModificarCategoria.SelectedIndex = 0;
+            CBModificarSubCat.SelectedIndex = 0;
+        }
 
         private void BEliminar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(TModificarID_user.Text) != 0)
+            if (Convert.ToInt32(TModificarID_prod.Text) != 0)
             {
                 if (MessageBox.Show("¿Desea eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     string mensaje = string.Empty;
                     Usuario objusuario = new Usuario()
                     {
-                        id_usuario = Convert.ToInt32(TModificarID_user.Text)
+                        id_usuario = Convert.ToInt32(TModificarID_prod.Text)
                     };
 
                     bool respuesta = new Usuario_negocio().Eliminar(objusuario, out mensaje);

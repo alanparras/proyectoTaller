@@ -86,6 +86,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
                     cmd.Parameters.AddWithValue("marca", obj.marca);
                     cmd.Parameters.AddWithValue("modelo", obj.modelo);
+                    cmd.Parameters.AddWithValue("precio", obj.precio);
+                    cmd.Parameters.AddWithValue("stock", obj.stock);
                     cmd.Parameters.AddWithValue("baja", obj.baja);
                     cmd.Parameters.AddWithValue("id_categoria", obj.objCategoria.id_categoria);
                     cmd.Parameters.AddWithValue("id_subcategoria", obj.objSubCategoria.id_subcategoria);
@@ -126,6 +128,8 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("descripcion", obj.descripcion);
                     cmd.Parameters.AddWithValue("marca", obj.marca);
                     cmd.Parameters.AddWithValue("modelo", obj.modelo);
+                    cmd.Parameters.AddWithValue("precio", obj.precio);
+                    cmd.Parameters.AddWithValue("stock", obj.stock);
                     cmd.Parameters.AddWithValue("baja", obj.baja);
                     cmd.Parameters.AddWithValue("id_categoria", obj.objCategoria.id_categoria);
                     cmd.Parameters.AddWithValue("id_subcategoria", obj.objSubCategoria.id_subcategoria);
