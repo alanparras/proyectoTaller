@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    public class Permiso_negocio
+    public class Categoria_negocio
     {
-        private Permiso_Datos objPermiso_datos = new Permiso_Datos();
+        private Categoria_Datos objCategoria_datos = new Categoria_Datos();
 
-        public List<Permiso> Listar(int idusuario)
+        public List<Categoria> Listar()
         {
-            return objPermiso_datos.Listar(idusuario);
+            return objCategoria_datos.Listar();
         }
     }
 }

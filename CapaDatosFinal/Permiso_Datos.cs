@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
-namespace CapaDatosFinal
+namespace CapaDatos
 {
     public class Permiso_Datos
     {

@@ -28,12 +28,66 @@ namespace ProyectoTallerG8
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet11.productos_pc' Puede moverla o quitarla según sea necesario.
-            this.productos_pcTableAdapter.Fill(this.dataSet11.productos_pc);
 
+            CBEstado.Items.Add(new OpcionSelectUsuario() { Valor = 0, Texto = "Dado de Alta" });
+            CBEstado.Items.Add(new OpcionSelectUsuario() { Valor = 1, Texto = "Dado de Baja" });
+            CBEstado.DisplayMember = "Texto";
+            CBEstado.ValueMember = "Valor";
+            CBEstado.SelectedIndex = 0;
 
-            
+            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = 0, Texto = "Dado de Alta" });
+            CBModificarEstado.Items.Add(new OpcionSelectUsuario() { Valor = 1, Texto = "Dado de Baja" });
+            CBModificarEstado.DisplayMember = "Texto";
+            CBModificarEstado.ValueMember = "Valor";
 
+            List<Categoria> listaCategoria = new Categoria_negocio().Listar();
+            foreach (Categoria item in listaCategoria)
+            {
+                CBCategoria.Items.Add(new OpcionSelectUsuario() { Valor = item.id_categoria, Texto = item.descripcion_categoria });
+                CBModificarCategoria.Items.Add(new OpcionSelectUsuario() { Valor = item.id_categoria, Texto = item.descripcion_categoria });
+            }
+            CBCategoria.DisplayMember = "Texto";
+            CBCategoria.ValueMember = "Valor";
+            CBCategoria.SelectedIndex = 0;
+
+            CBModificarCategoria.DisplayMember = "Texto";
+            CBModificarCategoria.ValueMember = "Valor";
+            CBModificarCategoria.SelectedIndex = 0;
+
+            //Muestra todos los usuarios
+            List<Producto> listaProducto = new Producto_negocio().Listar();
+            //Console.WriteLine($"Número de usuarios encontrados: {listaProducto.Count}");
+            foreach (Producto item in listaProducto)
+            {
+                //if (item.objSubCategoria == null)
+                //{
+                //    item.objSubCategoria.id_subcategoria = 0;
+                //    item.objSubCategoria.descripcion_subcategoria = "Sin subcategoria";
+                
+                //    if (item.objCategoria == null)
+                //    {
+                //        item.objCategoria.id_categoria = 0;
+                //        item.objCategoria.descripcion_categoria = "Sin categoria";
+                //    }
+                //}
+
+                productosDataGridView.Rows.Add(new object[] {
+                    "",
+                    item.id_producto,
+                    item.nombre,
+                    item.descripcion,
+                    item.marca,
+                    item.modelo,
+                    item.precio,
+                    item.stock,
+                    item.baja == true ? "Dado de Baja" : "Dado de Alta",
+                    item.visitas,
+                    item.objCategoria.id_categoria,
+                    item.objCategoria.descripcion_categoria,
+                    item.objSubCategoria.id_subcategoria,
+                    item.objSubCategoria.descripcion_subcategoria,
+                });
+            }
         }
 
         private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
@@ -58,30 +112,6 @@ namespace ProyectoTallerG8
         }
 
 
-        
-
-       
-
-        private void PanelModificarUser_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void CBModificarPerfil_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TID_user_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void BEliminar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(TModificarID_user.Text) != 0)
@@ -98,7 +128,7 @@ namespace ProyectoTallerG8
 
                     if (respuesta)
                     {
-                        usuariosDataGridView.Rows.RemoveAt(Convert.ToInt32(TBModificarIndice.Text));
+                        productosDataGridView.Rows.RemoveAt(Convert.ToInt32(TBModificarIndice.Text));
                     }
                     else
                     {
@@ -116,16 +146,6 @@ namespace ProyectoTallerG8
         }
 
         private void LApellido_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usuariosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void usuariosDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
 
         }
