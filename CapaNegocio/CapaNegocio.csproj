@@ -46,6 +46,7 @@
     <Compile Include="Permiso_negocio.cs" />
     <Compile Include="Producto_negocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubCategoria_negocio.cs" />
     <Compile Include="Usuario_negocio.cs" />
   </ItemGroup>
   <ItemGroup>

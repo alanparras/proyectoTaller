@@ -22,7 +22,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT p.id, p.nombre, p.descripcion, p.marca, p.modelo, p.precio, p.stock, p.baja, p.fecha_creacion, p.visitas, c.id_categoria, c.descripcion_categoria, s.id_subcategoria, s.descripcion_subcategoria FROM productos_pc p");
+                    query.AppendLine("SELECT p.id, p.nombre, p.descripcion, p.marca, p.modelo, p.precio, p.stock, p.baja, c.id_categoria, c.descripcion_categoria, s.id_subcategoria, s.descripcion_subcategoria FROM productos_pc p");
                     query.AppendLine("left join categorias_pc c on c.id_categoria = p.id_categoria");
                     query.AppendLine("left join subcategorias_pc s on s.id_categoria = c.id_categoria and s.id_subcategoria = p.id_subcategoria");
 
@@ -41,11 +41,10 @@ namespace CapaDatos
                                 nombre = dataReader["nombre"].ToString(),
                                 descripcion = dataReader["descripcion"].ToString(),
                                 marca = dataReader["marca"].ToString(),
+                                modelo = dataReader["modelo"].ToString(),
                                 precio = Convert.ToDecimal(dataReader["precio"]),
                                 stock = Convert.ToInt32(dataReader["stock"]),
                                 baja = Convert.ToBoolean(dataReader["baja"]),
-                                fecha_creacion = dataReader["fecha_creacion"].ToString(),
-                                visitas = Convert.ToInt32(dataReader["visitas"]),
                                 objCategoria = new Categoria()
                                 {
                                     id_categoria = dataReader["id_categoria"] != DBNull.Value ? Convert.ToInt32(dataReader["id_categoria"]) : 0,
@@ -165,7 +164,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("PROC_ELIMINAR_PRODUCTO", oconexion);
-                    cmd.Parameters.AddWithValue("id_producto", obj.id_producto);
+                    cmd.Parameters.AddWithValue("id_prod", obj.id_producto);
                     cmd.Parameters.Add("respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 

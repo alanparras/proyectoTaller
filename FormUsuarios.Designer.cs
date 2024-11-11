@@ -71,6 +71,10 @@
             this.LUser = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PanelModificarUser = new System.Windows.Forms.Panel();
+            this.TModificarConfirmPass = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TModificarPass = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.BEliminar = new System.Windows.Forms.Button();
             this.TBModificarIndice = new System.Windows.Forms.TextBox();
             this.TModificarID_user = new System.Windows.Forms.TextBox();
@@ -98,16 +102,13 @@
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
-            this.TModificarConfirmPass = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TModificarPass = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bajaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.baja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,6 +202,7 @@
             this.apellido,
             this.id_perfil,
             this.Perfil,
+            this.bajaValor,
             this.baja,
             this.user,
             this.pass,
@@ -371,6 +373,7 @@
             this.TID_user.Name = "TID_user";
             this.TID_user.Size = new System.Drawing.Size(36, 27);
             this.TID_user.TabIndex = 49;
+            this.TID_user.Text = "0";
             // 
             // CBEstado
             // 
@@ -655,6 +658,54 @@
             this.PanelModificarUser.TabIndex = 8;
             this.PanelModificarUser.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelModificarUser_Paint);
             // 
+            // TModificarConfirmPass
+            // 
+            this.TModificarConfirmPass.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TModificarConfirmPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TModificarConfirmPass.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TModificarConfirmPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TModificarConfirmPass.Location = new System.Drawing.Point(37, 271);
+            this.TModificarConfirmPass.Name = "TModificarConfirmPass";
+            this.TModificarConfirmPass.PasswordChar = '*';
+            this.TModificarConfirmPass.Size = new System.Drawing.Size(232, 27);
+            this.TModificarConfirmPass.TabIndex = 53;
+            this.TModificarConfirmPass.UseSystemPasswordChar = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(33, 246);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 23);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Confirmar Contraseña";
+            // 
+            // TModificarPass
+            // 
+            this.TModificarPass.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TModificarPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TModificarPass.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TModificarPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TModificarPass.Location = new System.Drawing.Point(37, 216);
+            this.TModificarPass.Name = "TModificarPass";
+            this.TModificarPass.PasswordChar = '*';
+            this.TModificarPass.Size = new System.Drawing.Size(232, 27);
+            this.TModificarPass.TabIndex = 51;
+            this.TModificarPass.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(33, 190);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 23);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Contraseña";
+            // 
             // BEliminar
             // 
             this.BEliminar.BackColor = System.Drawing.Color.Firebrick;
@@ -929,54 +980,6 @@
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
-            // TModificarConfirmPass
-            // 
-            this.TModificarConfirmPass.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarConfirmPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarConfirmPass.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarConfirmPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarConfirmPass.Location = new System.Drawing.Point(37, 271);
-            this.TModificarConfirmPass.Name = "TModificarConfirmPass";
-            this.TModificarConfirmPass.PasswordChar = '*';
-            this.TModificarConfirmPass.Size = new System.Drawing.Size(232, 27);
-            this.TModificarConfirmPass.TabIndex = 53;
-            this.TModificarConfirmPass.UseSystemPasswordChar = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(33, 246);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 23);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "Confirmar Contraseña";
-            // 
-            // TModificarPass
-            // 
-            this.TModificarPass.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TModificarPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TModificarPass.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TModificarPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TModificarPass.Location = new System.Drawing.Point(37, 216);
-            this.TModificarPass.Name = "TModificarPass";
-            this.TModificarPass.PasswordChar = '*';
-            this.TModificarPass.Size = new System.Drawing.Size(232, 27);
-            this.TModificarPass.TabIndex = 51;
-            this.TModificarPass.UseSystemPasswordChar = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(33, 190);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 23);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Contraseña";
-            // 
             // btnSeleccionar
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -1023,10 +1026,17 @@
             this.Perfil.Name = "Perfil";
             this.Perfil.ReadOnly = true;
             // 
+            // bajaValor
+            // 
+            this.bajaValor.HeaderText = "BajaValor";
+            this.bajaValor.Name = "bajaValor";
+            this.bajaValor.ReadOnly = true;
+            this.bajaValor.Visible = false;
+            // 
             // baja
             // 
             this.baja.DataPropertyName = "baja";
-            this.baja.HeaderText = "Dado de baja";
+            this.baja.HeaderText = "Baja";
             this.baja.Name = "baja";
             this.baja.ReadOnly = true;
             // 
@@ -1176,6 +1186,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_perfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bajaValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn baja;
         private System.Windows.Forms.DataGridViewTextBoxColumn user;
         private System.Windows.Forms.DataGridViewTextBoxColumn pass;

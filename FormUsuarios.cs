@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.PropertyGridInternal;
@@ -76,6 +77,7 @@ namespace ProyectoTallerG8
                     item.apellido,
                     item.objPerfil.id_perfil, 
                     item.objPerfil.descripcion, 
+                    item.baja == true ? 1 : 0,
                     item.baja == true ? "Dado de Baja" : "Dado de Alta",
                     item.user, 
                     item.pass,
@@ -89,7 +91,7 @@ namespace ProyectoTallerG8
 
         private void VaciarCampos()
         {
-            TID_user.Text = "-1";
+            TID_user.Text = "0";
             TNombre.Text = "";
             TApellido.Text = "";
             TEmail.Text = "";
@@ -101,7 +103,7 @@ namespace ProyectoTallerG8
             TDomicilio.Text = "";
             TCP.Text = "";
 
-            TModificarID_user.Text = "-1";
+            TModificarID_user.Text = "0";
             TModificarNombre.Text = "";
             TModificarAp.Text = "";
             TModificarEmail.Text = "";
@@ -140,10 +142,59 @@ namespace ProyectoTallerG8
         {
             string mensaje = string.Empty;
 
-            MessageBox.Show("TID_user.Text: " + TID_user.Text);
-            MessageBox.Show("TCP.Text: " + TCP.Text);
-            MessageBox.Show("CBperfiles.SelectedItem: " + Convert.ToInt32(((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor));
-            MessageBox.Show("CBEstado.SelectedItem: " + ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString());
+            if (string.IsNullOrWhiteSpace(TNombre.Text))
+            {
+                MessageBox.Show("El campo Nombre es obligatorio.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TApellido.Text))
+            {
+                MessageBox.Show("El campo Apellido es obligatorio.");
+                return;
+            }
+
+            if (CBperfiles.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un perfil.");
+                return;
+            }
+
+            if (CBEstado.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un estado.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TUser.Text))
+            {
+                MessageBox.Show("El campo Usuario es obligatorio.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TPass.Text) || TPass.Text.Length < 6)
+            {
+                MessageBox.Show("La contraseña debe tener al menos 6 caracteres.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TEmail.Text) || !TEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Debe ingresar un correo electrónico válido.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TDomicilio.Text))
+            {
+                MessageBox.Show("El campo Domicilio es obligatorio.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TCP.Text) || !int.TryParse(TCP.Text, out int codigoPostal) || codigoPostal < 1000 || codigoPostal > 9999)
+            {
+                MessageBox.Show("El Código Postal debe ser un número de 4 dígitos entre 1000 y 9999 (Argentina).");
+                return;
+            }
 
             Usuario objUser = new Usuario()
             {
@@ -159,11 +210,10 @@ namespace ProyectoTallerG8
                 CP = Convert.ToInt32(TCP.Text),
             };
 
-            int idusuarioregistrado = new Usuario_negocio().Registrar(objUser, out mensaje);
-
-            
             if (objUser.id_usuario == 0)
             {
+                int idusuarioregistrado = new Usuario_negocio().Registrar(objUser, out mensaje);
+                
                 if(idusuarioregistrado != 0)
                 {
                     usuariosDataGridView.Rows.Add(new object[] {
@@ -174,6 +224,7 @@ namespace ProyectoTallerG8
                         ((OpcionSelectUsuario)CBperfiles.SelectedItem).Valor.ToString(),
                         ((OpcionSelectUsuario)CBperfiles.SelectedItem).Texto.ToString(),
                         ((OpcionSelectUsuario)CBEstado.SelectedItem).Valor.ToString(),
+                        ((OpcionSelectUsuario)CBEstado.SelectedItem).Texto.ToString(),
                         TUser.Text,
                         TPass.Text,
                         TEmail.Text,
@@ -201,7 +252,8 @@ namespace ProyectoTallerG8
                     row.Cells["apellido"].Value = TModificarAp.Text;
                     row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Valor.ToString();
                     row.Cells["perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Texto.ToString();
-                    row.Cells["baja"].Value = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor.ToString();
+                    row.Cells["bajaValor"].Value = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor.ToString();
+                    row.Cells["baja"].Value = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Texto.ToString();
                     row.Cells["email"].Value = TModificarEmail.Text;
                     row.Cells["user"].Value = TModificarUser.Text;
 
@@ -301,15 +353,13 @@ namespace ProyectoTallerG8
 
                     foreach (OpcionSelectUsuario opcionSelect in CBModificarEstado.Items)
                     {
-                        if (opcionSelect.Valor.ToString() == usuariosDataGridView.Rows[indice].Cells["baja"].Value.ToString())
+                        if (opcionSelect.Valor.ToString() == usuariosDataGridView.Rows[indice].Cells["bajaValor"].Value.ToString())
                         {
                             int indice_select = CBModificarEstado.Items.IndexOf(opcionSelect);
                             CBModificarEstado.SelectedIndex = indice_select;
                             break;
                         }
                     }
-
-
                 }
             }
         }
@@ -351,6 +401,7 @@ namespace ProyectoTallerG8
                     if (respuesta)
                     {
                         usuariosDataGridView.Rows.RemoveAt(Convert.ToInt32(TBModificarIndice.Text));
+                        VaciarCampos();
                     }
                     else
                     {
@@ -358,13 +409,74 @@ namespace ProyectoTallerG8
                     }
                 }
             }
-            
-
         }
 
         private void BModificar_click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
+
+            // Validación para nombre (no debe estar vacío)
+            if (string.IsNullOrEmpty(TModificarNombre.Text))
+            {
+                MessageBox.Show("El nombre no puede estar vacío.");
+                return;
+            }
+
+            // Validación para apellido (no debe estar vacío)
+            if (string.IsNullOrEmpty(TModificarAp.Text))
+            {
+                MessageBox.Show("El apellido no puede estar vacío.");
+                return;
+            }
+
+            // Validación para perfil (debe haber un perfil seleccionado)
+            if (CBModificarPerfil.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un perfil.");
+                return;
+            }
+
+            // Validación para estado (debe estar seleccionado un valor)
+            if (CBModificarEstado.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar el estado.");
+                return;
+            }
+
+            // Validación para usuario (no debe estar vacío)
+            if (string.IsNullOrEmpty(TModificarUser.Text))
+            {
+                MessageBox.Show("El nombre de usuario no puede estar vacío.");
+                return;
+            }
+
+            // Validación para contraseña (no debe estar vacía)
+            if (string.IsNullOrEmpty(TModificarPass.Text))
+            {
+                MessageBox.Show("La contraseña no puede estar vacía.");
+                return;
+            }
+
+            // Validación para email (debe tener formato de correo electrónico)
+            if (string.IsNullOrEmpty(TModificarEmail.Text) || !Regex.IsMatch(TModificarEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            {
+                MessageBox.Show("El email no tiene un formato válido.");
+                return;
+            }
+
+            // Validación para domicilio (no debe estar vacío)
+            if (string.IsNullOrEmpty(TModificarDomicilio.Text))
+            {
+                MessageBox.Show("El domicilio no puede estar vacío.");
+                return;
+            }
+
+            // Validación para código postal (debe ser un número de 4 dígitos entre 1000 y 9999)
+            if (string.IsNullOrEmpty(TModificarCP.Text) || !int.TryParse(TModificarCP.Text, out int codigoPostal) || codigoPostal < 1000 || codigoPostal > 9999)
+            {
+                MessageBox.Show("El código postal debe ser un número de 4 dígitos entre 1000 y 9999.");
+                return;
+            }
 
             Usuario objUser = new Usuario()
             {
@@ -375,7 +487,6 @@ namespace ProyectoTallerG8
                 baja = Convert.ToInt32(((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor) == 1 ? true : false,
                 user = TModificarUser.Text,
                 pass = TModificarPass.Text,
-                
                 email = TModificarEmail.Text,
                 domicilio = TModificarDomicilio.Text,
                 CP = Convert.ToInt32(TModificarCP.Text),
@@ -392,6 +503,7 @@ namespace ProyectoTallerG8
                 row.Cells["apellido"].Value = TModificarAp.Text;
                 row.Cells["id_perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Valor.ToString();
                 row.Cells["perfil"].Value = ((OpcionSelectUsuario)CBModificarPerfil.SelectedItem).Texto.ToString();
+                row.Cells["bajaValor"].Value = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Valor.ToString();
                 row.Cells["baja"].Value = ((OpcionSelectUsuario)CBModificarEstado.SelectedItem).Texto.ToString();
                 row.Cells["email"].Value = TModificarEmail.Text;
                 row.Cells["user"].Value = TModificarUser.Text;

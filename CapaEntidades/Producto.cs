@@ -16,8 +16,6 @@ namespace CapaEntidades
         public decimal precio { get; set; }
         public int stock { get; set; }
         public bool baja { get; set; }
-        public string fecha_creacion { get; set; }
-        public int visitas { get; set; }
         public Categoria objCategoria { get; set; }
         public SubCategoria objSubCategoria { get; set; }
     }
