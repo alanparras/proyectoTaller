@@ -117,6 +117,7 @@
             this.BackupButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BackupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BackupButton.UseVisualStyleBackColor = false;
+            this.BackupButton.Click += new System.EventHandler(this.BackupButton_Click);
             // 
             // LogOutButton
             // 
@@ -141,6 +142,7 @@
             this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.LogOutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.LogOutButton.UseVisualStyleBackColor = false;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // ReceiptsButton
             // 
@@ -155,6 +157,7 @@
             this.ReceiptsButton.IconChar = FontAwesome.Sharp.IconChar.Receipt;
             this.ReceiptsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ReceiptsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ReceiptsButton.IconSize = 40;
             this.ReceiptsButton.Location = new System.Drawing.Point(3, 348);
             this.ReceiptsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.ReceiptsButton.Name = "ReceiptsButton";
@@ -179,6 +182,7 @@
             this.StatsButton.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.StatsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.StatsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.StatsButton.IconSize = 40;
             this.StatsButton.Location = new System.Drawing.Point(3, 279);
             this.StatsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.StatsButton.Name = "StatsButton";
@@ -203,6 +207,7 @@
             this.ProductsButton.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
             this.ProductsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ProductsButton.IconSize = 40;
             this.ProductsButton.Location = new System.Drawing.Point(3, 210);
             this.ProductsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.ProductsButton.Name = "ProductsButton";
@@ -227,6 +232,7 @@
             this.MsgButton.IconChar = FontAwesome.Sharp.IconChar.Envelope;
             this.MsgButton.IconColor = System.Drawing.Color.AliceBlue;
             this.MsgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.MsgButton.IconSize = 40;
             this.MsgButton.Location = new System.Drawing.Point(3, 141);
             this.MsgButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.MsgButton.Name = "MsgButton";
@@ -251,6 +257,7 @@
             this.ConsultasButton.IconChar = FontAwesome.Sharp.IconChar.FileText;
             this.ConsultasButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ConsultasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ConsultasButton.IconSize = 40;
             this.ConsultasButton.Location = new System.Drawing.Point(3, 72);
             this.ConsultasButton.MinimumSize = new System.Drawing.Size(90, 57);
             this.ConsultasButton.Name = "ConsultasButton";
@@ -260,6 +267,7 @@
             this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ConsultasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ConsultasButton.UseVisualStyleBackColor = false;
+            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click);
             // 
             // UserButton
             // 
@@ -274,6 +282,7 @@
             this.UserButton.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             this.UserButton.IconColor = System.Drawing.Color.AliceBlue;
             this.UserButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.UserButton.IconSize = 40;
             this.UserButton.Location = new System.Drawing.Point(3, 3);
             this.UserButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.UserButton.Name = "UserButton";

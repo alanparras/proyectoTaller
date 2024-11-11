@@ -76,10 +76,6 @@ namespace pruebaLogin
 
         }
 
-        private void iconPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void AbrirFormulario(IconButton boton, Form formulario)
         {
@@ -120,7 +116,6 @@ namespace pruebaLogin
             AbrirFormulario((IconButton)sender, new FormStats());
         }
 
-
         private void ReceiptsButton_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconButton)sender, new FormRecibos());
@@ -131,5 +126,19 @@ namespace pruebaLogin
             AbrirFormulario((IconButton)sender, new FormProductos());
         }
 
+        private void BackupButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconButton)sender, new FormBackup());
+        }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
+
+        private void ConsultasButton_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconButton)sender, new FormConsultas());
+        }
     }
 }
