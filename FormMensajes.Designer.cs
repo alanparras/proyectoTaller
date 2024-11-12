@@ -30,38 +30,48 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.usuariosDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mensajesDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.TFechaRespuesta = new System.Windows.Forms.TextBox();
+            this.TFechaCreado = new System.Windows.Forms.TextBox();
+            this.TEmail = new System.Windows.Forms.TextBox();
+            this.TNombre = new System.Windows.Forms.TextBox();
+            this.TID_mensaje = new System.Windows.Forms.TextBox();
+            this.TMensaje = new System.Windows.Forms.TextBox();
+            this.BEnviarRespuesta = new System.Windows.Forms.Button();
+            this.TRespuesta = new System.Windows.Forms.TextBox();
+            this.LRespuesta = new System.Windows.Forms.Label();
             this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new pruebaLogin.DataSet1();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.BModificar = new System.Windows.Forms.Button();
-            this.TUserA = new System.Windows.Forms.TextBox();
-            this.LUser = new System.Windows.Forms.Label();
             this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
+            this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
+            this.TBIndice = new System.Windows.Forms.TextBox();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
-            this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensajesDataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -90,30 +100,26 @@
             this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.usuariosDataGridView, 0, 1);
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.mensajesDataGridView, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.63584F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.58382F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.63063F));
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.15221F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.84779F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1058, 519);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // usuariosDataGridView
+            // mensajesDataGridView
             // 
-            this.usuariosDataGridView.AllowUserToAddRows = false;
-            this.usuariosDataGridView.AllowUserToDeleteRows = false;
-            this.usuariosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.usuariosDataGridView.AutoGenerateColumns = false;
-            this.usuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.usuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.usuariosDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.usuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.mensajesDataGridView.AllowUserToAddRows = false;
+            this.mensajesDataGridView.AllowUserToDeleteRows = false;
+            this.mensajesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.mensajesDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mensajesDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.mensajesDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,97 +127,207 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.usuariosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.usuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.usuariosDataGridView.DataSource = this.mensajesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.usuariosDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.usuariosDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.usuariosDataGridView.Location = new System.Drawing.Point(3, 162);
-            this.usuariosDataGridView.Name = "usuariosDataGridView";
-            this.usuariosDataGridView.ReadOnly = true;
-            this.usuariosDataGridView.Size = new System.Drawing.Size(1052, 324);
-            this.usuariosDataGridView.TabIndex = 7;
+            this.mensajesDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.mensajesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mensajesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnSeleccionar,
+            this.id_mensaje,
+            this.nombre,
+            this.correo,
+            this.mensaje,
+            this.fecha_mensaje,
+            this.fecha_respuesta,
+            this.respuesta});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mensajesDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.mensajesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mensajesDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.mensajesDataGridView.Location = new System.Drawing.Point(3, 309);
+            this.mensajesDataGridView.MultiSelect = false;
+            this.mensajesDataGridView.Name = "mensajesDataGridView";
+            this.mensajesDataGridView.ReadOnly = true;
+            this.mensajesDataGridView.Size = new System.Drawing.Size(1052, 207);
+            this.mensajesDataGridView.TabIndex = 9;
+            this.mensajesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mensajesDataGridView_CellContentClick);
+            this.mensajesDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.mensajesDataGridView_CellPainting);
             // 
-            // dataGridViewTextBoxColumn3
+            // btnSeleccionar
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn3.Frozen = true;
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID del Mensaje";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 147;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.HeaderText = "Seleccionar";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnSeleccionar.Text = "";
             // 
-            // dataGridViewTextBoxColumn4
+            // id_mensaje
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.id_mensaje.HeaderText = "ID";
+            this.id_mensaje.Name = "id_mensaje";
+            this.id_mensaje.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // nombre
             // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "correo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "E-mail";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 147;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // correo
             // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "mensaje";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Mensaje";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 147;
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
             // 
-            // dataGridViewCheckBoxColumn1
+            // mensaje
             // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "leido";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Leido";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 147;
+            this.mensaje.HeaderText = "Mensaje";
+            this.mensaje.Name = "mensaje";
+            this.mensaje.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn7
+            // fecha_mensaje
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "respuesta";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Respuesta";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.fecha_mensaje.HeaderText = "Fecha del mensaje";
+            this.fecha_mensaje.Name = "fecha_mensaje";
+            this.fecha_mensaje.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn8
+            // fecha_respuesta
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "created_at";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Creado";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.fecha_respuesta.HeaderText = "Fecha de respuesta";
+            this.fecha_respuesta.Name = "fecha_respuesta";
+            this.fecha_respuesta.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn9
+            // respuesta
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "updated_at";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Modificado";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.respuesta.HeaderText = "Respuesta";
+            this.respuesta.Name = "respuesta";
+            this.respuesta.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1052, 300);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel2.Controls.Add(this.TBIndice);
+            this.panel2.Controls.Add(this.TFechaRespuesta);
+            this.panel2.Controls.Add(this.TFechaCreado);
+            this.panel2.Controls.Add(this.TEmail);
+            this.panel2.Controls.Add(this.TNombre);
+            this.panel2.Controls.Add(this.TID_mensaje);
+            this.panel2.Controls.Add(this.TMensaje);
+            this.panel2.Controls.Add(this.BEnviarRespuesta);
+            this.panel2.Controls.Add(this.TRespuesta);
+            this.panel2.Controls.Add(this.LRespuesta);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1052, 300);
+            this.panel2.TabIndex = 6;
+            // 
+            // TFechaRespuesta
+            // 
+            this.TFechaRespuesta.Location = new System.Drawing.Point(555, 258);
+            this.TFechaRespuesta.Name = "TFechaRespuesta";
+            this.TFechaRespuesta.Size = new System.Drawing.Size(100, 20);
+            this.TFechaRespuesta.TabIndex = 29;
+            this.TFechaRespuesta.Visible = false;
+            // 
+            // TFechaCreado
+            // 
+            this.TFechaCreado.Location = new System.Drawing.Point(449, 258);
+            this.TFechaCreado.Name = "TFechaCreado";
+            this.TFechaCreado.Size = new System.Drawing.Size(100, 20);
+            this.TFechaCreado.TabIndex = 27;
+            this.TFechaCreado.Visible = false;
+            // 
+            // TEmail
+            // 
+            this.TEmail.Location = new System.Drawing.Point(343, 258);
+            this.TEmail.Name = "TEmail";
+            this.TEmail.Size = new System.Drawing.Size(100, 20);
+            this.TEmail.TabIndex = 25;
+            this.TEmail.Visible = false;
+            // 
+            // TNombre
+            // 
+            this.TNombre.Location = new System.Drawing.Point(237, 258);
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Size = new System.Drawing.Size(100, 20);
+            this.TNombre.TabIndex = 24;
+            this.TNombre.Visible = false;
+            // 
+            // TID_mensaje
+            // 
+            this.TID_mensaje.Location = new System.Drawing.Point(131, 258);
+            this.TID_mensaje.Name = "TID_mensaje";
+            this.TID_mensaje.Size = new System.Drawing.Size(100, 20);
+            this.TID_mensaje.TabIndex = 23;
+            this.TID_mensaje.Visible = false;
+            // 
+            // TMensaje
+            // 
+            this.TMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TMensaje.Location = new System.Drawing.Point(25, 25);
+            this.TMensaje.Multiline = true;
+            this.TMensaje.Name = "TMensaje";
+            this.TMensaje.ReadOnly = true;
+            this.TMensaje.Size = new System.Drawing.Size(453, 227);
+            this.TMensaje.TabIndex = 7;
+            // 
+            // BEnviarRespuesta
+            // 
+            this.BEnviarRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.BEnviarRespuesta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BEnviarRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEnviarRespuesta.ForeColor = System.Drawing.Color.White;
+            this.BEnviarRespuesta.Location = new System.Drawing.Point(546, 194);
+            this.BEnviarRespuesta.Name = "BEnviarRespuesta";
+            this.BEnviarRespuesta.Size = new System.Drawing.Size(143, 32);
+            this.BEnviarRespuesta.TabIndex = 22;
+            this.BEnviarRespuesta.Text = "Enviar Respuesta";
+            this.BEnviarRespuesta.UseVisualStyleBackColor = false;
+            this.BEnviarRespuesta.Click += new System.EventHandler(this.BEnviarRespuesta_Click);
+            // 
+            // TRespuesta
+            // 
+            this.TRespuesta.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TRespuesta.Location = new System.Drawing.Point(546, 81);
+            this.TRespuesta.Multiline = true;
+            this.TRespuesta.Name = "TRespuesta";
+            this.TRespuesta.Size = new System.Drawing.Size(443, 107);
+            this.TRespuesta.TabIndex = 5;
+            // 
+            // LRespuesta
+            // 
+            this.LRespuesta.AutoSize = true;
+            this.LRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.LRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LRespuesta.Location = new System.Drawing.Point(542, 55);
+            this.LRespuesta.Name = "LRespuesta";
+            this.LRespuesta.Size = new System.Drawing.Size(79, 23);
+            this.LRespuesta.TabIndex = 4;
+            this.LRespuesta.Text = "Respuesta:";
             // 
             // mensajesBindingSource
             // 
@@ -223,67 +339,10 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel1.Controls.Add(this.BModificar);
-            this.panel1.Controls.Add(this.TUserA);
-            this.panel1.Controls.Add(this.LUser);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1052, 153);
-            this.panel1.TabIndex = 5;
-            // 
-            // BModificar
-            // 
-            this.BModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificar.ForeColor = System.Drawing.Color.White;
-            this.BModificar.Location = new System.Drawing.Point(14, 62);
-            this.BModificar.Name = "BModificar";
-            this.BModificar.Size = new System.Drawing.Size(143, 32);
-            this.BModificar.TabIndex = 22;
-            this.BModificar.Text = "Enviar Respuesta";
-            this.BModificar.UseVisualStyleBackColor = false;
-            // 
-            // TUserA
-            // 
-            this.TUserA.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TUserA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TUserA.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TUserA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TUserA.Location = new System.Drawing.Point(14, 29);
-            this.TUserA.Name = "TUserA";
-            this.TUserA.Size = new System.Drawing.Size(443, 27);
-            this.TUserA.TabIndex = 5;
-            // 
-            // LUser
-            // 
-            this.LUser.AutoSize = true;
-            this.LUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LUser.Location = new System.Drawing.Point(10, 3);
-            this.LUser.Name = "LUser";
-            this.LUser.Size = new System.Drawing.Size(76, 23);
-            this.LUser.TabIndex = 4;
-            this.LUser.Text = "Respuesta";
-            // 
             // usuariosBindingSource1
             // 
             this.usuariosBindingSource1.DataMember = "usuarios";
             this.usuariosBindingSource1.DataSource = this.dataSet11;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuariosTableAdapter1
             // 
@@ -301,6 +360,28 @@
             this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
             this.tableAdapterManager1.ventas_detalleTableAdapter = null;
             // 
+            // mensajesTableAdapter
+            // 
+            this.mensajesTableAdapter.ClearBeforeFill = true;
+            // 
+            // TBIndice
+            // 
+            this.TBIndice.Location = new System.Drawing.Point(25, 258);
+            this.TBIndice.Name = "TBIndice";
+            this.TBIndice.Size = new System.Drawing.Size(100, 20);
+            this.TBIndice.TabIndex = 30;
+            this.TBIndice.Visible = false;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
@@ -312,10 +393,6 @@
             this.tableAdapterManager.mensajesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
-            // 
-            // mensajesTableAdapter
-            // 
-            this.mensajesTableAdapter.ClearBeforeFill = true;
             // 
             // FormMensajes
             // 
@@ -332,11 +409,12 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mensajesDataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -359,18 +437,26 @@
         private System.Windows.Forms.BindingSource mensajesBindingSource;
         private pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter mensajesTableAdapter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView usuariosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox TUserA;
-        private System.Windows.Forms.Label LUser;
-        private System.Windows.Forms.Button BModificar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox TMensaje;
+        private System.Windows.Forms.Button BEnviarRespuesta;
+        private System.Windows.Forms.TextBox TRespuesta;
+        private System.Windows.Forms.Label LRespuesta;
+        private System.Windows.Forms.DataGridView mensajesDataGridView;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_mensaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn correo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mensaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_mensaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_respuesta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn respuesta;
+        private System.Windows.Forms.TextBox TNombre;
+        private System.Windows.Forms.TextBox TID_mensaje;
+        private System.Windows.Forms.TextBox TFechaRespuesta;
+        private System.Windows.Forms.TextBox TFechaCreado;
+        private System.Windows.Forms.TextBox TEmail;
+        private System.Windows.Forms.TextBox TBIndice;
     }
 }
