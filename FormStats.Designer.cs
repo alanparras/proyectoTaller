@@ -67,6 +67,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.labelWarning = new System.Windows.Forms.Label();
             this.btnSearchProductChart = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.TSearchProduct = new System.Windows.Forms.TextBox();
@@ -86,7 +87,6 @@
             this.perfilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.perfilesTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.perfilesTableAdapter();
             this.ventas_cabeceraTableAdapter = new pruebaLogin.DataSet1TableAdapters.ventas_cabeceraTableAdapter();
-            this.labelWarning = new System.Windows.Forms.Label();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
@@ -160,8 +160,8 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.65348F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.34652F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.50674F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.49326F));
             this.tableLayoutPanel3.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.chartVentas, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -182,9 +182,9 @@
             this.panel2.Controls.Add(this.dtpStartDate);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(663, 3);
+            this.panel2.Location = new System.Drawing.Point(766, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(372, 506);
+            this.panel2.Size = new System.Drawing.Size(269, 506);
             this.panel2.TabIndex = 8;
             // 
             // labelMetric
@@ -265,7 +265,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartVentas.Series.Add(series1);
-            this.chartVentas.Size = new System.Drawing.Size(654, 506);
+            this.chartVentas.Size = new System.Drawing.Size(757, 506);
             this.chartVentas.TabIndex = 0;
             this.chartVentas.Text = "chart1";
             // 
@@ -293,8 +293,8 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.65348F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.34652F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.79576F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.20424F));
             this.tableLayoutPanel4.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.chartVentasEmpleados, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -317,9 +317,9 @@
             this.panel1.Controls.Add(this.dtpStartDateE);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(663, 3);
+            this.panel1.Location = new System.Drawing.Point(769, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(372, 506);
+            this.panel1.Size = new System.Drawing.Size(266, 506);
             this.panel1.TabIndex = 8;
             // 
             // label1
@@ -416,7 +416,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartVentasEmpleados.Series.Add(series2);
-            this.chartVentasEmpleados.Size = new System.Drawing.Size(654, 506);
+            this.chartVentasEmpleados.Size = new System.Drawing.Size(760, 506);
             this.chartVentasEmpleados.TabIndex = 9;
             this.chartVentasEmpleados.Text = "chart1";
             // 
@@ -466,6 +466,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(265, 506);
             this.panel3.TabIndex = 8;
+            // 
+            // labelWarning
+            // 
+            this.labelWarning.AutoSize = true;
+            this.labelWarning.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.labelWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.labelWarning.Location = new System.Drawing.Point(3, 392);
+            this.labelWarning.Name = "labelWarning";
+            this.labelWarning.Size = new System.Drawing.Size(0, 23);
+            this.labelWarning.TabIndex = 30;
             // 
             // btnSearchProductChart
             // 
@@ -651,16 +661,6 @@
             // ventas_cabeceraTableAdapter
             // 
             this.ventas_cabeceraTableAdapter.ClearBeforeFill = true;
-            // 
-            // labelWarning
-            // 
-            this.labelWarning.AutoSize = true;
-            this.labelWarning.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.labelWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelWarning.Location = new System.Drawing.Point(3, 392);
-            this.labelWarning.Name = "labelWarning";
-            this.labelWarning.Size = new System.Drawing.Size(0, 23);
-            this.labelWarning.TabIndex = 30;
             // 
             // usuariosBindingSource
             // 

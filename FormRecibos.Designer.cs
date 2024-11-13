@@ -35,14 +35,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.BModificar = new System.Windows.Forms.Button();
+            this.BVerPDF = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.LUser = new System.Windows.Forms.Label();
-            this.usuariosDataGridView = new System.Windows.Forms.DataGridView();
+            this.vcDataGridView = new System.Windows.Forms.DataGridView();
             this.cabecerasindividualesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new pruebaLogin.DataSet1();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vdDataGridView = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,12 +51,8 @@
             this.recibosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
-            this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
-            this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
             this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
             this.recibosTableAdapter = new pruebaLogin.DataSet1TableAdapters.recibosTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,27 +78,31 @@
             this.detalles_individualesTableAdapter = new pruebaLogin.DataSet1TableAdapters.detalles_individualesTableAdapter();
             this.cabeceras_individualesTableAdapter = new pruebaLogin.DataSet1TableAdapters.cabeceras_individualesTableAdapter();
             this.detallesindividualesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Select = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.select_1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zipcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ProyectoTallerG8.DataSet1();
+            this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
+            this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vcDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cabecerasindividualesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vdDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesindividualesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recibosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detallesindividualesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detallesindividualesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -128,7 +128,7 @@
             this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.BModificar, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.BVerPDF, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
@@ -140,18 +140,19 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1058, 519);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // BModificar
+            // BVerPDF
             // 
-            this.BModificar.BackColor = System.Drawing.Color.Firebrick;
-            this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificar.ForeColor = System.Drawing.Color.White;
-            this.BModificar.Location = new System.Drawing.Point(3, 402);
-            this.BModificar.Name = "BModificar";
-            this.BModificar.Size = new System.Drawing.Size(107, 32);
-            this.BModificar.TabIndex = 23;
-            this.BModificar.Text = "Ver en PDF";
-            this.BModificar.UseVisualStyleBackColor = false;
+            this.BVerPDF.BackColor = System.Drawing.Color.Firebrick;
+            this.BVerPDF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BVerPDF.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BVerPDF.ForeColor = System.Drawing.Color.White;
+            this.BVerPDF.Location = new System.Drawing.Point(3, 402);
+            this.BVerPDF.Name = "BVerPDF";
+            this.BVerPDF.Size = new System.Drawing.Size(107, 32);
+            this.BVerPDF.TabIndex = 23;
+            this.BVerPDF.Text = "Ver en PDF";
+            this.BVerPDF.UseVisualStyleBackColor = false;
+            this.BVerPDF.Click += new System.EventHandler(this.BVerPDF_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -160,52 +161,51 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.LUser, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.usuariosDataGridView, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.vcDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.vdDataGridView, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 361F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1052, 393);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Location = new System.Drawing.Point(529, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 23);
+            this.label1.Size = new System.Drawing.Size(166, 29);
             this.label1.TabIndex = 10;
             this.label1.Text = "Detalles del Recibo";
             // 
             // LUser
             // 
             this.LUser.AutoSize = true;
-            this.LUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.LUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.LUser.Location = new System.Drawing.Point(3, 0);
             this.LUser.Name = "LUser";
-            this.LUser.Size = new System.Drawing.Size(52, 23);
+            this.LUser.Size = new System.Drawing.Size(66, 29);
             this.LUser.TabIndex = 9;
             this.LUser.Text = "Recibo";
             // 
-            // usuariosDataGridView
+            // vcDataGridView
             // 
-            this.usuariosDataGridView.AllowUserToAddRows = false;
-            this.usuariosDataGridView.AllowUserToDeleteRows = false;
-            this.usuariosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.vcDataGridView.AllowUserToAddRows = false;
+            this.vcDataGridView.AllowUserToDeleteRows = false;
+            this.vcDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.usuariosDataGridView.AutoGenerateColumns = false;
-            this.usuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.usuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.usuariosDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.usuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.vcDataGridView.AutoGenerateColumns = false;
+            this.vcDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vcDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vcDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.vcDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,17 +213,17 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.usuariosDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.usuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Select,
+            this.vcDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.vcDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vcDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.select_1,
             this.idDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn1,
             this.apellidoDataGridViewTextBoxColumn,
             this.zipcodeDataGridViewTextBoxColumn,
             this.totalventaDataGridViewTextBoxColumn});
-            this.usuariosDataGridView.DataSource = this.cabecerasindividualesBindingSource;
+            this.vcDataGridView.DataSource = this.cabecerasindividualesBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,14 +231,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.usuariosDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.usuariosDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.usuariosDataGridView.Location = new System.Drawing.Point(3, 35);
-            this.usuariosDataGridView.Name = "usuariosDataGridView";
-            this.usuariosDataGridView.ReadOnly = true;
-            this.usuariosDataGridView.Size = new System.Drawing.Size(520, 355);
-            this.usuariosDataGridView.TabIndex = 7;
-            this.usuariosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuariosDataGridView_CellContentClick);
+            this.vcDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.vcDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.vcDataGridView.Location = new System.Drawing.Point(3, 33);
+            this.vcDataGridView.Name = "vcDataGridView";
+            this.vcDataGridView.ReadOnly = true;
+            this.vcDataGridView.Size = new System.Drawing.Size(520, 357);
+            this.vcDataGridView.TabIndex = 7;
+            this.vcDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vcDataGridView_CellContentClick);
             // 
             // cabecerasindividualesBindingSource
             // 
@@ -250,18 +250,18 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridView1
+            // vdDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.vdDataGridView.AllowUserToAddRows = false;
+            this.vdDataGridView.AllowUserToDeleteRows = false;
+            this.vdDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.vdDataGridView.AutoGenerateColumns = false;
+            this.vdDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vdDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vdDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.vdDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -269,14 +269,14 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.vdDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.vdDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vdDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
             this.precioUDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.detallesindividualesBindingSource;
+            this.vdDataGridView.DataSource = this.detallesindividualesBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,39 +284,39 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.Location = new System.Drawing.Point(529, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 355);
-            this.dataGridView1.TabIndex = 8;
+            this.vdDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.vdDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.vdDataGridView.Location = new System.Drawing.Point(529, 33);
+            this.vdDataGridView.Name = "vdDataGridView";
+            this.vdDataGridView.ReadOnly = true;
+            this.vdDataGridView.Size = new System.Drawing.Size(520, 357);
+            this.vdDataGridView.TabIndex = 8;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cantidadDataGridViewTextBoxColumn
             // 
             this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
             this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
             this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // precioUDataGridViewTextBoxColumn
             // 
             this.precioUDataGridViewTextBoxColumn.DataPropertyName = "precioU";
-            this.precioUDataGridViewTextBoxColumn.HeaderText = "precioU";
+            this.precioUDataGridViewTextBoxColumn.HeaderText = "Precio Unitario";
             this.precioUDataGridViewTextBoxColumn.Name = "precioUDataGridViewTextBoxColumn";
             this.precioUDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -340,16 +340,6 @@
             this.usuariosBindingSource1.DataMember = "usuarios";
             this.usuariosBindingSource1.DataSource = this.dataSet11;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // usuariosTableAdapter1
             // 
             this.usuariosTableAdapter1.ClearBeforeFill = true;
@@ -365,18 +355,6 @@
             this.tableAdapterManager1.UpdateOrder = pruebaLogin.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
             this.tableAdapterManager1.ventas_detalleTableAdapter = null;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.consultasTableAdapter = null;
-            this.tableAdapterManager.mensajesTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
             // mensajesTableAdapter
             // 
@@ -539,12 +517,12 @@
             this.detallesindividualesBindingSource1.DataMember = "detalles_individuales";
             this.detallesindividualesBindingSource1.DataSource = this.dataSet11;
             // 
-            // Select
+            // select_1
             // 
-            this.Select.DataPropertyName = "id";
-            this.Select.HeaderText = "Seleccionar";
-            this.Select.Name = "Select";
-            this.Select.ReadOnly = true;
+            this.select_1.DataPropertyName = "id";
+            this.select_1.HeaderText = "Seleccionar";
+            this.select_1.Name = "select_1";
+            this.select_1.ReadOnly = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -588,6 +566,28 @@
             this.totalventaDataGridViewTextBoxColumn.Name = "totalventaDataGridViewTextBoxColumn";
             this.totalventaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.consultasTableAdapter = null;
+            this.tableAdapterManager.mensajesTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
+            // 
             // FormRecibos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,17 +605,17 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vcDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cabecerasindividualesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vdDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesindividualesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recibosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detallesindividualesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.detallesindividualesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -663,16 +663,16 @@
         private pruebaLogin.DataSet1TableAdapters.cabeceras_individualesTableAdapter cabeceras_individualesTableAdapter;
         private System.Windows.Forms.BindingSource detallesindividualesBindingSource1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView vdDataGridView;
+        private System.Windows.Forms.DataGridView vcDataGridView;
+        private System.Windows.Forms.Button BVerPDF;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LUser;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridView usuariosDataGridView;
-        private System.Windows.Forms.Button BModificar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LUser;
-        private System.Windows.Forms.DataGridViewButtonColumn Select;
+        private System.Windows.Forms.DataGridViewButtonColumn select_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
