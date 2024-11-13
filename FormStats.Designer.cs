@@ -182,9 +182,9 @@
             this.panel2.Controls.Add(this.dtpStartDate);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(766, 3);
+            this.panel2.Location = new System.Drawing.Point(765, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 506);
+            this.panel2.Size = new System.Drawing.Size(270, 506);
             this.panel2.TabIndex = 8;
             // 
             // labelMetric
@@ -265,7 +265,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartVentas.Series.Add(series1);
-            this.chartVentas.Size = new System.Drawing.Size(757, 506);
+            this.chartVentas.Size = new System.Drawing.Size(756, 506);
             this.chartVentas.TabIndex = 0;
             this.chartVentas.Text = "chart1";
             // 
@@ -693,6 +693,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.MinimumSize = new System.Drawing.Size(1080, 600);
             this.Name = "FormStats";
+            this.Text = "Estadísticas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

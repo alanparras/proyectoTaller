@@ -40,6 +40,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LUser = new System.Windows.Forms.Label();
             this.vcDataGridView = new System.Windows.Forms.DataGridView();
+            this.select_1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cabecerasindividualesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new pruebaLogin.DataSet1();
             this.vdDataGridView = new System.Windows.Forms.DataGridView();
@@ -78,13 +85,6 @@
             this.detalles_individualesTableAdapter = new pruebaLogin.DataSet1TableAdapters.detalles_individualesTableAdapter();
             this.cabeceras_individualesTableAdapter = new pruebaLogin.DataSet1TableAdapters.cabeceras_individualesTableAdapter();
             this.detallesindividualesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.select_1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipcodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
@@ -239,6 +239,55 @@
             this.vcDataGridView.Size = new System.Drawing.Size(520, 357);
             this.vcDataGridView.TabIndex = 7;
             this.vcDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vcDataGridView_CellContentClick);
+            // 
+            // select_1
+            // 
+            this.select_1.DataPropertyName = "id";
+            this.select_1.HeaderText = "Seleccionar";
+            this.select_1.Name = "select_1";
+            this.select_1.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID de la Venta";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zipcodeDataGridViewTextBoxColumn
+            // 
+            this.zipcodeDataGridViewTextBoxColumn.DataPropertyName = "zipcode";
+            this.zipcodeDataGridViewTextBoxColumn.HeaderText = "Código Postal";
+            this.zipcodeDataGridViewTextBoxColumn.Name = "zipcodeDataGridViewTextBoxColumn";
+            this.zipcodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalventaDataGridViewTextBoxColumn
+            // 
+            this.totalventaDataGridViewTextBoxColumn.DataPropertyName = "total_venta";
+            this.totalventaDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalventaDataGridViewTextBoxColumn.Name = "totalventaDataGridViewTextBoxColumn";
+            this.totalventaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cabecerasindividualesBindingSource
             // 
@@ -517,55 +566,6 @@
             this.detallesindividualesBindingSource1.DataMember = "detalles_individuales";
             this.detallesindividualesBindingSource1.DataSource = this.dataSet11;
             // 
-            // select_1
-            // 
-            this.select_1.DataPropertyName = "id";
-            this.select_1.HeaderText = "Seleccionar";
-            this.select_1.Name = "select_1";
-            this.select_1.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID de la Venta";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn1
-            // 
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
-            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // zipcodeDataGridViewTextBoxColumn
-            // 
-            this.zipcodeDataGridViewTextBoxColumn.DataPropertyName = "zipcode";
-            this.zipcodeDataGridViewTextBoxColumn.HeaderText = "Código Postal";
-            this.zipcodeDataGridViewTextBoxColumn.Name = "zipcodeDataGridViewTextBoxColumn";
-            this.zipcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalventaDataGridViewTextBoxColumn
-            // 
-            this.totalventaDataGridViewTextBoxColumn.DataPropertyName = "total_venta";
-            this.totalventaDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalventaDataGridViewTextBoxColumn.Name = "totalventaDataGridViewTextBoxColumn";
-            this.totalventaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "usuarios";
@@ -597,7 +597,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.MinimumSize = new System.Drawing.Size(1080, 564);
             this.Name = "FormRecibos";
-            this.Text = "FormRecibos";
+            this.Text = "Recibos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormRecibos_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
