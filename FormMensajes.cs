@@ -100,6 +100,20 @@ namespace ProyectoTallerG8
         {
             string mensaje = string.Empty;
 
+            // Validación para nombre (no debe estar vacío)
+            if (string.IsNullOrEmpty(TMensaje.Text))
+            {
+                MessageBox.Show("Debe seleccionar un mensaje.");
+                return;
+            }
+
+            // Validación para descripción (no debe estar vacío)
+            if (string.IsNullOrEmpty(TRespuesta.Text))
+            {
+                MessageBox.Show("Debe ingresar una respuesta.");
+                return;
+            }
+
             Mensaje objMensaje = new Mensaje()
             {
                 id_mensaje = Convert.ToInt32(TID_mensaje.Text),

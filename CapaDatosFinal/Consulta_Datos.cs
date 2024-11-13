@@ -66,7 +66,6 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("PROC_REGISTRAR_RESPUESTA_CONSULTA", oconexion);
                     cmd.Parameters.AddWithValue("id_consulta", obj.id_consulta);
                     cmd.Parameters.AddWithValue("respuesta", obj.respuesta);
-                    cmd.Parameters.AddWithValue("fecha_respuesta", obj.updated_at);
                     cmd.Parameters.Add("resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
