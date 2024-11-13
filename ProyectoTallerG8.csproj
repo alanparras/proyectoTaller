@@ -252,6 +252,10 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CapaDatosFinal\CapaDatos.csproj">
+      <Project>{1d57cb6e-57f5-48b6-8310-059440516079}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="CapaEntidades\CapaEntidades.csproj">
       <Project>{176a63cf-bae9-4e91-9fc9-dbe0f3f02373}</Project>
       <Name>CapaEntidades</Name>

@@ -6,6 +6,7 @@ using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.PropertyGridInternal;
 using System.Windows.Media;
+using CapaDatos;
 using CapaEntidades;
 using CapaNegocio;
 using ProyectoTallerG8.Utilidades;
@@ -74,6 +75,15 @@ namespace ProyectoTallerG8
             //Muestra todos los productos
             List<Producto> listaProducto = new Producto_negocio().Listar();
             //Console.WriteLine($"Número de productos encontrados: {listaProducto.Count}");
+
+            CargarProductosEnDataGridView(listaProducto);
+        }
+
+        private void CargarProductosEnDataGridView(List<Producto> listaProducto)
+        {
+            // Limpia las filas del DataGridView antes de agregar datos nuevos
+            productosDataGridView.Rows.Clear();
+
             foreach (Producto item in listaProducto)
             {
                 productosDataGridView.Rows.Add(new object[] {
@@ -95,8 +105,10 @@ namespace ProyectoTallerG8
             }
         }
 
-        // Método para actualizar el ComboBox de subcategorías
-        void ActualizarSubcategorias(OpcionSelectUsuario categoriaSeleccionada, ComboBox comboSubcategoria)
+
+
+            // Método para actualizar el ComboBox de subcategorías
+            void ActualizarSubcategorias(OpcionSelectUsuario categoriaSeleccionada, ComboBox comboSubcategoria)
         {
             comboSubcategoria.Items.Clear(); // Limpia las subcategorías previas
 
@@ -134,17 +146,13 @@ namespace ProyectoTallerG8
 
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
-            string searchTerm = textSearch.Text;
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                // Llama al método FillBySearch con el texto ingresado en el TextBox
-                //this.productosTableAdapter1.FillBySearch(this.dataSet11.productos, searchTerm);
-            }
-            else
-            {
-                // Si no hay texto, se cargan todos los registros
-                //this.productosTableAdapter1.Fill(this.dataSet11.productos);
-            }
+            string criterio = textSearch.Text;
+
+            // Instancia de la clase que contiene el método BuscarProductos en el otro proyecto
+            Producto_Datos productoService = new Producto_Datos();
+            List<Producto> resultados = productoService.BuscarProductos(criterio);
+
+            CargarProductosEnDataGridView(resultados);
         }
 
         private void VaciarCampos()

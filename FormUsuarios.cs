@@ -6,6 +6,7 @@ using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.PropertyGridInternal;
 using System.Windows.Media;
+using CapaDatos;
 using CapaEntidades;
 using CapaNegocio;
 using FontAwesome.Sharp;
@@ -33,6 +34,8 @@ namespace ProyectoTallerG8
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.perfiles' Puede moverla o quitarla según sea necesario.
             this.perfilesTableAdapter1.Fill(this.dataSet11.perfiles);
+            usuariosDataGridView.AutoGenerateColumns = false;
+
 
             // TODO: esta línea de código carga datos en la tabla 'dataSet11.usuarios' Puede moverla o quitarla según sea necesario.
             //this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
@@ -67,26 +70,35 @@ namespace ProyectoTallerG8
 
             //Muestra todos los usuarios
             List<Usuario> listaUsuario = new Usuario_negocio().Listar();
+
+            CargarUsuariosEnDataGridView(listaUsuario);
             //Console.WriteLine($"Número de usuarios encontrados: {listaUsuario.Count}");
+
+        }
+
+        private void CargarUsuariosEnDataGridView(List<Usuario> listaUsuario)
+        {
+            // Limpia las filas del DataGridView antes de agregar datos nuevos
+            usuariosDataGridView.Rows.Clear();
+
             foreach (Usuario item in listaUsuario)
             {
                 usuariosDataGridView.Rows.Add(new object[] {
-                    "", 
-                    item.id_usuario, 
-                    item.nombre, 
+                    "",
+                    item.id_usuario,
+                    item.nombre,
                     item.apellido,
-                    item.objPerfil.id_perfil, 
-                    item.objPerfil.descripcion, 
-                    item.baja == true ? 1 : 0,
-                    item.baja == true ? "Dado de Baja" : "Dado de Alta",
-                    item.user, 
+                    item.objPerfil.id_perfil,
+                    item.objPerfil.descripcion,
+                    item.baja ? 1 : 0,
+                    item.baja ? "Dado de Baja" : "Dado de Alta",
+                    item.user,
                     item.pass,
-                    item.email, 
+                    item.email,
                     item.domicilio,
                     item.CP
                 });
             }
-
         }
 
         private void VaciarCampos()
@@ -124,17 +136,13 @@ namespace ProyectoTallerG8
 
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
-            string searchTerm = textSearch.Text;
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                // Llama al método FillBySearch con el texto ingresado en el TextBox
-                this.usuariosTableAdapter1.FillBySearch(this.dataSet11.usuarios, searchTerm);
-            }
-            else
-            {
-                // Si no hay texto, se cargan todos los registros
-                this.usuariosTableAdapter1.Fill(this.dataSet11.usuarios);
-            }
+            string criterio = textSearch.Text;
+
+            // Instancia de la clase que contiene el método BuscarUsuarios en el otro proyecto
+            Usuario_Datos usuarioService = new Usuario_Datos();
+            List<Usuario> resultados = usuarioService.BuscarUsuarios(criterio);
+
+            CargarUsuariosEnDataGridView(resultados);
         }
 
 

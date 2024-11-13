@@ -58,6 +58,54 @@ namespace CapaDatos
             }
             return lista;
         }
+
+        public List<Usuario> BuscarUsuarios(string criterio)
+        {
+            List<Usuario> lista = new List<Usuario>();
+
+            using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    StringBuilder query = new StringBuilder();
+                    query.AppendLine("select u.id,u.nombre,u.apellido,u.zipcode,u.domicilio,u.email,u.usuario,u.pass,p.id_perfiles,p.descripcion,u.baja from usuarios u");
+                    query.AppendLine("inner join perfiles p on p.id_perfiles = u.perfil_id");
+                    query.AppendLine("where u.nombre LIKE @criterio OR u.apellido LIKE @criterio OR u.email LIKE @criterio OR u.usuario LIKE @criterio OR u.domicilio LIKE @criterio OR u.zipcode LIKE @criterio;");
+
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@criterio", "%" + criterio + "%");
+
+                    oconexion.Open();
+
+                    using (SqlDataReader dataReader = cmd.ExecuteReader())
+                    {
+                        while (dataReader.Read())
+                        {
+                            lista.Add(new Usuario()
+                            {
+                                id_usuario = Convert.ToInt32(dataReader["id"]),
+                                nombre = dataReader["nombre"].ToString(),
+                                apellido = dataReader["apellido"].ToString(),
+                                CP = Convert.ToInt32(dataReader["zipcode"]),
+                                domicilio = dataReader["domicilio"].ToString(),
+                                email = dataReader["email"].ToString(),
+                                user = dataReader["usuario"].ToString(),
+                                pass = dataReader["pass"].ToString(),
+                                objPerfil = new Perfil() { id_perfil = Convert.ToInt32(dataReader["id_perfiles"]), descripcion = dataReader["descripcion"].ToString() },
+                                baja = Convert.ToBoolean(dataReader["baja"]),
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lista = new List<Usuario>();
+                }
+            }
+            return lista;
+        }
+
         public int Registrar(Usuario obj, out string Mensaje)
         {
             int idusuariogenerado = 0;

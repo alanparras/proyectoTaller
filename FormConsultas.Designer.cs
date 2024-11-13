@@ -29,12 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.consultasDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_consulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TUsuario = new System.Windows.Forms.TextBox();
+            this.TApellido = new System.Windows.Forms.TextBox();
             this.TBIndice = new System.Windows.Forms.TextBox();
             this.TFechaRespuesta = new System.Windows.Forms.TextBox();
             this.TFechaCreado = new System.Windows.Forms.TextBox();
@@ -53,31 +66,19 @@
             this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
             this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
             this.consultasTableAdapter = new pruebaLogin.DataSet1TableAdapters.consultasTableAdapter();
-            this.consultasDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_consulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TApellido = new System.Windows.Forms.TextBox();
-            this.TUsuario = new System.Windows.Forms.TextBox();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
@@ -116,166 +117,6 @@
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel2.Controls.Add(this.TUsuario);
-            this.panel2.Controls.Add(this.TApellido);
-            this.panel2.Controls.Add(this.TBIndice);
-            this.panel2.Controls.Add(this.TFechaRespuesta);
-            this.panel2.Controls.Add(this.TFechaCreado);
-            this.panel2.Controls.Add(this.TEmail);
-            this.panel2.Controls.Add(this.TNombre);
-            this.panel2.Controls.Add(this.TID_consulta);
-            this.panel2.Controls.Add(this.TMensaje);
-            this.panel2.Controls.Add(this.BEnviarRespuesta);
-            this.panel2.Controls.Add(this.TRespuesta);
-            this.panel2.Controls.Add(this.LRespuesta);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1052, 308);
-            this.panel2.TabIndex = 11;
-            // 
-            // TBIndice
-            // 
-            this.TBIndice.Location = new System.Drawing.Point(25, 258);
-            this.TBIndice.Name = "TBIndice";
-            this.TBIndice.Size = new System.Drawing.Size(100, 20);
-            this.TBIndice.TabIndex = 30;
-            this.TBIndice.Visible = false;
-            // 
-            // TFechaRespuesta
-            // 
-            this.TFechaRespuesta.Location = new System.Drawing.Point(767, 258);
-            this.TFechaRespuesta.Name = "TFechaRespuesta";
-            this.TFechaRespuesta.Size = new System.Drawing.Size(100, 20);
-            this.TFechaRespuesta.TabIndex = 29;
-            this.TFechaRespuesta.Visible = false;
-            // 
-            // TFechaCreado
-            // 
-            this.TFechaCreado.Location = new System.Drawing.Point(661, 258);
-            this.TFechaCreado.Name = "TFechaCreado";
-            this.TFechaCreado.Size = new System.Drawing.Size(100, 20);
-            this.TFechaCreado.TabIndex = 27;
-            this.TFechaCreado.Visible = false;
-            // 
-            // TEmail
-            // 
-            this.TEmail.Location = new System.Drawing.Point(555, 258);
-            this.TEmail.Name = "TEmail";
-            this.TEmail.Size = new System.Drawing.Size(100, 20);
-            this.TEmail.TabIndex = 25;
-            this.TEmail.Visible = false;
-            // 
-            // TNombre
-            // 
-            this.TNombre.Location = new System.Drawing.Point(237, 258);
-            this.TNombre.Name = "TNombre";
-            this.TNombre.Size = new System.Drawing.Size(100, 20);
-            this.TNombre.TabIndex = 24;
-            this.TNombre.Visible = false;
-            // 
-            // TID_consulta
-            // 
-            this.TID_consulta.Location = new System.Drawing.Point(131, 258);
-            this.TID_consulta.Name = "TID_consulta";
-            this.TID_consulta.Size = new System.Drawing.Size(100, 20);
-            this.TID_consulta.TabIndex = 23;
-            this.TID_consulta.Visible = false;
-            // 
-            // TMensaje
-            // 
-            this.TMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TMensaje.Location = new System.Drawing.Point(25, 25);
-            this.TMensaje.Multiline = true;
-            this.TMensaje.Name = "TMensaje";
-            this.TMensaje.ReadOnly = true;
-            this.TMensaje.Size = new System.Drawing.Size(453, 227);
-            this.TMensaje.TabIndex = 7;
-            // 
-            // BEnviarRespuesta
-            // 
-            this.BEnviarRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.BEnviarRespuesta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BEnviarRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEnviarRespuesta.ForeColor = System.Drawing.Color.White;
-            this.BEnviarRespuesta.Location = new System.Drawing.Point(546, 194);
-            this.BEnviarRespuesta.Name = "BEnviarRespuesta";
-            this.BEnviarRespuesta.Size = new System.Drawing.Size(143, 32);
-            this.BEnviarRespuesta.TabIndex = 22;
-            this.BEnviarRespuesta.Text = "Enviar Respuesta";
-            this.BEnviarRespuesta.UseVisualStyleBackColor = false;
-            this.BEnviarRespuesta.Click += new System.EventHandler(this.BEnviarRespuesta_Click);
-            // 
-            // TRespuesta
-            // 
-            this.TRespuesta.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TRespuesta.Location = new System.Drawing.Point(546, 81);
-            this.TRespuesta.Multiline = true;
-            this.TRespuesta.Name = "TRespuesta";
-            this.TRespuesta.Size = new System.Drawing.Size(443, 107);
-            this.TRespuesta.TabIndex = 5;
-            // 
-            // LRespuesta
-            // 
-            this.LRespuesta.AutoSize = true;
-            this.LRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LRespuesta.Location = new System.Drawing.Point(542, 55);
-            this.LRespuesta.Name = "LRespuesta";
-            this.LRespuesta.Size = new System.Drawing.Size(79, 23);
-            this.LRespuesta.TabIndex = 4;
-            this.LRespuesta.Text = "Respuesta:";
-            // 
-            // consultasBindingSource
-            // 
-            this.consultasBindingSource.DataMember = "consultas";
-            this.consultasBindingSource.DataSource = this.dataSet11;
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mensajesBindingSource
-            // 
-            this.mensajesBindingSource.DataMember = "mensajes";
-            this.mensajesBindingSource.DataSource = this.dataSet11;
-            // 
-            // usuariosBindingSource1
-            // 
-            this.usuariosBindingSource1.DataMember = "usuarios";
-            this.usuariosBindingSource1.DataSource = this.dataSet11;
-            // 
-            // usuariosTableAdapter1
-            // 
-            this.usuariosTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager1
-            // 
-            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager1.Connection = null;
-            this.tableAdapterManager1.consultasTableAdapter = null;
-            this.tableAdapterManager1.mensajesTableAdapter = null;
-            this.tableAdapterManager1.perfilesTableAdapter = null;
-            this.tableAdapterManager1.productos_pcTableAdapter = null;
-            this.tableAdapterManager1.UpdateOrder = pruebaLogin.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
-            this.tableAdapterManager1.ventas_detalleTableAdapter = null;
-            // 
-            // mensajesTableAdapter
-            // 
-            this.mensajesTableAdapter.ClearBeforeFill = true;
-            // 
-            // consultasTableAdapter
-            // 
-            this.consultasTableAdapter.ClearBeforeFill = true;
-            // 
             // consultasDataGridView
             // 
             this.consultasDataGridView.AllowUserToAddRows = false;
@@ -284,14 +125,14 @@
             this.consultasDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.consultasDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.consultasDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.consultasDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.consultasDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.consultasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.consultasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
@@ -304,14 +145,14 @@
             this.fecha_mensaje,
             this.fecha_respuesta,
             this.respuesta});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.consultasDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.consultasDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.consultasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consultasDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.consultasDataGridView.Location = new System.Drawing.Point(3, 317);
@@ -325,12 +166,12 @@
             // 
             // btnSeleccionar
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle5;
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.HeaderText = "Seleccionar";
             this.btnSeleccionar.Name = "btnSeleccionar";
@@ -392,14 +233,27 @@
             this.respuesta.Name = "respuesta";
             this.respuesta.ReadOnly = true;
             // 
-            // TApellido
+            // panel2
             // 
-            this.TApellido.Location = new System.Drawing.Point(343, 258);
-            this.TApellido.Name = "TApellido";
-            this.TApellido.Size = new System.Drawing.Size(100, 20);
-            this.TApellido.TabIndex = 31;
-            this.TApellido.Visible = false;
-            this.TApellido.TextChanged += new System.EventHandler(this.TApellido_TextChanged);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.TUsuario);
+            this.panel2.Controls.Add(this.TApellido);
+            this.panel2.Controls.Add(this.TBIndice);
+            this.panel2.Controls.Add(this.TFechaRespuesta);
+            this.panel2.Controls.Add(this.TFechaCreado);
+            this.panel2.Controls.Add(this.TEmail);
+            this.panel2.Controls.Add(this.TNombre);
+            this.panel2.Controls.Add(this.TID_consulta);
+            this.panel2.Controls.Add(this.TMensaje);
+            this.panel2.Controls.Add(this.BEnviarRespuesta);
+            this.panel2.Controls.Add(this.TRespuesta);
+            this.panel2.Controls.Add(this.LRespuesta);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1052, 308);
+            this.panel2.TabIndex = 11;
             // 
             // TUsuario
             // 
@@ -409,6 +263,154 @@
             this.TUsuario.TabIndex = 32;
             this.TUsuario.Visible = false;
             this.TUsuario.TextChanged += new System.EventHandler(this.TUsuario_TextChanged);
+            // 
+            // TApellido
+            // 
+            this.TApellido.Location = new System.Drawing.Point(343, 258);
+            this.TApellido.Name = "TApellido";
+            this.TApellido.Size = new System.Drawing.Size(100, 20);
+            this.TApellido.TabIndex = 31;
+            this.TApellido.Visible = false;
+            this.TApellido.TextChanged += new System.EventHandler(this.TApellido_TextChanged);
+            // 
+            // TBIndice
+            // 
+            this.TBIndice.Location = new System.Drawing.Point(25, 258);
+            this.TBIndice.Name = "TBIndice";
+            this.TBIndice.Size = new System.Drawing.Size(100, 20);
+            this.TBIndice.TabIndex = 30;
+            this.TBIndice.Visible = false;
+            // 
+            // TFechaRespuesta
+            // 
+            this.TFechaRespuesta.Location = new System.Drawing.Point(767, 258);
+            this.TFechaRespuesta.Name = "TFechaRespuesta";
+            this.TFechaRespuesta.Size = new System.Drawing.Size(100, 20);
+            this.TFechaRespuesta.TabIndex = 29;
+            this.TFechaRespuesta.Visible = false;
+            // 
+            // TFechaCreado
+            // 
+            this.TFechaCreado.Location = new System.Drawing.Point(661, 258);
+            this.TFechaCreado.Name = "TFechaCreado";
+            this.TFechaCreado.Size = new System.Drawing.Size(100, 20);
+            this.TFechaCreado.TabIndex = 27;
+            this.TFechaCreado.Visible = false;
+            // 
+            // TEmail
+            // 
+            this.TEmail.Location = new System.Drawing.Point(555, 258);
+            this.TEmail.Name = "TEmail";
+            this.TEmail.Size = new System.Drawing.Size(100, 20);
+            this.TEmail.TabIndex = 25;
+            this.TEmail.Visible = false;
+            // 
+            // TNombre
+            // 
+            this.TNombre.Location = new System.Drawing.Point(237, 258);
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Size = new System.Drawing.Size(100, 20);
+            this.TNombre.TabIndex = 24;
+            this.TNombre.Visible = false;
+            // 
+            // TID_consulta
+            // 
+            this.TID_consulta.Location = new System.Drawing.Point(131, 258);
+            this.TID_consulta.Name = "TID_consulta";
+            this.TID_consulta.Size = new System.Drawing.Size(100, 20);
+            this.TID_consulta.TabIndex = 23;
+            this.TID_consulta.Visible = false;
+            // 
+            // TMensaje
+            // 
+            this.TMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TMensaje.Location = new System.Drawing.Point(25, 42);
+            this.TMensaje.Multiline = true;
+            this.TMensaje.Name = "TMensaje";
+            this.TMensaje.ReadOnly = true;
+            this.TMensaje.Size = new System.Drawing.Size(453, 210);
+            this.TMensaje.TabIndex = 7;
+            // 
+            // BEnviarRespuesta
+            // 
+            this.BEnviarRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.BEnviarRespuesta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BEnviarRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEnviarRespuesta.ForeColor = System.Drawing.Color.White;
+            this.BEnviarRespuesta.Location = new System.Drawing.Point(546, 194);
+            this.BEnviarRespuesta.Name = "BEnviarRespuesta";
+            this.BEnviarRespuesta.Size = new System.Drawing.Size(143, 32);
+            this.BEnviarRespuesta.TabIndex = 22;
+            this.BEnviarRespuesta.Text = "Enviar Respuesta";
+            this.BEnviarRespuesta.UseVisualStyleBackColor = false;
+            this.BEnviarRespuesta.Click += new System.EventHandler(this.BEnviarRespuesta_Click);
+            // 
+            // TRespuesta
+            // 
+            this.TRespuesta.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TRespuesta.Location = new System.Drawing.Point(546, 42);
+            this.TRespuesta.Multiline = true;
+            this.TRespuesta.Name = "TRespuesta";
+            this.TRespuesta.Size = new System.Drawing.Size(443, 146);
+            this.TRespuesta.TabIndex = 5;
+            // 
+            // LRespuesta
+            // 
+            this.LRespuesta.AutoSize = true;
+            this.LRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.LRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LRespuesta.Location = new System.Drawing.Point(542, 16);
+            this.LRespuesta.Name = "LRespuesta";
+            this.LRespuesta.Size = new System.Drawing.Size(79, 23);
+            this.LRespuesta.TabIndex = 4;
+            this.LRespuesta.Text = "Respuesta:";
+            // 
+            // consultasBindingSource
+            // 
+            this.consultasBindingSource.DataMember = "consultas";
+            this.consultasBindingSource.DataSource = this.dataSet11;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // mensajesBindingSource
+            // 
+            this.mensajesBindingSource.DataMember = "mensajes";
+            this.mensajesBindingSource.DataSource = this.dataSet11;
+            // 
+            // usuariosBindingSource1
+            // 
+            this.usuariosBindingSource1.DataMember = "usuarios";
+            this.usuariosBindingSource1.DataSource = this.dataSet11;
+            // 
+            // usuariosTableAdapter1
+            // 
+            this.usuariosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.consultasTableAdapter = null;
+            this.tableAdapterManager1.mensajesTableAdapter = null;
+            this.tableAdapterManager1.perfilesTableAdapter = null;
+            this.tableAdapterManager1.productos_pcTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = pruebaLogin.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
+            this.tableAdapterManager1.ventas_detalleTableAdapter = null;
+            // 
+            // mensajesTableAdapter
+            // 
+            this.mensajesTableAdapter.ClearBeforeFill = true;
+            // 
+            // consultasTableAdapter
+            // 
+            this.consultasTableAdapter.ClearBeforeFill = true;
             // 
             // usuariosBindingSource
             // 
@@ -432,6 +434,17 @@
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(21, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 23);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Consulta";
+            // 
             // FormConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,13 +460,13 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -501,5 +514,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn respuesta;
         private System.Windows.Forms.TextBox TUsuario;
         private System.Windows.Forms.TextBox TApellido;
+        private System.Windows.Forms.Label label1;
     }
 }

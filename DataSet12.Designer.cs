@@ -5797,18 +5797,17 @@ namespace pruebaLogin.DataSet1TableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT * 
-FROM usuarios
-WHERE 
-    (TRY_CONVERT(INT, @search) = id) OR 
-    (TRY_CONVERT(INT, @search) = perfil_id) OR
-    (nombre LIKE '%' + @search + '%') OR 
-    (apellido LIKE '%' + @search + '%') OR 
-    (baja LIKE '%' + @search + '%') OR 
-    (usuario LIKE '%' + @search + '%') OR 
-    (email LIKE '%' + @search + '%') OR 
-    (domicilio LIKE '%' + @search + '%') OR
-    (zipcode LIKE '%' + @search + '%')";
+            this._commandCollection[1].CommandText = @"SELECT        nombre, apellido, zipcode, domicilio, email, usuario, perfil_id, baja, id
+FROM            usuarios
+WHERE        (TRY_CONVERT(INT, @search) = id) OR
+                         (TRY_CONVERT(INT, @search) = perfil_id) OR
+                         (nombre LIKE '%' + @search + '%') OR
+                         (apellido LIKE '%' + @search + '%') OR
+                         (baja LIKE '%' + @search + '%') OR
+                         (usuario LIKE '%' + @search + '%') OR
+                         (email LIKE '%' + @search + '%') OR
+                         (domicilio LIKE '%' + @search + '%') OR
+                         (zipcode LIKE '%' + @search + '%')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@search", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
