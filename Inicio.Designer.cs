@@ -107,16 +107,40 @@
             this.BackupButton.IconChar = FontAwesome.Sharp.IconChar.GroupArrowsRotate;
             this.BackupButton.IconColor = System.Drawing.Color.AliceBlue;
             this.BackupButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BackupButton.Location = new System.Drawing.Point(3, 501);
+            this.BackupButton.Location = new System.Drawing.Point(3, 417);
             this.BackupButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.BackupButton.Name = "BackupButton";
-            this.BackupButton.Size = new System.Drawing.Size(88, 77);
+            this.BackupButton.Size = new System.Drawing.Size(145, 63);
             this.BackupButton.TabIndex = 13;
             this.BackupButton.Text = "Restauración";
             this.BackupButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BackupButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BackupButton.UseVisualStyleBackColor = false;
             this.BackupButton.Click += new System.EventHandler(this.BackupButton_Click);
+            // 
+            // LogOutButton
+            // 
+            this.LogOutButton.AutoSize = true;
+            this.LogOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.LogOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.LogOutButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogOutButton.FlatAppearance.BorderSize = 0;
+            this.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogOutButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOutButton.ForeColor = System.Drawing.Color.AliceBlue;
+            this.LogOutButton.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
+            this.LogOutButton.IconColor = System.Drawing.Color.AliceBlue;
+            this.LogOutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.LogOutButton.Location = new System.Drawing.Point(3, 486);
+            this.LogOutButton.MinimumSize = new System.Drawing.Size(75, 37);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(145, 66);
+            this.LogOutButton.TabIndex = 12;
+            this.LogOutButton.Text = "Cerrar Sesión";
+            this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.LogOutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.LogOutButton.UseVisualStyleBackColor = false;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // ReceiptsButton
             // 
@@ -131,10 +155,10 @@
             this.ReceiptsButton.IconChar = FontAwesome.Sharp.IconChar.Receipt;
             this.ReceiptsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ReceiptsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ReceiptsButton.Location = new System.Drawing.Point(3, 418);
+            this.ReceiptsButton.Location = new System.Drawing.Point(3, 348);
             this.ReceiptsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.ReceiptsButton.Name = "ReceiptsButton";
-            this.ReceiptsButton.Size = new System.Drawing.Size(88, 77);
+            this.ReceiptsButton.Size = new System.Drawing.Size(145, 63);
             this.ReceiptsButton.TabIndex = 10;
             this.ReceiptsButton.Text = "Recibos";
             this.ReceiptsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -155,10 +179,10 @@
             this.StatsButton.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.StatsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.StatsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.StatsButton.Location = new System.Drawing.Point(3, 335);
+            this.StatsButton.Location = new System.Drawing.Point(3, 279);
             this.StatsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.StatsButton.Name = "StatsButton";
-            this.StatsButton.Size = new System.Drawing.Size(88, 77);
+            this.StatsButton.Size = new System.Drawing.Size(145, 63);
             this.StatsButton.TabIndex = 9;
             this.StatsButton.Text = "Estadísticas";
             this.StatsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -179,10 +203,10 @@
             this.ProductsButton.IconChar = FontAwesome.Sharp.IconChar.BoxesPacking;
             this.ProductsButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ProductsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ProductsButton.Location = new System.Drawing.Point(3, 252);
+            this.ProductsButton.Location = new System.Drawing.Point(3, 210);
             this.ProductsButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(88, 77);
+            this.ProductsButton.Size = new System.Drawing.Size(145, 63);
             this.ProductsButton.TabIndex = 8;
             this.ProductsButton.Text = "Productos";
             this.ProductsButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -203,10 +227,10 @@
             this.MsgButton.IconChar = FontAwesome.Sharp.IconChar.Envelope;
             this.MsgButton.IconColor = System.Drawing.Color.AliceBlue;
             this.MsgButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.MsgButton.Location = new System.Drawing.Point(3, 169);
+            this.MsgButton.Location = new System.Drawing.Point(3, 141);
             this.MsgButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.MsgButton.Name = "MsgButton";
-            this.MsgButton.Size = new System.Drawing.Size(88, 77);
+            this.MsgButton.Size = new System.Drawing.Size(145, 63);
             this.MsgButton.TabIndex = 7;
             this.MsgButton.Text = "Mensajes";
             this.MsgButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -227,49 +251,16 @@
             this.ConsultasButton.IconChar = FontAwesome.Sharp.IconChar.FileText;
             this.ConsultasButton.IconColor = System.Drawing.Color.AliceBlue;
             this.ConsultasButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ConsultasButton.Location = new System.Drawing.Point(3, 86);
+            this.ConsultasButton.Location = new System.Drawing.Point(3, 72);
             this.ConsultasButton.MinimumSize = new System.Drawing.Size(90, 57);
             this.ConsultasButton.Name = "ConsultasButton";
-            this.ConsultasButton.Size = new System.Drawing.Size(90, 77);
+            this.ConsultasButton.Size = new System.Drawing.Size(145, 63);
             this.ConsultasButton.TabIndex = 6;
             this.ConsultasButton.Text = "Consultas";
             this.ConsultasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ConsultasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ConsultasButton.UseVisualStyleBackColor = false;
-            // 
-            // contenedor
-            // 
-            this.contenedor.BackgroundImage = global::pruebaLogin.Properties.Resources.LogoGio;
-            this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(103, 3);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(731, 509);
-            this.contenedor.TabIndex = 6;
-            // 
-            // LogOutButton
-            // 
-            this.LogOutButton.AutoSize = true;
-            this.LogOutButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.LogOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.LogOutButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LogOutButton.FlatAppearance.BorderSize = 0;
-            this.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogOutButton.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogOutButton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.LogOutButton.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
-            this.LogOutButton.IconColor = System.Drawing.Color.AliceBlue;
-            this.LogOutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.LogOutButton.Location = new System.Drawing.Point(3, 584);
-            this.LogOutButton.MinimumSize = new System.Drawing.Size(75, 37);
-            this.LogOutButton.Name = "LogOutButton";
-            this.LogOutButton.Size = new System.Drawing.Size(88, 77);
-            this.LogOutButton.TabIndex = 12;
-            this.LogOutButton.Text = "Cerrar Sesión";
-            this.LogOutButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.LogOutButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.LogOutButton.UseVisualStyleBackColor = false;
-            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
+            this.ConsultasButton.Click += new System.EventHandler(this.ConsultasButton_Click_1);
             // 
             // UserButton
             // 
@@ -288,7 +279,7 @@
             this.UserButton.Location = new System.Drawing.Point(3, 3);
             this.UserButton.MinimumSize = new System.Drawing.Size(75, 37);
             this.UserButton.Name = "UserButton";
-            this.UserButton.Size = new System.Drawing.Size(88, 77);
+            this.UserButton.Size = new System.Drawing.Size(145, 63);
             this.UserButton.TabIndex = 5;
             this.UserButton.Text = "Usuarios";
             this.UserButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -304,16 +295,6 @@
             this.contenedor.Location = new System.Drawing.Point(160, 3);
             this.contenedor.Name = "contenedor";
             this.contenedor.Size = new System.Drawing.Size(901, 555);
-            this.contenedor.TabIndex = 6;
-            // 
-            // contenedor
-            // 
-            this.contenedor.BackgroundImage = global::pruebaLogin.Properties.Resources.LogoGio;
-            this.contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contenedor.Location = new System.Drawing.Point(103, 3);
-            this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(731, 509);
             this.contenedor.TabIndex = 6;
             // 
             // Inicio

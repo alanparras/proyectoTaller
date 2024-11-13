@@ -30,44 +30,54 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.TBIndice = new System.Windows.Forms.TextBox();
+            this.TFechaRespuesta = new System.Windows.Forms.TextBox();
+            this.TFechaCreado = new System.Windows.Forms.TextBox();
+            this.TEmail = new System.Windows.Forms.TextBox();
+            this.TNombre = new System.Windows.Forms.TextBox();
+            this.TID_consulta = new System.Windows.Forms.TextBox();
+            this.TMensaje = new System.Windows.Forms.TextBox();
+            this.BEnviarRespuesta = new System.Windows.Forms.Button();
+            this.TRespuesta = new System.Windows.Forms.TextBox();
+            this.LRespuesta = new System.Windows.Forms.Label();
+            this.consultasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new pruebaLogin.DataSet1();
+            this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
+            this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
+            this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
+            this.consultasTableAdapter = new pruebaLogin.DataSet1TableAdapters.consultasTableAdapter();
             this.consultasDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_consulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leido = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fecha_mensaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.respuesta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updated_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consultasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet11 = new pruebaLogin.DataSet1();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.BModificar = new System.Windows.Forms.Button();
-            this.TUserA = new System.Windows.Forms.TextBox();
-            this.LUser = new System.Windows.Forms.Label();
-            this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuariosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.TApellido = new System.Windows.Forms.TextBox();
+            this.TUsuario = new System.Windows.Forms.TextBox();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
-            this.usuariosTableAdapter1 = new pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter();
-            this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
-            this.mensajesTableAdapter = new pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter();
-            this.consultasTableAdapter = new pruebaLogin.DataSet1TableAdapters.consultasTableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
@@ -95,142 +105,132 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.consultasDataGridView, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.25048F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.96917F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.63063F));
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.50097F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.49903F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1058, 519);
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_1);
             // 
-            // consultasDataGridView
+            // panel2
             // 
-            this.consultasDataGridView.AllowUserToAddRows = false;
-            this.consultasDataGridView.AllowUserToDeleteRows = false;
-            this.consultasDataGridView.AutoGenerateColumns = false;
-            this.consultasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.consultasDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.consultasDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.consultasDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.consultasDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.consultasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.consultasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.apellido,
-            this.usuario,
-            this.correo,
-            this.mensaje,
-            this.leido,
-            this.respuesta,
-            this.created_at,
-            this.updated_at});
-            this.consultasDataGridView.DataSource = this.consultasBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.consultasDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.consultasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.consultasDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.consultasDataGridView.Location = new System.Drawing.Point(3, 160);
-            this.consultasDataGridView.Name = "consultasDataGridView";
-            this.consultasDataGridView.ReadOnly = true;
-            this.consultasDataGridView.Size = new System.Drawing.Size(1052, 326);
-            this.consultasDataGridView.TabIndex = 4;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.panel2.Controls.Add(this.TUsuario);
+            this.panel2.Controls.Add(this.TApellido);
+            this.panel2.Controls.Add(this.TBIndice);
+            this.panel2.Controls.Add(this.TFechaRespuesta);
+            this.panel2.Controls.Add(this.TFechaCreado);
+            this.panel2.Controls.Add(this.TEmail);
+            this.panel2.Controls.Add(this.TNombre);
+            this.panel2.Controls.Add(this.TID_consulta);
+            this.panel2.Controls.Add(this.TMensaje);
+            this.panel2.Controls.Add(this.BEnviarRespuesta);
+            this.panel2.Controls.Add(this.TRespuesta);
+            this.panel2.Controls.Add(this.LRespuesta);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1052, 308);
+            this.panel2.TabIndex = 11;
             // 
-            // dataGridViewTextBoxColumn1
+            // TBIndice
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID del Mensaje";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 147;
+            this.TBIndice.Location = new System.Drawing.Point(25, 258);
+            this.TBIndice.Name = "TBIndice";
+            this.TBIndice.Size = new System.Drawing.Size(100, 20);
+            this.TBIndice.TabIndex = 30;
+            this.TBIndice.Visible = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // TFechaRespuesta
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.TFechaRespuesta.Location = new System.Drawing.Point(767, 258);
+            this.TFechaRespuesta.Name = "TFechaRespuesta";
+            this.TFechaRespuesta.Size = new System.Drawing.Size(100, 20);
+            this.TFechaRespuesta.TabIndex = 29;
+            this.TFechaRespuesta.Visible = false;
             // 
-            // apellido
+            // TFechaCreado
             // 
-            this.apellido.DataPropertyName = "apellido";
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
+            this.TFechaCreado.Location = new System.Drawing.Point(661, 258);
+            this.TFechaCreado.Name = "TFechaCreado";
+            this.TFechaCreado.Size = new System.Drawing.Size(100, 20);
+            this.TFechaCreado.TabIndex = 27;
+            this.TFechaCreado.Visible = false;
             // 
-            // usuario
+            // TEmail
             // 
-            this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
+            this.TEmail.Location = new System.Drawing.Point(555, 258);
+            this.TEmail.Name = "TEmail";
+            this.TEmail.Size = new System.Drawing.Size(100, 20);
+            this.TEmail.TabIndex = 25;
+            this.TEmail.Visible = false;
             // 
-            // correo
+            // TNombre
             // 
-            this.correo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.correo.DataPropertyName = "correo";
-            this.correo.HeaderText = "E-Mail";
-            this.correo.Name = "correo";
-            this.correo.ReadOnly = true;
-            this.correo.Width = 147;
+            this.TNombre.Location = new System.Drawing.Point(237, 258);
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Size = new System.Drawing.Size(100, 20);
+            this.TNombre.TabIndex = 24;
+            this.TNombre.Visible = false;
             // 
-            // mensaje
+            // TID_consulta
             // 
-            this.mensaje.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.mensaje.DataPropertyName = "mensaje";
-            this.mensaje.HeaderText = "Mensaje";
-            this.mensaje.Name = "mensaje";
-            this.mensaje.ReadOnly = true;
-            this.mensaje.Width = 147;
+            this.TID_consulta.Location = new System.Drawing.Point(131, 258);
+            this.TID_consulta.Name = "TID_consulta";
+            this.TID_consulta.Size = new System.Drawing.Size(100, 20);
+            this.TID_consulta.TabIndex = 23;
+            this.TID_consulta.Visible = false;
             // 
-            // leido
+            // TMensaje
             // 
-            this.leido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.leido.DataPropertyName = "leido";
-            this.leido.HeaderText = "Leido";
-            this.leido.Name = "leido";
-            this.leido.ReadOnly = true;
-            this.leido.Width = 147;
+            this.TMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TMensaje.Location = new System.Drawing.Point(25, 25);
+            this.TMensaje.Multiline = true;
+            this.TMensaje.Name = "TMensaje";
+            this.TMensaje.ReadOnly = true;
+            this.TMensaje.Size = new System.Drawing.Size(453, 227);
+            this.TMensaje.TabIndex = 7;
             // 
-            // respuesta
+            // BEnviarRespuesta
             // 
-            this.respuesta.DataPropertyName = "respuesta";
-            this.respuesta.HeaderText = "Respuesta";
-            this.respuesta.Name = "respuesta";
-            this.respuesta.ReadOnly = true;
+            this.BEnviarRespuesta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
+            this.BEnviarRespuesta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BEnviarRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BEnviarRespuesta.ForeColor = System.Drawing.Color.White;
+            this.BEnviarRespuesta.Location = new System.Drawing.Point(546, 194);
+            this.BEnviarRespuesta.Name = "BEnviarRespuesta";
+            this.BEnviarRespuesta.Size = new System.Drawing.Size(143, 32);
+            this.BEnviarRespuesta.TabIndex = 22;
+            this.BEnviarRespuesta.Text = "Enviar Respuesta";
+            this.BEnviarRespuesta.UseVisualStyleBackColor = false;
+            this.BEnviarRespuesta.Click += new System.EventHandler(this.BEnviarRespuesta_Click);
             // 
-            // created_at
+            // TRespuesta
             // 
-            this.created_at.DataPropertyName = "created_at";
-            this.created_at.HeaderText = "Creado";
-            this.created_at.Name = "created_at";
-            this.created_at.ReadOnly = true;
+            this.TRespuesta.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.TRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TRespuesta.Location = new System.Drawing.Point(546, 81);
+            this.TRespuesta.Multiline = true;
+            this.TRespuesta.Name = "TRespuesta";
+            this.TRespuesta.Size = new System.Drawing.Size(443, 107);
+            this.TRespuesta.TabIndex = 5;
             // 
-            // updated_at
+            // LRespuesta
             // 
-            this.updated_at.DataPropertyName = "updated_at";
-            this.updated_at.HeaderText = "Modificado";
-            this.updated_at.Name = "updated_at";
-            this.updated_at.ReadOnly = true;
+            this.LRespuesta.AutoSize = true;
+            this.LRespuesta.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
+            this.LRespuesta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LRespuesta.Location = new System.Drawing.Point(542, 55);
+            this.LRespuesta.Name = "LRespuesta";
+            this.LRespuesta.Size = new System.Drawing.Size(79, 23);
+            this.LRespuesta.TabIndex = 4;
+            this.LRespuesta.Text = "Respuesta:";
             // 
             // consultasBindingSource
             // 
@@ -242,54 +242,6 @@
             this.dataSet11.DataSetName = "DataSet1";
             this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.panel1.Controls.Add(this.BModificar);
-            this.panel1.Controls.Add(this.TUserA);
-            this.panel1.Controls.Add(this.LUser);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1052, 151);
-            this.panel1.TabIndex = 5;
-            // 
-            // BModificar
-            // 
-            this.BModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(127)))), ((int)(((byte)(191)))));
-            this.BModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BModificar.ForeColor = System.Drawing.Color.White;
-            this.BModificar.Location = new System.Drawing.Point(14, 62);
-            this.BModificar.Name = "BModificar";
-            this.BModificar.Size = new System.Drawing.Size(143, 32);
-            this.BModificar.TabIndex = 23;
-            this.BModificar.Text = "Enviar Respuesta";
-            this.BModificar.UseVisualStyleBackColor = false;
-            // 
-            // TUserA
-            // 
-            this.TUserA.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.TUserA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TUserA.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TUserA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TUserA.Location = new System.Drawing.Point(14, 29);
-            this.TUserA.Name = "TUserA";
-            this.TUserA.Size = new System.Drawing.Size(443, 27);
-            this.TUserA.TabIndex = 5;
-            this.TUserA.TextChanged += new System.EventHandler(this.TUserA_TextChanged);
-            // 
-            // LUser
-            // 
-            this.LUser.AutoSize = true;
-            this.LUser.Font = new System.Drawing.Font("Bahnschrift Condensed", 14F);
-            this.LUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LUser.Location = new System.Drawing.Point(10, 3);
-            this.LUser.Name = "LUser";
-            this.LUser.Size = new System.Drawing.Size(76, 23);
-            this.LUser.TabIndex = 4;
-            this.LUser.Text = "Respuesta";
-            // 
             // mensajesBindingSource
             // 
             this.mensajesBindingSource.DataMember = "mensajes";
@@ -299,16 +251,6 @@
             // 
             this.usuariosBindingSource1.DataMember = "usuarios";
             this.usuariosBindingSource1.DataSource = this.dataSet11;
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuariosTableAdapter1
             // 
@@ -326,6 +268,158 @@
             this.tableAdapterManager1.ventas_cabeceraTableAdapter = null;
             this.tableAdapterManager1.ventas_detalleTableAdapter = null;
             // 
+            // mensajesTableAdapter
+            // 
+            this.mensajesTableAdapter.ClearBeforeFill = true;
+            // 
+            // consultasTableAdapter
+            // 
+            this.consultasTableAdapter.ClearBeforeFill = true;
+            // 
+            // consultasDataGridView
+            // 
+            this.consultasDataGridView.AllowUserToAddRows = false;
+            this.consultasDataGridView.AllowUserToDeleteRows = false;
+            this.consultasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.consultasDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.consultasDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.consultasDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.consultasDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.consultasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.consultasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnSeleccionar,
+            this.id_consulta,
+            this.nombre,
+            this.apellido,
+            this.usuario,
+            this.correo,
+            this.mensaje,
+            this.fecha_mensaje,
+            this.fecha_respuesta,
+            this.respuesta});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.consultasDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.consultasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consultasDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.consultasDataGridView.Location = new System.Drawing.Point(3, 317);
+            this.consultasDataGridView.MultiSelect = false;
+            this.consultasDataGridView.Name = "consultasDataGridView";
+            this.consultasDataGridView.ReadOnly = true;
+            this.consultasDataGridView.Size = new System.Drawing.Size(1052, 199);
+            this.consultasDataGridView.TabIndex = 12;
+            this.consultasDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.consultasDataGridView_CellContentClick);
+            this.consultasDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.consultasDataGridView_CellPainting);
+            // 
+            // btnSeleccionar
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.HeaderText = "Seleccionar";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnSeleccionar.Text = "";
+            // 
+            // id_consulta
+            // 
+            this.id_consulta.HeaderText = "ID";
+            this.id_consulta.Name = "id_consulta";
+            this.id_consulta.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // correo
+            // 
+            this.correo.HeaderText = "Correo";
+            this.correo.Name = "correo";
+            this.correo.ReadOnly = true;
+            // 
+            // mensaje
+            // 
+            this.mensaje.HeaderText = "Mensaje";
+            this.mensaje.Name = "mensaje";
+            this.mensaje.ReadOnly = true;
+            // 
+            // fecha_mensaje
+            // 
+            this.fecha_mensaje.HeaderText = "Fecha del mensaje";
+            this.fecha_mensaje.Name = "fecha_mensaje";
+            this.fecha_mensaje.ReadOnly = true;
+            // 
+            // fecha_respuesta
+            // 
+            this.fecha_respuesta.HeaderText = "Fecha de respuesta";
+            this.fecha_respuesta.Name = "fecha_respuesta";
+            this.fecha_respuesta.ReadOnly = true;
+            // 
+            // respuesta
+            // 
+            this.respuesta.HeaderText = "Respuesta";
+            this.respuesta.Name = "respuesta";
+            this.respuesta.ReadOnly = true;
+            // 
+            // TApellido
+            // 
+            this.TApellido.Location = new System.Drawing.Point(343, 258);
+            this.TApellido.Name = "TApellido";
+            this.TApellido.Size = new System.Drawing.Size(100, 20);
+            this.TApellido.TabIndex = 31;
+            this.TApellido.Visible = false;
+            this.TApellido.TextChanged += new System.EventHandler(this.TApellido_TextChanged);
+            // 
+            // TUsuario
+            // 
+            this.TUsuario.Location = new System.Drawing.Point(449, 258);
+            this.TUsuario.Name = "TUsuario";
+            this.TUsuario.Size = new System.Drawing.Size(100, 20);
+            this.TUsuario.TabIndex = 32;
+            this.TUsuario.Visible = false;
+            this.TUsuario.TextChanged += new System.EventHandler(this.TUsuario_TextChanged);
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
@@ -337,14 +431,6 @@
             this.tableAdapterManager.mensajesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
-            // 
-            // mensajesTableAdapter
-            // 
-            this.mensajesTableAdapter.ClearBeforeFill = true;
-            // 
-            // consultasTableAdapter
-            // 
-            this.consultasTableAdapter.ClearBeforeFill = true;
             // 
             // FormConsultas
             // 
@@ -361,13 +447,13 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.consultasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -386,25 +472,34 @@
         private System.Windows.Forms.BindingSource usuariosBindingSource1;
         private pruebaLogin.DataSet1TableAdapters.usuariosTableAdapter usuariosTableAdapter1;
         private pruebaLogin.DataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView consultasDataGridView;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox TUserA;
-        private System.Windows.Forms.Label LUser;
         private System.Windows.Forms.BindingSource mensajesBindingSource;
         private pruebaLogin.DataSet1TableAdapters.mensajesTableAdapter mensajesTableAdapter;
         private System.Windows.Forms.BindingSource consultasBindingSource;
         private pruebaLogin.DataSet1TableAdapters.consultasTableAdapter consultasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox TBIndice;
+        private System.Windows.Forms.TextBox TFechaRespuesta;
+        private System.Windows.Forms.TextBox TFechaCreado;
+        private System.Windows.Forms.TextBox TEmail;
+        private System.Windows.Forms.TextBox TNombre;
+        private System.Windows.Forms.TextBox TID_consulta;
+        private System.Windows.Forms.TextBox TMensaje;
+        private System.Windows.Forms.Button BEnviarRespuesta;
+        private System.Windows.Forms.TextBox TRespuesta;
+        private System.Windows.Forms.Label LRespuesta;
+        private System.Windows.Forms.DataGridView consultasDataGridView;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_consulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn mensaje;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn leido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_mensaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_respuesta;
         private System.Windows.Forms.DataGridViewTextBoxColumn respuesta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updated_at;
-        private System.Windows.Forms.Button BModificar;
+        private System.Windows.Forms.TextBox TUsuario;
+        private System.Windows.Forms.TextBox TApellido;
     }
 }

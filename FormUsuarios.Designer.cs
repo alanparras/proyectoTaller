@@ -38,6 +38,19 @@
             this.tableAdapterManager1 = new pruebaLogin.DataSet1TableAdapters.TableAdapterManager();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.usuariosDataGridView = new System.Windows.Forms.DataGridView();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bajaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -102,19 +115,6 @@
             this.dataSet1 = new ProyectoTallerG8.DataSet1();
             this.usuariosTableAdapter = new ProyectoTallerG8.DataSet1TableAdapters.usuariosTableAdapter();
             this.tableAdapterManager = new ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager();
-            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bajaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -227,6 +227,97 @@
             this.usuariosDataGridView.TabIndex = 4;
             this.usuariosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usuariosDataGridView_CellContentClick);
             this.usuariosDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.usuariosDataGridView_CellPainting);
+            // 
+            // btnSeleccionar
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.HeaderText = "Seleccionar";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnSeleccionar.Text = "";
+            // 
+            // id_user
+            // 
+            this.id_user.HeaderText = "ID de Usuario";
+            this.id_user.Name = "id_user";
+            this.id_user.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // id_perfil
+            // 
+            this.id_perfil.DataPropertyName = "perfil_id";
+            this.id_perfil.HeaderText = "id_perfil";
+            this.id_perfil.Name = "id_perfil";
+            this.id_perfil.ReadOnly = true;
+            // 
+            // Perfil
+            // 
+            this.Perfil.HeaderText = "Perfil";
+            this.Perfil.Name = "Perfil";
+            this.Perfil.ReadOnly = true;
+            // 
+            // bajaValor
+            // 
+            this.bajaValor.HeaderText = "BajaValor";
+            this.bajaValor.Name = "bajaValor";
+            this.bajaValor.ReadOnly = true;
+            this.bajaValor.Visible = false;
+            // 
+            // baja
+            // 
+            this.baja.DataPropertyName = "baja";
+            this.baja.HeaderText = "Baja";
+            this.baja.Name = "baja";
+            this.baja.ReadOnly = true;
+            // 
+            // user
+            // 
+            this.user.HeaderText = "Usuario";
+            this.user.Name = "user";
+            this.user.ReadOnly = true;
+            // 
+            // pass
+            // 
+            this.pass.HeaderText = "Pass";
+            this.pass.Name = "pass";
+            this.pass.ReadOnly = true;
+            this.pass.Visible = false;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // domicilio
+            // 
+            this.domicilio.HeaderText = "Domicilio";
+            this.domicilio.Name = "domicilio";
+            this.domicilio.ReadOnly = true;
+            // 
+            // CP
+            // 
+            this.CP.HeaderText = "Código postal";
+            this.CP.Name = "CP";
+            this.CP.ReadOnly = true;
             // 
             // tableLayoutPanel4
             // 
@@ -361,6 +452,7 @@
             this.TIndice.Size = new System.Drawing.Size(36, 27);
             this.TIndice.TabIndex = 50;
             this.TIndice.Text = "-1";
+            this.TIndice.Visible = false;
             this.TIndice.TextChanged += new System.EventHandler(this.TIndice_TextChanged);
             // 
             // TID_user
@@ -374,6 +466,7 @@
             this.TID_user.Size = new System.Drawing.Size(36, 27);
             this.TID_user.TabIndex = 49;
             this.TID_user.Text = "0";
+            this.TID_user.Visible = false;
             // 
             // CBEstado
             // 
@@ -731,6 +824,7 @@
             this.TBModificarIndice.Size = new System.Drawing.Size(36, 27);
             this.TBModificarIndice.TabIndex = 48;
             this.TBModificarIndice.Text = "-1";
+            this.TBModificarIndice.Visible = false;
             // 
             // TModificarID_user
             // 
@@ -742,6 +836,7 @@
             this.TModificarID_user.Name = "TModificarID_user";
             this.TModificarID_user.Size = new System.Drawing.Size(36, 27);
             this.TModificarID_user.TabIndex = 47;
+            this.TModificarID_user.Visible = false;
             // 
             // CBModificarPerfil
             // 
@@ -979,97 +1074,6 @@
             this.tableAdapterManager.mensajesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProyectoTallerG8.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
-            // 
-            // btnSeleccionar
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.DefaultCellStyle = dataGridViewCellStyle2;
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.HeaderText = "Seleccionar";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btnSeleccionar.Text = "";
-            // 
-            // id_user
-            // 
-            this.id_user.HeaderText = "ID de Usuario";
-            this.id_user.Name = "id_user";
-            this.id_user.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // id_perfil
-            // 
-            this.id_perfil.DataPropertyName = "perfil_id";
-            this.id_perfil.HeaderText = "id_perfil";
-            this.id_perfil.Name = "id_perfil";
-            this.id_perfil.ReadOnly = true;
-            // 
-            // Perfil
-            // 
-            this.Perfil.HeaderText = "Perfil";
-            this.Perfil.Name = "Perfil";
-            this.Perfil.ReadOnly = true;
-            // 
-            // bajaValor
-            // 
-            this.bajaValor.HeaderText = "BajaValor";
-            this.bajaValor.Name = "bajaValor";
-            this.bajaValor.ReadOnly = true;
-            this.bajaValor.Visible = false;
-            // 
-            // baja
-            // 
-            this.baja.DataPropertyName = "baja";
-            this.baja.HeaderText = "Baja";
-            this.baja.Name = "baja";
-            this.baja.ReadOnly = true;
-            // 
-            // user
-            // 
-            this.user.HeaderText = "Usuario";
-            this.user.Name = "user";
-            this.user.ReadOnly = true;
-            // 
-            // pass
-            // 
-            this.pass.HeaderText = "Pass";
-            this.pass.Name = "pass";
-            this.pass.ReadOnly = true;
-            this.pass.Visible = false;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // domicilio
-            // 
-            this.domicilio.HeaderText = "Domicilio";
-            this.domicilio.Name = "domicilio";
-            this.domicilio.ReadOnly = true;
-            // 
-            // CP
-            // 
-            this.CP.HeaderText = "Código postal";
-            this.CP.Name = "CP";
-            this.CP.ReadOnly = true;
             // 
             // FormUsuarios
             // 

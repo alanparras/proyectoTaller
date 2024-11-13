@@ -123,7 +123,7 @@ namespace pruebaLogin
             this.Close();   
         }
 
-        private void ConsultasButton_Click(object sender, EventArgs e)
+        private void ConsultasButton_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario((IconButton)sender, new FormConsultas());
         }

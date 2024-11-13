@@ -24,14 +24,6 @@ namespace ProyectoTallerG8
             InitializeComponent();
         }
 
-        private void usuariosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.usuariosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet1);
-
-        }
-
         private void FormMensajes_Load(object sender, EventArgs e)
         {
             List<Mensaje> listaMensaje = new Mensaje_negocio().Listar();
@@ -60,101 +52,6 @@ namespace ProyectoTallerG8
             TFechaCreado.Text = "";
             TFechaRespuesta.Text = "";
             TRespuesta.Text = "";
-        }
-
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ConsultasButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void B_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void mensajesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
